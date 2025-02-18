@@ -1,0 +1,378 @@
+{
+    "$defs": {
+        "ephemeral": {
+            "aws_cognito_identity_openid_token_for_developer_identity": {
+                "properties": {
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "identity_id": {
+                        "type": "string"
+                    },
+                    "identity_pool_id": {
+                        "type": "string"
+                    },
+                    "logins": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "type": "object"
+                    },
+                    "principal_tags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "type": "object"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "token": {
+                        "type": "string"
+                    },
+                    "token_duration": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "identity_pool_id",
+                    "logins"
+                ],
+                "type": "object"
+            },
+            "aws_eks_cluster_auth": {
+                "properties": {
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "token": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "type": "object"
+            },
+            "aws_kms_secrets": {
+                "properties": {
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "plaintext": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "type": "object"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "secret": {
+                        "items": {
+                            "properties": {
+                                "context": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "encryption_algorithm": {
+                                    "type": "string"
+                                },
+                                "grant_tokens": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "key_id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "payload": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "payload"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+
+                ],
+                "type": "object"
+            },
+            "aws_lambda_invocation": {
+                "properties": {
+                    "client_context": {
+                        "type": "string"
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "executed_version": {
+                        "type": "string"
+                    },
+                    "function_error": {
+                        "type": "string"
+                    },
+                    "function_name": {
+                        "type": "string"
+                    },
+                    "log_result": {
+                        "type": "string"
+                    },
+                    "log_type": {
+                        "type": "string"
+                    },
+                    "payload": {
+                        "type": "string"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "qualifier": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "string"
+                    },
+                    "status_code": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "function_name",
+                    "payload"
+                ],
+                "type": "object"
+            },
+            "aws_secretsmanager_random_password": {
+                "properties": {
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "exclude_characters": {
+                        "type": "boolean"
+                    },
+                    "exclude_lowercase": {
+                        "type": "boolean"
+                    },
+                    "exclude_numbers": {
+                        "type": "boolean"
+                    },
+                    "exclude_punctuation": {
+                        "type": "boolean"
+                    },
+                    "exclude_uppercase": {
+                        "type": "boolean"
+                    },
+                    "include_space": {
+                        "type": "boolean"
+                    },
+                    "password_length": {
+                        "type": "number"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "random_password": {
+                        "type": "string"
+                    },
+                    "require_each_included_type": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+
+                ],
+                "type": "object"
+            },
+            "aws_secretsmanager_secret_version": {
+                "properties": {
+                    "arn": {
+                        "type": "string"
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "created_date": {
+                        "type": "string"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "secret_binary": {
+                        "type": "string"
+                    },
+                    "secret_id": {
+                        "type": "string"
+                    },
+                    "secret_string": {
+                        "type": "string"
+                    },
+                    "version_id": {
+                        "type": "string"
+                    },
+                    "version_stage": {
+                        "type": "string"
+                    },
+                    "version_stages": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "secret_id"
+                ],
+                "type": "object"
+            },
+            "aws_ssm_parameter": {
+                "properties": {
+                    "arn": {
+                        "type": "string"
+                    },
+                    "count": {
+                        "type": "number"
+                    },
+                    "depends_on": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "number"
+                    },
+                    "with_decryption": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "arn"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    "properties": {
+        "ephemeral": {
+            "properties": {
+                "aws_cognito_identity_openid_token_for_developer_identity": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_cognito_identity_openid_token_for_developer_identity"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_eks_cluster_auth": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_eks_cluster_auth"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_secrets": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_kms_secrets"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lambda_invocation": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_lambda_invocation"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_secretsmanager_random_password": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_secretsmanager_random_password"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_secretsmanager_secret_version": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_secretsmanager_secret_version"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_parameter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/ephemeral/aws_ssm_parameter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
