@@ -1,0 +1,113 @@
+{
+    "$defs": {
+        "aws_codecommit_approval_rule_template": {
+            "properties": {
+                "approval_rule_template_id": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "last_modified_user": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rule_content_sha256": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_codecommit_repository": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "clone_url_http": {
+                    "type": "string"
+                },
+                "clone_url_ssh": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "repository_id": {
+                    "type": "string"
+                },
+                "repository_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "repository_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_codecommit_approval_rule_template": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codecommit_approval_rule_template"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codecommit_repository": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codecommit_repository"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

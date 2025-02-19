@@ -1,0 +1,95 @@
+{
+    "$defs": {
+        "aws_emrcontainers_virtual_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "container_provider": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "info": {
+                                "items": {
+                                    "properties": {
+                                        "eks_info": {
+                                            "items": {
+                                                "properties": {
+                                                    "namespace": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "virtual_cluster_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "virtual_cluster_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_emrcontainers_virtual_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_emrcontainers_virtual_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

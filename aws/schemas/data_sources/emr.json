@@ -1,0 +1,138 @@
+{
+    "$defs": {
+        "aws_emr_release_labels": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filters": {
+                    "properties": {
+                        "application": {
+                            "type": "string"
+                        },
+                        "prefix": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "release_labels": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_emr_supported_instance_types": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "release_label": {
+                    "type": "string"
+                },
+                "supported_instance_types": {
+                    "items": {
+                        "properties": {
+                            "architecture": {
+                                "type": "string"
+                            },
+                            "ebs_optimized_available": {
+                                "type": "boolean"
+                            },
+                            "ebs_optimized_by_default": {
+                                "type": "boolean"
+                            },
+                            "ebs_storage_only": {
+                                "type": "boolean"
+                            },
+                            "instance_family_id": {
+                                "type": "string"
+                            },
+                            "is_64_bits_only": {
+                                "type": "boolean"
+                            },
+                            "memory_gb": {
+                                "type": "number"
+                            },
+                            "number_of_disks": {
+                                "type": "number"
+                            },
+                            "storage_gb": {
+                                "type": "number"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "vcpu": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "release_label"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_emr_release_labels": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_emr_release_labels"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_emr_supported_instance_types": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_emr_supported_instance_types"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

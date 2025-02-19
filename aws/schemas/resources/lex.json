@@ -1,0 +1,986 @@
+{
+    "$defs": {
+        "aws_lex_bot": {
+            "properties": {
+                "abort_statement": {
+                    "properties": {
+                        "message": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "content_type": {
+                                        "type": "string"
+                                    },
+                                    "group_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "content",
+                                    "content_type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "response_card": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "message"
+                    ],
+                    "type": "object"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "checksum": {
+                    "type": "string"
+                },
+                "child_directed": {
+                    "type": "boolean"
+                },
+                "clarification_prompt": {
+                    "properties": {
+                        "max_attempts": {
+                            "type": "number"
+                        },
+                        "message": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "content_type": {
+                                        "type": "string"
+                                    },
+                                    "group_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "content",
+                                    "content_type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "response_card": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "max_attempts",
+                        "message"
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_version": {
+                    "type": "boolean"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "detect_sentiment": {
+                    "type": "boolean"
+                },
+                "enable_model_improvements": {
+                    "type": "boolean"
+                },
+                "failure_reason": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "idle_session_ttl_in_seconds": {
+                    "type": "number"
+                },
+                "intent": {
+                    "items": {
+                        "properties": {
+                            "intent_name": {
+                                "type": "string"
+                            },
+                            "intent_version": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "intent_name",
+                            "intent_version"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "locale": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nlu_intent_confidence_threshold": {
+                    "type": "number"
+                },
+                "process_behavior": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "voice_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abort_statement",
+                "child_directed",
+                "intent",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_lex_bot_alias": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "bot_name": {
+                    "type": "string"
+                },
+                "bot_version": {
+                    "type": "string"
+                },
+                "checksum": {
+                    "type": "string"
+                },
+                "conversation_logs": {
+                    "properties": {
+                        "iam_role_arn": {
+                            "type": "string"
+                        },
+                        "log_settings": {
+                            "items": {
+                                "properties": {
+                                    "destination": {
+                                        "type": "string"
+                                    },
+                                    "kms_key_arn": {
+                                        "type": "string"
+                                    },
+                                    "log_type": {
+                                        "type": "string"
+                                    },
+                                    "resource_arn": {
+                                        "type": "string"
+                                    },
+                                    "resource_prefix": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "destination",
+                                    "log_type",
+                                    "resource_arn"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "iam_role_arn"
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "bot_name",
+                "bot_version",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_lex_intent": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "checksum": {
+                    "type": "string"
+                },
+                "conclusion_statement": {
+                    "properties": {
+                        "message": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "content_type": {
+                                        "type": "string"
+                                    },
+                                    "group_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "content",
+                                    "content_type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "response_card": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "message"
+                    ],
+                    "type": "object"
+                },
+                "confirmation_prompt": {
+                    "properties": {
+                        "max_attempts": {
+                            "type": "number"
+                        },
+                        "message": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "content_type": {
+                                        "type": "string"
+                                    },
+                                    "group_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "content",
+                                    "content_type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "response_card": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "max_attempts",
+                        "message"
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_version": {
+                    "type": "boolean"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "dialog_code_hook": {
+                    "properties": {
+                        "message_version": {
+                            "type": "string"
+                        },
+                        "uri": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "message_version",
+                        "uri"
+                    ],
+                    "type": "object"
+                },
+                "follow_up_prompt": {
+                    "properties": {
+                        "prompt": {
+                            "properties": {
+                                "max_attempts": {
+                                    "type": "number"
+                                },
+                                "message": {
+                                    "items": {
+                                        "properties": {
+                                            "content": {
+                                                "type": "string"
+                                            },
+                                            "content_type": {
+                                                "type": "string"
+                                            },
+                                            "group_number": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "content",
+                                            "content_type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "response_card": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "max_attempts",
+                                "message"
+                            ],
+                            "type": "object"
+                        },
+                        "rejection_statement": {
+                            "properties": {
+                                "message": {
+                                    "items": {
+                                        "properties": {
+                                            "content": {
+                                                "type": "string"
+                                            },
+                                            "content_type": {
+                                                "type": "string"
+                                            },
+                                            "group_number": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "content",
+                                            "content_type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "response_card": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "message"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "prompt",
+                        "rejection_statement"
+                    ],
+                    "type": "object"
+                },
+                "fulfillment_activity": {
+                    "properties": {
+                        "code_hook": {
+                            "properties": {
+                                "message_version": {
+                                    "type": "string"
+                                },
+                                "uri": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "message_version",
+                                "uri"
+                            ],
+                            "type": "object"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parent_intent_signature": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rejection_statement": {
+                    "properties": {
+                        "message": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "type": "string"
+                                    },
+                                    "content_type": {
+                                        "type": "string"
+                                    },
+                                    "group_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "content",
+                                    "content_type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "response_card": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "message"
+                    ],
+                    "type": "object"
+                },
+                "sample_utterances": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "slot": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "priority": {
+                                "type": "number"
+                            },
+                            "response_card": {
+                                "type": "string"
+                            },
+                            "sample_utterances": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "slot_constraint": {
+                                "type": "string"
+                            },
+                            "slot_type": {
+                                "type": "string"
+                            },
+                            "slot_type_version": {
+                                "type": "string"
+                            },
+                            "value_elicitation_prompt": {
+                                "properties": {
+                                    "max_attempts": {
+                                        "type": "number"
+                                    },
+                                    "message": {
+                                        "items": {
+                                            "properties": {
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "content_type": {
+                                                    "type": "string"
+                                                },
+                                                "group_number": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "required": [
+                                                "content",
+                                                "content_type"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "response_card": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "max_attempts",
+                                    "message"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "slot_constraint",
+                            "slot_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fulfillment_activity",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_lex_slot_type": {
+            "properties": {
+                "checksum": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_version": {
+                    "type": "boolean"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "enumeration_value": {
+                    "items": {
+                        "properties": {
+                            "synonyms": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "value_selection_strategy": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "enumeration_value",
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_lex_bot": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lex_bot"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lex_bot_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lex_bot_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lex_intent": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lex_intent"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lex_slot_type": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lex_slot_type"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

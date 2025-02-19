@@ -1,0 +1,493 @@
+{
+    "$defs": {
+        "aws_prometheus_alert_manager_definition": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "definition": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "workspace_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "definition",
+                "workspace_id"
+            ],
+            "type": "object"
+        },
+        "aws_prometheus_rule_group_namespace": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "data": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "workspace_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "data",
+                "name",
+                "workspace_id"
+            ],
+            "type": "object"
+        },
+        "aws_prometheus_scraper": {
+            "properties": {
+                "alias": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "destination": {
+                    "items": {
+                        "properties": {
+                            "amp": {
+                                "items": {
+                                    "properties": {
+                                        "workspace_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "workspace_arn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "scrape_configuration": {
+                    "type": "string"
+                },
+                "source": {
+                    "items": {
+                        "properties": {
+                            "eks": {
+                                "items": {
+                                    "properties": {
+                                        "cluster_arn": {
+                                            "type": "string"
+                                        },
+                                        "security_group_ids": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "subnet_ids": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "cluster_arn",
+                                        "subnet_ids"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "scrape_configuration"
+            ],
+            "type": "object"
+        },
+        "aws_prometheus_workspace": {
+            "properties": {
+                "alias": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "logging_configuration": {
+                    "properties": {
+                        "log_group_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "log_group_arn"
+                    ],
+                    "type": "object"
+                },
+                "prometheus_endpoint": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_prometheus_alert_manager_definition": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_alert_manager_definition"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_prometheus_rule_group_namespace": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_rule_group_namespace"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_prometheus_scraper": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_scraper"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_prometheus_workspace": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_workspace"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

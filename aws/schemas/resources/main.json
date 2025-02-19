@@ -1,0 +1,119 @@
+{
+    "$defs": {
+        "aws_main_route_table_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "original_route_table_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route_table_id": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "route_table_id",
+                "vpc_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_main_route_table_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_main_route_table_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

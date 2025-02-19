@@ -1,0 +1,69 @@
+{
+    "$defs": {
+        "aws_lambda_invocation": {
+            "properties": {
+                "client_context": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "executed_version": {
+                    "type": "string"
+                },
+                "function_error": {
+                    "type": "string"
+                },
+                "function_name": {
+                    "type": "string"
+                },
+                "log_result": {
+                    "type": "string"
+                },
+                "log_type": {
+                    "type": "string"
+                },
+                "payload": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "qualifier": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "string"
+                },
+                "status_code": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "function_name",
+                "payload"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "ephemeral": {
+            "properties": {
+                "aws_lambda_invocation": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lambda_invocation"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -10,7 +10,7 @@
       resource: std.foldl(
         function(acc, item)
           assert std.trace(item.key, true);
-          acc + root.convertResource(item.key, item.value),
+          acc + { [std.split(item.key, '_')[1]]+: root.convertResource(item.key, item.value) },
         std.objectKeysValues(std.get(providerSchema, 'resource_schemas', {})),
         {}
       ),
@@ -18,7 +18,7 @@
       ephemeral: std.foldl(
         function(acc, item)
           assert std.trace(item.key, true);
-          acc + root.convertEphemeral(item.key, item.value),
+          acc + { [std.split(item.key, '_')[1]]+: root.convertEphemeral(item.key, item.value) },
         std.objectKeysValues(std.get(providerSchema, 'ephemeral_resource_schemas', {})),
         {}
       ),
@@ -26,16 +26,24 @@
       data_source: std.foldl(
         function(acc, item)
           assert std.trace(item.key, true);
-          acc + root.convertDatasource(item.key, item.value),
+          acc + { [std.split(item.key, '_')[1]]+: root.convertDatasource(item.key, item.value) },
         std.objectKeysValues(std.get(providerSchema, 'data_source_schemas', {})),
         {}
       ),
     },
 
   fileOutput(name, source, version, schema):
+    local schemas = root.convert(name, source, version, schema);
     {
       [item.key + '.json']: std.manifestJson(item.value)
-      for item in std.objectKeysValues(root.convert(name, source, version, schema))
+      for item in std.objectKeysValues(schemas)
+      if item.key == 'provider'
+    }
+    + {
+      ['resources/' + resource.key + '.json']: std.manifestJson(resource.value)
+      for group in std.objectKeysValues(schemas)
+      if group.key != 'provider'
+      for resource in std.objectKeysValues(group.value)
     },
 
   convertProvider(name, resource): {
@@ -67,39 +75,37 @@
     root.convertResourceBlock('resource', name, resource)
     + {
       '$defs'+: {
-        resource+: {
-          [name]+: {
-            properties+: {
-              provisioner: {
-                type: 'array',
-                items: { type: 'object' },
-              },
-              lifecycle: {
-                type: 'object',
-                properties: {
-                  create_before_destroy: { type: 'boolean' },
-                  prevent_destroy: { type: 'boolean' },
-                  ignore_changes: {
-                    type: 'array',
-                    items: { type: 'string' },
+        [name]+: {
+          properties+: {
+            provisioner: {
+              type: 'array',
+              items: { type: 'object' },
+            },
+            lifecycle: {
+              type: 'object',
+              properties: {
+                create_before_destroy: { type: 'boolean' },
+                prevent_destroy: { type: 'boolean' },
+                ignore_changes: {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+                replace_triggered_by: {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+                precondition: {
+                  type: 'object',
+                  properties: {
+                    condition: { type: 'boolean' },
+                    error_message: { type: 'string' },
                   },
-                  replace_triggered_by: {
-                    type: 'array',
-                    items: { type: 'string' },
-                  },
-                  precondition: {
-                    type: 'object',
-                    properties: {
-                      condition: { type: 'boolean' },
-                      error_message: { type: 'string' },
-                    },
-                  },
-                  postcondition: {
-                    type: 'object',
-                    properties: {
-                      condition: { type: 'boolean' },
-                      error_message: { type: 'string' },
-                    },
+                },
+                postcondition: {
+                  type: 'object',
+                  properties: {
+                    condition: { type: 'boolean' },
+                    error_message: { type: 'string' },
                   },
                 },
               },
@@ -117,18 +123,15 @@
 
   convertResourceBlock(type, name, resource): {
     '$defs'+: {
-      [type]+: {
-        [name]:
-          root.convertBlock(resource.block)
-          + {
-            properties+: {
-              provider: { type: 'string' },
-              depends_on: { type: 'array', items: { type: 'string' } },
-              count: { type: 'number' },
-            },
+      [name]:
+        root.convertBlock(resource.block)
+        + {
+          properties+: {
+            provider: { type: 'string' },
+            depends_on: { type: 'array', items: { type: 'string' } },
+            count: { type: 'number' },
           },
-
-      },
+        },
     },
     properties+: {
       [type]+: {
@@ -136,7 +139,7 @@
         properties+: {
           [name]: {
             type: 'object',
-            additionalProperties: { '$refs': '#/$defs/%s/%s' % [type, name] },
+            additionalProperties: { '$refs': '#/$defs/%s' % name },
             minProperties: 1,
           },
         },

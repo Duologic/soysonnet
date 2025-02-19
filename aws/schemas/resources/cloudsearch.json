@@ -1,0 +1,302 @@
+{
+    "$defs": {
+        "aws_cloudsearch_domain": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "document_service_endpoint": {
+                    "type": "string"
+                },
+                "domain_id": {
+                    "type": "string"
+                },
+                "endpoint_options": {
+                    "properties": {
+                        "enforce_https": {
+                            "type": "boolean"
+                        },
+                        "tls_security_policy": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "index_field": {
+                    "items": {
+                        "properties": {
+                            "analysis_scheme": {
+                                "type": "string"
+                            },
+                            "default_value": {
+                                "type": "string"
+                            },
+                            "facet": {
+                                "type": "boolean"
+                            },
+                            "highlight": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "return": {
+                                "type": "boolean"
+                            },
+                            "search": {
+                                "type": "boolean"
+                            },
+                            "sort": {
+                                "type": "boolean"
+                            },
+                            "source_fields": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "multi_az": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "scaling_parameters": {
+                    "properties": {
+                        "desired_instance_type": {
+                            "type": "string"
+                        },
+                        "desired_partition_count": {
+                            "type": "number"
+                        },
+                        "desired_replication_count": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "search_service_endpoint": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_cloudsearch_domain_service_access_policy": {
+            "properties": {
+                "access_policy": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "access_policy",
+                "domain_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_cloudsearch_domain": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cloudsearch_domain"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cloudsearch_domain_service_access_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cloudsearch_domain_service_access_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

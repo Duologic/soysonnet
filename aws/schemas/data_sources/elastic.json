@@ -1,0 +1,142 @@
+{
+    "$defs": {
+        "aws_elastic_beanstalk_application": {
+            "properties": {
+                "appversion_lifecycle": {
+                    "items": {
+                        "properties": {
+                            "delete_source_from_s3": {
+                                "type": "boolean"
+                            },
+                            "max_age_in_days": {
+                                "type": "number"
+                            },
+                            "max_count": {
+                                "type": "number"
+                            },
+                            "service_role": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_elastic_beanstalk_hosted_zone": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_elastic_beanstalk_solution_stack": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "most_recent": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_regex": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name_regex"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_elastic_beanstalk_application": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elastic_beanstalk_application"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elastic_beanstalk_hosted_zone": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elastic_beanstalk_hosted_zone"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elastic_beanstalk_solution_stack": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elastic_beanstalk_solution_stack"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

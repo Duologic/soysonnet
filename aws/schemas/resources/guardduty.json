@@ -1,0 +1,1610 @@
+{
+    "$defs": {
+        "aws_guardduty_detector": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "datasources": {
+                    "properties": {
+                        "kubernetes": {
+                            "properties": {
+                                "audit_logs": {
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "enable"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "audit_logs"
+                            ],
+                            "type": "object"
+                        },
+                        "malware_protection": {
+                            "properties": {
+                                "scan_ec2_instance_with_findings": {
+                                    "properties": {
+                                        "ebs_volumes": {
+                                            "properties": {
+                                                "enable": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": [
+                                                "enable"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "ebs_volumes"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "scan_ec2_instance_with_findings"
+                            ],
+                            "type": "object"
+                        },
+                        "s3_logs": {
+                            "properties": {
+                                "enable": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "enable"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable": {
+                    "type": "boolean"
+                },
+                "finding_publishing_frequency": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_detector_feature": {
+            "properties": {
+                "additional_configuration": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "status"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "detector_id",
+                "name",
+                "status"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_filter": {
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "finding_criteria": {
+                    "properties": {
+                        "criterion": {
+                            "items": {
+                                "properties": {
+                                    "equals": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "field": {
+                                        "type": "string"
+                                    },
+                                    "greater_than": {
+                                        "type": "string"
+                                    },
+                                    "greater_than_or_equal": {
+                                        "type": "string"
+                                    },
+                                    "less_than": {
+                                        "type": "string"
+                                    },
+                                    "less_than_or_equal": {
+                                        "type": "string"
+                                    },
+                                    "not_equals": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "field"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "criterion"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rank": {
+                    "type": "number"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "action",
+                "detector_id",
+                "finding_criteria",
+                "name",
+                "rank"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_invite_accepter": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "master_account_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "detector_id",
+                "master_account_id"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_ipset": {
+            "properties": {
+                "activate": {
+                    "type": "boolean"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "activate",
+                "detector_id",
+                "format",
+                "location",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_malware_protection_plan": {
+            "properties": {
+                "actions": {
+                    "items": {
+                        "properties": {
+                            "tagging": {
+                                "items": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "protected_resource": {
+                    "items": {
+                        "properties": {
+                            "s3_bucket": {
+                                "items": {
+                                    "properties": {
+                                        "bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "object_prefixes": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "bucket_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "role"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_member": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "disable_email_notification": {
+                    "type": "boolean"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "invitation_message": {
+                    "type": "string"
+                },
+                "invite": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "relationship_status": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "account_id",
+                "detector_id",
+                "email"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_member_detector_feature": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "additional_configuration": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "status"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "account_id",
+                "detector_id",
+                "name",
+                "status"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_organization_admin_account": {
+            "properties": {
+                "admin_account_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "admin_account_id"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_organization_configuration": {
+            "properties": {
+                "auto_enable": {
+                    "type": "boolean"
+                },
+                "auto_enable_organization_members": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "datasources": {
+                    "properties": {
+                        "kubernetes": {
+                            "properties": {
+                                "audit_logs": {
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "enable"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "audit_logs"
+                            ],
+                            "type": "object"
+                        },
+                        "malware_protection": {
+                            "properties": {
+                                "scan_ec2_instance_with_findings": {
+                                    "properties": {
+                                        "ebs_volumes": {
+                                            "properties": {
+                                                "auto_enable": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": [
+                                                "auto_enable"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "ebs_volumes"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "scan_ec2_instance_with_findings"
+                            ],
+                            "type": "object"
+                        },
+                        "s3_logs": {
+                            "properties": {
+                                "auto_enable": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "auto_enable"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "detector_id"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_organization_configuration_feature": {
+            "properties": {
+                "additional_configuration": {
+                    "items": {
+                        "properties": {
+                            "auto_enable": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "auto_enable",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "auto_enable": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "auto_enable",
+                "detector_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_publishing_destination": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "destination_arn": {
+                    "type": "string"
+                },
+                "destination_type": {
+                    "type": "string"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "destination_arn",
+                "detector_id",
+                "kms_key_arn"
+            ],
+            "type": "object"
+        },
+        "aws_guardduty_threatintelset": {
+            "properties": {
+                "activate": {
+                    "type": "boolean"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "detector_id": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "activate",
+                "detector_id",
+                "format",
+                "location",
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_guardduty_detector": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_detector"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_detector_feature": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_detector_feature"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_filter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_filter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_invite_accepter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_invite_accepter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_ipset": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_ipset"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_malware_protection_plan": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_malware_protection_plan"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_member": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_member"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_member_detector_feature": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_member_detector_feature"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_organization_admin_account": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_organization_admin_account"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_organization_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_organization_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_organization_configuration_feature": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_organization_configuration_feature"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_publishing_destination": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_publishing_destination"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_guardduty_threatintelset": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_guardduty_threatintelset"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

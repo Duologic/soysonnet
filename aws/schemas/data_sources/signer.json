@@ -1,0 +1,232 @@
+{
+    "$defs": {
+        "aws_signer_signing_job": {
+            "properties": {
+                "completed_at": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "job_id": {
+                    "type": "string"
+                },
+                "job_invoker": {
+                    "type": "string"
+                },
+                "job_owner": {
+                    "type": "string"
+                },
+                "platform_display_name": {
+                    "type": "string"
+                },
+                "platform_id": {
+                    "type": "string"
+                },
+                "profile_name": {
+                    "type": "string"
+                },
+                "profile_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "requested_by": {
+                    "type": "string"
+                },
+                "revocation_record": {
+                    "items": {
+                        "properties": {
+                            "reason": {
+                                "type": "string"
+                            },
+                            "revoked_at": {
+                                "type": "string"
+                            },
+                            "revoked_by": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "signature_expires_at": {
+                    "type": "string"
+                },
+                "signed_object": {
+                    "items": {
+                        "properties": {
+                            "s3": {
+                                "items": {
+                                    "properties": {
+                                        "bucket": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "source": {
+                    "items": {
+                        "properties": {
+                            "s3": {
+                                "items": {
+                                    "properties": {
+                                        "bucket": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_reason": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "job_id"
+            ],
+            "type": "object"
+        },
+        "aws_signer_signing_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "platform_display_name": {
+                    "type": "string"
+                },
+                "platform_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "revocation_record": {
+                    "items": {
+                        "properties": {
+                            "revocation_effective_from": {
+                                "type": "string"
+                            },
+                            "revoked_at": {
+                                "type": "string"
+                            },
+                            "revoked_by": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "signature_validity_period": {
+                    "items": {
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "version_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_signer_signing_job": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_signer_signing_job"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_signer_signing_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_signer_signing_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

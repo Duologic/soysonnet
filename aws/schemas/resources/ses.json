@@ -1,0 +1,1567 @@
+{
+    "$defs": {
+        "aws_ses_active_receipt_rule_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rule_set_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "rule_set_name"
+            ],
+            "type": "object"
+        },
+        "aws_ses_configuration_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delivery_options": {
+                    "properties": {
+                        "tls_policy": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_fresh_start": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "reputation_metrics_enabled": {
+                    "type": "boolean"
+                },
+                "sending_enabled": {
+                    "type": "boolean"
+                },
+                "tracking_options": {
+                    "properties": {
+                        "custom_redirect_domain": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_ses_domain_dkim": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dkim_tokens": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "type": "object"
+        },
+        "aws_ses_domain_identity": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "verification_token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "type": "object"
+        },
+        "aws_ses_domain_identity_verification": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "type": "object"
+        },
+        "aws_ses_domain_mail_from": {
+            "properties": {
+                "behavior_on_mx_failure": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "mail_from_domain": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "domain",
+                "mail_from_domain"
+            ],
+            "type": "object"
+        },
+        "aws_ses_email_identity": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "email"
+            ],
+            "type": "object"
+        },
+        "aws_ses_event_destination": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cloudwatch_destination": {
+                    "items": {
+                        "properties": {
+                            "default_value": {
+                                "type": "string"
+                            },
+                            "dimension_name": {
+                                "type": "string"
+                            },
+                            "value_source": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "default_value",
+                            "dimension_name",
+                            "value_source"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "configuration_set_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kinesis_destination": {
+                    "properties": {
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "stream_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "role_arn",
+                        "stream_arn"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "matching_types": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "sns_destination": {
+                    "properties": {
+                        "topic_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "topic_arn"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "configuration_set_name",
+                "matching_types",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_ses_identity_notification_topic": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity": {
+                    "type": "string"
+                },
+                "include_original_headers": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "notification_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "topic_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identity",
+                "notification_type"
+            ],
+            "type": "object"
+        },
+        "aws_ses_identity_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "identity",
+                "name",
+                "policy"
+            ],
+            "type": "object"
+        },
+        "aws_ses_receipt_filter": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cidr": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "cidr",
+                "name",
+                "policy"
+            ],
+            "type": "object"
+        },
+        "aws_ses_receipt_rule": {
+            "properties": {
+                "add_header_action": {
+                    "items": {
+                        "properties": {
+                            "header_name": {
+                                "type": "string"
+                            },
+                            "header_value": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "header_name",
+                            "header_value",
+                            "position"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "after": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "bounce_action": {
+                    "items": {
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            },
+                            "sender": {
+                                "type": "string"
+                            },
+                            "smtp_reply_code": {
+                                "type": "string"
+                            },
+                            "status_code": {
+                                "type": "string"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "message",
+                            "position",
+                            "sender",
+                            "smtp_reply_code"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lambda_action": {
+                    "items": {
+                        "properties": {
+                            "function_arn": {
+                                "type": "string"
+                            },
+                            "invocation_type": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "function_arn",
+                            "position"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "recipients": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "rule_set_name": {
+                    "type": "string"
+                },
+                "s3_action": {
+                    "items": {
+                        "properties": {
+                            "bucket_name": {
+                                "type": "string"
+                            },
+                            "iam_role_arn": {
+                                "type": "string"
+                            },
+                            "kms_key_arn": {
+                                "type": "string"
+                            },
+                            "object_key_prefix": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "bucket_name",
+                            "position"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "scan_enabled": {
+                    "type": "boolean"
+                },
+                "sns_action": {
+                    "items": {
+                        "properties": {
+                            "encoding": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "position",
+                            "topic_arn"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "stop_action": {
+                    "items": {
+                        "properties": {
+                            "position": {
+                                "type": "number"
+                            },
+                            "scope": {
+                                "type": "string"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "position",
+                            "scope"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tls_policy": {
+                    "type": "string"
+                },
+                "workmail_action": {
+                    "items": {
+                        "properties": {
+                            "organization_arn": {
+                                "type": "string"
+                            },
+                            "position": {
+                                "type": "number"
+                            },
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "organization_arn",
+                            "position"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "name",
+                "rule_set_name"
+            ],
+            "type": "object"
+        },
+        "aws_ses_receipt_rule_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rule_set_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "rule_set_name"
+            ],
+            "type": "object"
+        },
+        "aws_ses_template": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "html": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_ses_active_receipt_rule_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_active_receipt_rule_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_configuration_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_configuration_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_domain_dkim": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_domain_dkim"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_domain_identity": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_domain_identity"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_domain_identity_verification": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_domain_identity_verification"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_domain_mail_from": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_domain_mail_from"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_email_identity": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_email_identity"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_event_destination": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_event_destination"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_identity_notification_topic": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_identity_notification_topic"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_identity_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_identity_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_receipt_filter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_receipt_filter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_receipt_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_receipt_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_receipt_rule_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_receipt_rule_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_template": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_template"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

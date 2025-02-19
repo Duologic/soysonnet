@@ -1,0 +1,485 @@
+{
+    "$defs": {
+        "aws_signer_signing_job": {
+            "properties": {
+                "completed_at": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "destination": {
+                    "properties": {
+                        "s3": {
+                            "properties": {
+                                "bucket": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "s3"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ignore_signing_job_failure": {
+                    "type": "boolean"
+                },
+                "job_id": {
+                    "type": "string"
+                },
+                "job_invoker": {
+                    "type": "string"
+                },
+                "job_owner": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "platform_display_name": {
+                    "type": "string"
+                },
+                "platform_id": {
+                    "type": "string"
+                },
+                "profile_name": {
+                    "type": "string"
+                },
+                "profile_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "requested_by": {
+                    "type": "string"
+                },
+                "revocation_record": {
+                    "items": {
+                        "properties": {
+                            "reason": {
+                                "type": "string"
+                            },
+                            "revoked_at": {
+                                "type": "string"
+                            },
+                            "revoked_by": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "signature_expires_at": {
+                    "type": "string"
+                },
+                "signed_object": {
+                    "items": {
+                        "properties": {
+                            "s3": {
+                                "items": {
+                                    "properties": {
+                                        "bucket": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "source": {
+                    "properties": {
+                        "s3": {
+                            "properties": {
+                                "bucket": {
+                                    "type": "string"
+                                },
+                                "key": {
+                                    "type": "string"
+                                },
+                                "version": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket",
+                                "key",
+                                "version"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "s3"
+                    ],
+                    "type": "object"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_reason": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "destination",
+                "profile_name",
+                "source"
+            ],
+            "type": "object"
+        },
+        "aws_signer_signing_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "platform_display_name": {
+                    "type": "string"
+                },
+                "platform_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "revocation_record": {
+                    "items": {
+                        "properties": {
+                            "revocation_effective_from": {
+                                "type": "string"
+                            },
+                            "revoked_at": {
+                                "type": "string"
+                            },
+                            "revoked_by": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "signature_validity_period": {
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                "signing_material": {
+                    "properties": {
+                        "certificate_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "certificate_arn"
+                    ],
+                    "type": "object"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "version_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "platform_id"
+            ],
+            "type": "object"
+        },
+        "aws_signer_signing_profile_permission": {
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "principal": {
+                    "type": "string"
+                },
+                "profile_name": {
+                    "type": "string"
+                },
+                "profile_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "statement_id": {
+                    "type": "string"
+                },
+                "statement_id_prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "principal",
+                "profile_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_signer_signing_job": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_signer_signing_job"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_signer_signing_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_signer_signing_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_signer_signing_profile_permission": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_signer_signing_profile_permission"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

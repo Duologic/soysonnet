@@ -1,0 +1,331 @@
+{
+    "$defs": {
+        "aws_acm_certificate": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "certificate_authority_arn": {
+                    "type": "string"
+                },
+                "certificate_body": {
+                    "type": "string"
+                },
+                "certificate_chain": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "domain_validation_options": {
+                    "items": {
+                        "properties": {
+                            "domain_name": {
+                                "type": "string"
+                            },
+                            "resource_record_name": {
+                                "type": "string"
+                            },
+                            "resource_record_type": {
+                                "type": "string"
+                            },
+                            "resource_record_value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "early_renewal_duration": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_algorithm": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "not_after": {
+                    "type": "string"
+                },
+                "not_before": {
+                    "type": "string"
+                },
+                "options": {
+                    "properties": {
+                        "certificate_transparency_logging_preference": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "pending_renewal": {
+                    "type": "boolean"
+                },
+                "private_key": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "renewal_eligibility": {
+                    "type": "string"
+                },
+                "renewal_summary": {
+                    "items": {
+                        "properties": {
+                            "renewal_status": {
+                                "type": "string"
+                            },
+                            "renewal_status_reason": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subject_alternative_names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "validation_emails": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "validation_method": {
+                    "type": "string"
+                },
+                "validation_option": {
+                    "items": {
+                        "properties": {
+                            "domain_name": {
+                                "type": "string"
+                            },
+                            "validation_domain": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "domain_name",
+                            "validation_domain"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_acm_certificate_validation": {
+            "properties": {
+                "certificate_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "validation_record_fqdns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "certificate_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_acm_certificate": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_acm_certificate"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_acm_certificate_validation": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_acm_certificate_validation"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,332 @@
+{
+    "$defs": {
+        "aws_efs_access_point": {
+            "properties": {
+                "access_point_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_system_arn": {
+                    "type": "string"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "posix_user": {
+                    "items": {
+                        "properties": {
+                            "gid": {
+                                "type": "number"
+                            },
+                            "secondary_gids": {
+                                "items": {
+                                    "type": "number"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "uid": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "root_directory": {
+                    "items": {
+                        "properties": {
+                            "creation_info": {
+                                "items": {
+                                    "properties": {
+                                        "owner_gid": {
+                                            "type": "number"
+                                        },
+                                        "owner_uid": {
+                                            "type": "number"
+                                        },
+                                        "permissions": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "access_point_id"
+            ],
+            "type": "object"
+        },
+        "aws_efs_access_points": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_system_id"
+            ],
+            "type": "object"
+        },
+        "aws_efs_file_system": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "availability_zone_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_token": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "encrypted": {
+                    "type": "boolean"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle_policy": {
+                    "items": {
+                        "properties": {
+                            "transition_to_archive": {
+                                "type": "string"
+                            },
+                            "transition_to_ia": {
+                                "type": "string"
+                            },
+                            "transition_to_primary_storage_class": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "performance_mode": {
+                    "type": "string"
+                },
+                "protection": {
+                    "items": {
+                        "properties": {
+                            "replication_overwrite": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioned_throughput_in_mibps": {
+                    "type": "number"
+                },
+                "size_in_bytes": {
+                    "type": "number"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "throughput_mode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_efs_mount_target": {
+            "properties": {
+                "access_point_id": {
+                    "type": "string"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "availability_zone_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "file_system_arn": {
+                    "type": "string"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_address": {
+                    "type": "string"
+                },
+                "mount_target_dns_name": {
+                    "type": "string"
+                },
+                "mount_target_id": {
+                    "type": "string"
+                },
+                "network_interface_id": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "security_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "subnet_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_efs_access_point": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_efs_access_point"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_efs_access_points": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_efs_access_points"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_efs_file_system": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_efs_file_system"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_efs_mount_target": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_efs_mount_target"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

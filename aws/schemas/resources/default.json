@@ -1,0 +1,1030 @@
+{
+    "$defs": {
+        "aws_default_network_acl": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_network_acl_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "egress": {
+                    "items": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "cidr_block": {
+                                "type": "string"
+                            },
+                            "from_port": {
+                                "type": "number"
+                            },
+                            "icmp_code": {
+                                "type": "number"
+                            },
+                            "icmp_type": {
+                                "type": "number"
+                            },
+                            "ipv6_cidr_block": {
+                                "type": "string"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "rule_no": {
+                                "type": "number"
+                            },
+                            "to_port": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "from_port",
+                            "protocol",
+                            "rule_no",
+                            "to_port"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ingress": {
+                    "items": {
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "cidr_block": {
+                                "type": "string"
+                            },
+                            "from_port": {
+                                "type": "number"
+                            },
+                            "icmp_code": {
+                                "type": "number"
+                            },
+                            "icmp_type": {
+                                "type": "number"
+                            },
+                            "ipv6_cidr_block": {
+                                "type": "string"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "rule_no": {
+                                "type": "number"
+                            },
+                            "to_port": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "from_port",
+                            "protocol",
+                            "rule_no",
+                            "to_port"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "default_network_acl_id"
+            ],
+            "type": "object"
+        },
+        "aws_default_route_table": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_route_table_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "propagating_vgws": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route": {
+                    "items": {
+                        "properties": {
+                            "cidr_block": {
+                                "type": "string"
+                            },
+                            "core_network_arn": {
+                                "type": "string"
+                            },
+                            "destination_prefix_list_id": {
+                                "type": "string"
+                            },
+                            "egress_only_gateway_id": {
+                                "type": "string"
+                            },
+                            "gateway_id": {
+                                "type": "string"
+                            },
+                            "instance_id": {
+                                "type": "string"
+                            },
+                            "ipv6_cidr_block": {
+                                "type": "string"
+                            },
+                            "nat_gateway_id": {
+                                "type": "string"
+                            },
+                            "network_interface_id": {
+                                "type": "string"
+                            },
+                            "transit_gateway_id": {
+                                "type": "string"
+                            },
+                            "vpc_endpoint_id": {
+                                "type": "string"
+                            },
+                            "vpc_peering_connection_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "default_route_table_id"
+            ],
+            "type": "object"
+        },
+        "aws_default_security_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "egress": {
+                    "items": {
+                        "properties": {
+                            "cidr_blocks": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "from_port": {
+                                "type": "number"
+                            },
+                            "ipv6_cidr_blocks": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "prefix_list_ids": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "security_groups": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "self": {
+                                "type": "boolean"
+                            },
+                            "to_port": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ingress": {
+                    "items": {
+                        "properties": {
+                            "cidr_blocks": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "from_port": {
+                                "type": "number"
+                            },
+                            "ipv6_cidr_blocks": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "prefix_list_ids": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "security_groups": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "self": {
+                                "type": "boolean"
+                            },
+                            "to_port": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "revoke_rules_on_delete": {
+                    "type": "boolean"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_default_subnet": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "assign_ipv6_address_on_creation": {
+                    "type": "boolean"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "cidr_block": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "customer_owned_ipv4_pool": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_dns64": {
+                    "type": "boolean"
+                },
+                "enable_lni_at_device_index": {
+                    "type": "number"
+                },
+                "enable_resource_name_dns_a_record_on_launch": {
+                    "type": "boolean"
+                },
+                "enable_resource_name_dns_aaaa_record_on_launch": {
+                    "type": "boolean"
+                },
+                "existing_default_subnet": {
+                    "type": "boolean"
+                },
+                "force_destroy": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block_association_id": {
+                    "type": "string"
+                },
+                "ipv6_native": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "map_customer_owned_ip_on_launch": {
+                    "type": "boolean"
+                },
+                "map_public_ip_on_launch": {
+                    "type": "boolean"
+                },
+                "outpost_arn": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "private_dns_hostname_type_on_launch": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "availability_zone"
+            ],
+            "type": "object"
+        },
+        "aws_default_vpc": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "assign_generated_ipv6_cidr_block": {
+                    "type": "boolean"
+                },
+                "cidr_block": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_network_acl_id": {
+                    "type": "string"
+                },
+                "default_route_table_id": {
+                    "type": "string"
+                },
+                "default_security_group_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dhcp_options_id": {
+                    "type": "string"
+                },
+                "enable_dns_hostnames": {
+                    "type": "boolean"
+                },
+                "enable_dns_support": {
+                    "type": "boolean"
+                },
+                "enable_network_address_usage_metrics": {
+                    "type": "boolean"
+                },
+                "existing_default_vpc": {
+                    "type": "boolean"
+                },
+                "force_destroy": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_tenancy": {
+                    "type": "string"
+                },
+                "ipv6_association_id": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block_network_border_group": {
+                    "type": "string"
+                },
+                "ipv6_ipam_pool_id": {
+                    "type": "string"
+                },
+                "ipv6_netmask_length": {
+                    "type": "number"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "main_route_table_id": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_default_vpc_dhcp_options": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "domain_name_servers": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipv6_address_preferred_lease_time": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "netbios_name_servers": {
+                    "type": "string"
+                },
+                "netbios_node_type": {
+                    "type": "string"
+                },
+                "ntp_servers": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_default_network_acl": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_network_acl"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_default_route_table": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_route_table"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_default_security_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_security_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_default_subnet": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_subnet"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_default_vpc": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_vpc"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_default_vpc_dhcp_options": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_default_vpc_dhcp_options"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

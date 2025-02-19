@@ -1,0 +1,1524 @@
+{
+    "$defs": {
+        "aws_appsync_api_cache": {
+            "properties": {
+                "api_caching_behavior": {
+                    "type": "string"
+                },
+                "api_id": {
+                    "type": "string"
+                },
+                "at_rest_encryption_enabled": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "transit_encryption_enabled": {
+                    "type": "boolean"
+                },
+                "ttl": {
+                    "type": "number"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_caching_behavior",
+                "api_id",
+                "ttl",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_api_key": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "api_key_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "api_id"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_datasource": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "dynamodb_config": {
+                    "properties": {
+                        "delta_sync_config": {
+                            "properties": {
+                                "base_table_ttl": {
+                                    "type": "number"
+                                },
+                                "delta_sync_table_name": {
+                                    "type": "string"
+                                },
+                                "delta_sync_table_ttl": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "delta_sync_table_name"
+                            ],
+                            "type": "object"
+                        },
+                        "region": {
+                            "type": "string"
+                        },
+                        "table_name": {
+                            "type": "string"
+                        },
+                        "use_caller_credentials": {
+                            "type": "boolean"
+                        },
+                        "versioned": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "table_name"
+                    ],
+                    "type": "object"
+                },
+                "elasticsearch_config": {
+                    "properties": {
+                        "endpoint": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "endpoint"
+                    ],
+                    "type": "object"
+                },
+                "event_bridge_config": {
+                    "properties": {
+                        "event_bus_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "event_bus_arn"
+                    ],
+                    "type": "object"
+                },
+                "http_config": {
+                    "properties": {
+                        "authorization_config": {
+                            "properties": {
+                                "authorization_type": {
+                                    "type": "string"
+                                },
+                                "aws_iam_config": {
+                                    "properties": {
+                                        "signing_region": {
+                                            "type": "string"
+                                        },
+                                        "signing_service_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "endpoint": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "endpoint"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lambda_config": {
+                    "properties": {
+                        "function_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "function_arn"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "opensearchservice_config": {
+                    "properties": {
+                        "endpoint": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "endpoint"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "relational_database_config": {
+                    "properties": {
+                        "http_endpoint_config": {
+                            "properties": {
+                                "aws_secret_store_arn": {
+                                    "type": "string"
+                                },
+                                "database_name": {
+                                    "type": "string"
+                                },
+                                "db_cluster_identifier": {
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "type": "string"
+                                },
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "aws_secret_store_arn",
+                                "db_cluster_identifier"
+                            ],
+                            "type": "object"
+                        },
+                        "source_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "service_role_arn": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_domain_name": {
+            "properties": {
+                "appsync_domain_name": {
+                    "type": "string"
+                },
+                "certificate_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "hosted_zone_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "certificate_arn",
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_domain_name_api_association": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "api_id",
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_function": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_source": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "function_id": {
+                    "type": "string"
+                },
+                "function_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_batch_size": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "request_mapping_template": {
+                    "type": "string"
+                },
+                "response_mapping_template": {
+                    "type": "string"
+                },
+                "runtime": {
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "runtime_version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "runtime_version"
+                    ],
+                    "type": "object"
+                },
+                "sync_config": {
+                    "properties": {
+                        "conflict_detection": {
+                            "type": "string"
+                        },
+                        "conflict_handler": {
+                            "type": "string"
+                        },
+                        "lambda_conflict_handler_config": {
+                            "properties": {
+                                "lambda_conflict_handler_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "api_id",
+                "data_source",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_graphql_api": {
+            "properties": {
+                "additional_authentication_provider": {
+                    "items": {
+                        "properties": {
+                            "authentication_type": {
+                                "type": "string"
+                            },
+                            "lambda_authorizer_config": {
+                                "properties": {
+                                    "authorizer_result_ttl_in_seconds": {
+                                        "type": "number"
+                                    },
+                                    "authorizer_uri": {
+                                        "type": "string"
+                                    },
+                                    "identity_validation_expression": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "authorizer_uri"
+                                ],
+                                "type": "object"
+                            },
+                            "openid_connect_config": {
+                                "properties": {
+                                    "auth_ttl": {
+                                        "type": "number"
+                                    },
+                                    "client_id": {
+                                        "type": "string"
+                                    },
+                                    "iat_ttl": {
+                                        "type": "number"
+                                    },
+                                    "issuer": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "issuer"
+                                ],
+                                "type": "object"
+                            },
+                            "user_pool_config": {
+                                "properties": {
+                                    "app_id_client_regex": {
+                                        "type": "string"
+                                    },
+                                    "aws_region": {
+                                        "type": "string"
+                                    },
+                                    "user_pool_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "user_pool_id"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "authentication_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "api_type": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "authentication_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enhanced_metrics_config": {
+                    "properties": {
+                        "data_source_level_metrics_behavior": {
+                            "type": "string"
+                        },
+                        "operation_level_metrics_config": {
+                            "type": "string"
+                        },
+                        "resolver_level_metrics_behavior": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "data_source_level_metrics_behavior",
+                        "operation_level_metrics_config",
+                        "resolver_level_metrics_behavior"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "introspection_config": {
+                    "type": "string"
+                },
+                "lambda_authorizer_config": {
+                    "properties": {
+                        "authorizer_result_ttl_in_seconds": {
+                            "type": "number"
+                        },
+                        "authorizer_uri": {
+                            "type": "string"
+                        },
+                        "identity_validation_expression": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "authorizer_uri"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "log_config": {
+                    "properties": {
+                        "cloudwatch_logs_role_arn": {
+                            "type": "string"
+                        },
+                        "exclude_verbose_content": {
+                            "type": "boolean"
+                        },
+                        "field_log_level": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "cloudwatch_logs_role_arn",
+                        "field_log_level"
+                    ],
+                    "type": "object"
+                },
+                "merged_api_execution_role_arn": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "openid_connect_config": {
+                    "properties": {
+                        "auth_ttl": {
+                            "type": "number"
+                        },
+                        "client_id": {
+                            "type": "string"
+                        },
+                        "iat_ttl": {
+                            "type": "number"
+                        },
+                        "issuer": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "issuer"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "query_depth_limit": {
+                    "type": "number"
+                },
+                "resolver_count_limit": {
+                    "type": "number"
+                },
+                "schema": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "uris": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "user_pool_config": {
+                    "properties": {
+                        "app_id_client_regex": {
+                            "type": "string"
+                        },
+                        "aws_region": {
+                            "type": "string"
+                        },
+                        "default_action": {
+                            "type": "string"
+                        },
+                        "user_pool_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "default_action",
+                        "user_pool_id"
+                    ],
+                    "type": "object"
+                },
+                "visibility": {
+                    "type": "string"
+                },
+                "xray_enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "authentication_type",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_resolver": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "caching_config": {
+                    "properties": {
+                        "caching_keys": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "ttl": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_source": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "field": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kind": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_batch_size": {
+                    "type": "number"
+                },
+                "pipeline_config": {
+                    "properties": {
+                        "functions": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "request_template": {
+                    "type": "string"
+                },
+                "response_template": {
+                    "type": "string"
+                },
+                "runtime": {
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "runtime_version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "runtime_version"
+                    ],
+                    "type": "object"
+                },
+                "sync_config": {
+                    "properties": {
+                        "conflict_detection": {
+                            "type": "string"
+                        },
+                        "conflict_handler": {
+                            "type": "string"
+                        },
+                        "lambda_conflict_handler_config": {
+                            "properties": {
+                                "lambda_conflict_handler_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "field",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_appsync_source_api_association": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "association_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "merged_api_arn": {
+                    "type": "string"
+                },
+                "merged_api_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "source_api_arn": {
+                    "type": "string"
+                },
+                "source_api_association_config": {
+                    "items": {
+                        "properties": {
+                            "merge_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "source_api_id": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_appsync_type": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "definition": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "api_id",
+                "definition",
+                "format"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_appsync_api_cache": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_api_cache"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_api_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_api_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_datasource": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_datasource"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_domain_name": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_domain_name"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_domain_name_api_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_domain_name_api_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_function": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_function"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_graphql_api": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_graphql_api"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_resolver": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_resolver"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_source_api_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_source_api_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appsync_type": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appsync_type"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "$defs": {
+        "aws_sagemaker_prebuilt_ecr_image": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_suffix": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image_tag": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "registry_id": {
+                    "type": "string"
+                },
+                "registry_path": {
+                    "type": "string"
+                },
+                "repository_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "repository_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_sagemaker_prebuilt_ecr_image": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sagemaker_prebuilt_ecr_image"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

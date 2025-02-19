@@ -1,0 +1,289 @@
+{
+    "$defs": {
+        "aws_paymentcryptography_key": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "deletion_window_in_days": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "exportable": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_attributes": {
+                    "properties": {
+                        "key_algorithm": {
+                            "type": "string"
+                        },
+                        "key_class": {
+                            "type": "string"
+                        },
+                        "key_modes_of_use": {
+                            "properties": {
+                                "decrypt": {
+                                    "type": "boolean"
+                                },
+                                "derive_key": {
+                                    "type": "boolean"
+                                },
+                                "encrypt": {
+                                    "type": "boolean"
+                                },
+                                "generate": {
+                                    "type": "boolean"
+                                },
+                                "no_restrictions": {
+                                    "type": "boolean"
+                                },
+                                "sign": {
+                                    "type": "boolean"
+                                },
+                                "unwrap": {
+                                    "type": "boolean"
+                                },
+                                "verify": {
+                                    "type": "boolean"
+                                },
+                                "wrap": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "key_usage": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "key_algorithm",
+                        "key_class",
+                        "key_usage"
+                    ],
+                    "type": "object"
+                },
+                "key_check_value": {
+                    "type": "string"
+                },
+                "key_check_value_algorithm": {
+                    "type": "string"
+                },
+                "key_origin": {
+                    "type": "string"
+                },
+                "key_state": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "exportable"
+            ],
+            "type": "object"
+        },
+        "aws_paymentcryptography_key_alias": {
+            "properties": {
+                "alias_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "alias_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_paymentcryptography_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_paymentcryptography_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_paymentcryptography_key_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_paymentcryptography_key_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

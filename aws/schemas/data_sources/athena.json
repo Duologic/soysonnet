@@ -1,0 +1,56 @@
+{
+    "$defs": {
+        "aws_athena_named_query": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "database": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "querystring": {
+                    "type": "string"
+                },
+                "workgroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_athena_named_query": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_athena_named_query"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

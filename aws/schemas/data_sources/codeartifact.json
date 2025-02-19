@@ -1,0 +1,103 @@
+{
+    "$defs": {
+        "aws_codeartifact_authorization_token": {
+            "properties": {
+                "authorization_token": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "domain_owner": {
+                    "type": "string"
+                },
+                "duration_seconds": {
+                    "type": "number"
+                },
+                "expiration": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "type": "object"
+        },
+        "aws_codeartifact_repository_endpoint": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "domain_owner": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "repository": {
+                    "type": "string"
+                },
+                "repository_endpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domain",
+                "format",
+                "repository"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_codeartifact_authorization_token": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codeartifact_authorization_token"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codeartifact_repository_endpoint": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codeartifact_repository_endpoint"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,577 @@
+{
+    "$defs": {
+        "aws_s3_account_public_access_block": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "block_public_acls": {
+                    "type": "boolean"
+                },
+                "block_public_policy": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ignore_public_acls": {
+                    "type": "boolean"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "restrict_public_buckets": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_s3_bucket": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "bucket": {
+                    "type": "string"
+                },
+                "bucket_domain_name": {
+                    "type": "string"
+                },
+                "bucket_regional_domain_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hosted_zone_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "website_domain": {
+                    "type": "string"
+                },
+                "website_endpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket"
+            ],
+            "type": "object"
+        },
+        "aws_s3_bucket_object": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "bucket": {
+                    "type": "string"
+                },
+                "bucket_key_enabled": {
+                    "type": "boolean"
+                },
+                "cache_control": {
+                    "type": "string"
+                },
+                "content_disposition": {
+                    "type": "string"
+                },
+                "content_encoding": {
+                    "type": "string"
+                },
+                "content_language": {
+                    "type": "string"
+                },
+                "content_length": {
+                    "type": "number"
+                },
+                "content_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "etag": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "string"
+                },
+                "expires": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "last_modified": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "object_lock_legal_hold_status": {
+                    "type": "string"
+                },
+                "object_lock_mode": {
+                    "type": "string"
+                },
+                "object_lock_retain_until_date": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "range": {
+                    "type": "string"
+                },
+                "server_side_encryption": {
+                    "type": "string"
+                },
+                "sse_kms_key_id": {
+                    "type": "string"
+                },
+                "storage_class": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version_id": {
+                    "type": "string"
+                },
+                "website_redirect_location": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket",
+                "key"
+            ],
+            "type": "object"
+        },
+        "aws_s3_bucket_objects": {
+            "properties": {
+                "bucket": {
+                    "type": "string"
+                },
+                "common_prefixes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delimiter": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encoding_type": {
+                    "type": "string"
+                },
+                "fetch_owner": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "keys": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "max_keys": {
+                    "type": "number"
+                },
+                "owners": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "start_after": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket"
+            ],
+            "type": "object"
+        },
+        "aws_s3_bucket_policy": {
+            "properties": {
+                "bucket": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket"
+            ],
+            "type": "object"
+        },
+        "aws_s3_directory_buckets": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "buckets": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_s3_object": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "bucket": {
+                    "type": "string"
+                },
+                "bucket_key_enabled": {
+                    "type": "boolean"
+                },
+                "cache_control": {
+                    "type": "string"
+                },
+                "checksum_crc32": {
+                    "type": "string"
+                },
+                "checksum_crc32c": {
+                    "type": "string"
+                },
+                "checksum_mode": {
+                    "type": "string"
+                },
+                "checksum_sha1": {
+                    "type": "string"
+                },
+                "checksum_sha256": {
+                    "type": "string"
+                },
+                "content_disposition": {
+                    "type": "string"
+                },
+                "content_encoding": {
+                    "type": "string"
+                },
+                "content_language": {
+                    "type": "string"
+                },
+                "content_length": {
+                    "type": "number"
+                },
+                "content_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "etag": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "string"
+                },
+                "expires": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "last_modified": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "object_lock_legal_hold_status": {
+                    "type": "string"
+                },
+                "object_lock_mode": {
+                    "type": "string"
+                },
+                "object_lock_retain_until_date": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "range": {
+                    "type": "string"
+                },
+                "server_side_encryption": {
+                    "type": "string"
+                },
+                "sse_kms_key_id": {
+                    "type": "string"
+                },
+                "storage_class": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version_id": {
+                    "type": "string"
+                },
+                "website_redirect_location": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket",
+                "key"
+            ],
+            "type": "object"
+        },
+        "aws_s3_objects": {
+            "properties": {
+                "bucket": {
+                    "type": "string"
+                },
+                "common_prefixes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delimiter": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encoding_type": {
+                    "type": "string"
+                },
+                "fetch_owner": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "keys": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "max_keys": {
+                    "type": "number"
+                },
+                "owners": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "request_charged": {
+                    "type": "string"
+                },
+                "request_payer": {
+                    "type": "string"
+                },
+                "start_after": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bucket"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_s3_account_public_access_block": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_account_public_access_block"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_bucket": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_bucket"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_bucket_object": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_bucket_object"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_bucket_objects": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_bucket_objects"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_bucket_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_bucket_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_directory_buckets": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_directory_buckets"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_object": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_object"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_s3_objects": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_s3_objects"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

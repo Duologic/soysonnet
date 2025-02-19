@@ -1,0 +1,2548 @@
+{
+    "$defs": {
+        "aws_fsx_backup": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "volume_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_fsx_data_repository_association": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "association_id": {
+                    "type": "string"
+                },
+                "batch_import_meta_data_on_create": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_repository_path": {
+                    "type": "string"
+                },
+                "delete_data_in_filesystem": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "file_system_path": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "imported_file_chunk_size": {
+                    "type": "number"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "s3": {
+                    "properties": {
+                        "auto_export_policy": {
+                            "properties": {
+                                "events": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "auto_import_policy": {
+                            "properties": {
+                                "events": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "data_repository_path",
+                "file_system_id",
+                "file_system_path"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_file_cache": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "copy_tags_to_data_repository_associations": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_repository_association": {
+                    "items": {
+                        "properties": {
+                            "association_id": {
+                                "type": "string"
+                            },
+                            "data_repository_path": {
+                                "type": "string"
+                            },
+                            "data_repository_subdirectories": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "file_cache_id": {
+                                "type": "string"
+                            },
+                            "file_cache_path": {
+                                "type": "string"
+                            },
+                            "file_system_id": {
+                                "type": "string"
+                            },
+                            "file_system_path": {
+                                "type": "string"
+                            },
+                            "imported_file_chunk_size": {
+                                "type": "number"
+                            },
+                            "nfs": {
+                                "items": {
+                                    "properties": {
+                                        "dns_ips": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "version"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_arn": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "data_repository_path",
+                            "file_cache_path"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "data_repository_association_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "file_cache_id": {
+                    "type": "string"
+                },
+                "file_cache_type": {
+                    "type": "string"
+                },
+                "file_cache_type_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lustre_configuration": {
+                    "items": {
+                        "properties": {
+                            "deployment_type": {
+                                "type": "string"
+                            },
+                            "log_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "destination": {
+                                            "type": "string"
+                                        },
+                                        "level": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "metadata_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "storage_capacity": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "storage_capacity"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "mount_name": {
+                                "type": "string"
+                            },
+                            "per_unit_storage_throughput": {
+                                "type": "number"
+                            },
+                            "weekly_maintenance_start_time": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "deployment_type",
+                            "metadata_configuration",
+                            "per_unit_storage_throughput"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "network_interface_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "storage_capacity": {
+                    "type": "number"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_cache_type",
+                "file_cache_type_version",
+                "storage_capacity",
+                "subnet_ids"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_lustre_file_system": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_import_policy": {
+                    "type": "string"
+                },
+                "automatic_backup_retention_days": {
+                    "type": "number"
+                },
+                "backup_id": {
+                    "type": "string"
+                },
+                "copy_tags_to_backups": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "daily_automatic_backup_start_time": {
+                    "type": "string"
+                },
+                "data_compression_type": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_type": {
+                    "type": "string"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "drive_cache_type": {
+                    "type": "string"
+                },
+                "efa_enabled": {
+                    "type": "boolean"
+                },
+                "export_path": {
+                    "type": "string"
+                },
+                "file_system_type_version": {
+                    "type": "string"
+                },
+                "final_backup_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "import_path": {
+                    "type": "string"
+                },
+                "imported_file_chunk_size": {
+                    "type": "number"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "log_configuration": {
+                    "properties": {
+                        "destination": {
+                            "type": "string"
+                        },
+                        "level": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "metadata_configuration": {
+                    "properties": {
+                        "iops": {
+                            "type": "number"
+                        },
+                        "mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "mount_name": {
+                    "type": "string"
+                },
+                "network_interface_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "per_unit_storage_throughput": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "root_squash_configuration": {
+                    "properties": {
+                        "no_squash_nids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "root_squash": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "skip_final_backup": {
+                    "type": "boolean"
+                },
+                "storage_capacity": {
+                    "type": "number"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "weekly_maintenance_start_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "subnet_ids"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_ontap_file_system": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "automatic_backup_retention_days": {
+                    "type": "number"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "daily_automatic_backup_start_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_type": {
+                    "type": "string"
+                },
+                "disk_iops_configuration": {
+                    "properties": {
+                        "iops": {
+                            "type": "number"
+                        },
+                        "mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "endpoint_ip_address_range": {
+                    "type": "string"
+                },
+                "endpoints": {
+                    "items": {
+                        "properties": {
+                            "intercluster": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "management": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "fsx_admin_password": {
+                    "type": "string"
+                },
+                "ha_pairs": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "network_interface_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "preferred_subnet_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route_table_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "storage_capacity": {
+                    "type": "number"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "throughput_capacity": {
+                    "type": "number"
+                },
+                "throughput_capacity_per_ha_pair": {
+                    "type": "number"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "weekly_maintenance_start_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "deployment_type",
+                "preferred_subnet_id",
+                "storage_capacity",
+                "subnet_ids"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_ontap_storage_virtual_machine": {
+            "properties": {
+                "active_directory_configuration": {
+                    "properties": {
+                        "netbios_name": {
+                            "type": "string"
+                        },
+                        "self_managed_active_directory_configuration": {
+                            "properties": {
+                                "dns_ips": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "domain_name": {
+                                    "type": "string"
+                                },
+                                "file_system_administrators_group": {
+                                    "type": "string"
+                                },
+                                "organizational_unit_distinguished_name": {
+                                    "type": "string"
+                                },
+                                "password": {
+                                    "type": "string"
+                                },
+                                "username": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "dns_ips",
+                                "domain_name",
+                                "password",
+                                "username"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoints": {
+                    "items": {
+                        "properties": {
+                            "iscsi": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "management": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "nfs": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "smb": {
+                                "items": {
+                                    "properties": {
+                                        "dns_name": {
+                                            "type": "string"
+                                        },
+                                        "ip_addresses": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "root_volume_security_style": {
+                    "type": "string"
+                },
+                "subtype": {
+                    "type": "string"
+                },
+                "svm_admin_password": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "file_system_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_ontap_volume": {
+            "properties": {
+                "aggregate_configuration": {
+                    "properties": {
+                        "aggregates": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "constituents_per_aggregate": {
+                            "type": "number"
+                        },
+                        "total_constituents": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "bypass_snaplock_enterprise_retention": {
+                    "type": "boolean"
+                },
+                "copy_tags_to_backups": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "file_system_id": {
+                    "type": "string"
+                },
+                "final_backup_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "flexcache_endpoint_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "junction_path": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "ontap_volume_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_style": {
+                    "type": "string"
+                },
+                "size_in_bytes": {
+                    "type": "string"
+                },
+                "size_in_megabytes": {
+                    "type": "number"
+                },
+                "skip_final_backup": {
+                    "type": "boolean"
+                },
+                "snaplock_configuration": {
+                    "properties": {
+                        "audit_log_volume": {
+                            "type": "boolean"
+                        },
+                        "autocommit_period": {
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "privileged_delete": {
+                            "type": "string"
+                        },
+                        "retention_period": {
+                            "properties": {
+                                "default_retention": {
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "maximum_retention": {
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "minimum_retention": {
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "snaplock_type": {
+                            "type": "string"
+                        },
+                        "volume_append_mode_enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "snaplock_type"
+                    ],
+                    "type": "object"
+                },
+                "snapshot_policy": {
+                    "type": "string"
+                },
+                "storage_efficiency_enabled": {
+                    "type": "boolean"
+                },
+                "storage_virtual_machine_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tiering_policy": {
+                    "properties": {
+                        "cooling_period": {
+                            "type": "number"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "volume_style": {
+                    "type": "string"
+                },
+                "volume_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "storage_virtual_machine_id"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_openzfs_file_system": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "automatic_backup_retention_days": {
+                    "type": "number"
+                },
+                "backup_id": {
+                    "type": "string"
+                },
+                "copy_tags_to_backups": {
+                    "type": "boolean"
+                },
+                "copy_tags_to_volumes": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "daily_automatic_backup_start_time": {
+                    "type": "string"
+                },
+                "delete_options": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_type": {
+                    "type": "string"
+                },
+                "disk_iops_configuration": {
+                    "properties": {
+                        "iops": {
+                            "type": "number"
+                        },
+                        "mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "endpoint_ip_address": {
+                    "type": "string"
+                },
+                "endpoint_ip_address_range": {
+                    "type": "string"
+                },
+                "final_backup_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "network_interface_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "preferred_subnet_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "root_volume_configuration": {
+                    "properties": {
+                        "copy_tags_to_snapshots": {
+                            "type": "boolean"
+                        },
+                        "data_compression_type": {
+                            "type": "string"
+                        },
+                        "nfs_exports": {
+                            "properties": {
+                                "client_configurations": {
+                                    "items": {
+                                        "properties": {
+                                            "clients": {
+                                                "type": "string"
+                                            },
+                                            "options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+                                            "clients",
+                                            "options"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "client_configurations"
+                            ],
+                            "type": "object"
+                        },
+                        "read_only": {
+                            "type": "boolean"
+                        },
+                        "record_size_kib": {
+                            "type": "number"
+                        },
+                        "user_and_group_quotas": {
+                            "items": {
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "storage_capacity_quota_gib": {
+                                        "type": "number"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "storage_capacity_quota_gib",
+                                    "type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "root_volume_id": {
+                    "type": "string"
+                },
+                "route_table_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "skip_final_backup": {
+                    "type": "boolean"
+                },
+                "storage_capacity": {
+                    "type": "number"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "throughput_capacity": {
+                    "type": "number"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "weekly_maintenance_start_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "deployment_type",
+                "subnet_ids",
+                "throughput_capacity"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_openzfs_snapshot": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "read": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "volume_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "volume_id"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_openzfs_volume": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "copy_tags_to_snapshots": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_compression_type": {
+                    "type": "string"
+                },
+                "delete_volume_options": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nfs_exports": {
+                    "properties": {
+                        "client_configurations": {
+                            "items": {
+                                "properties": {
+                                    "clients": {
+                                        "type": "string"
+                                    },
+                                    "options": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "clients",
+                                    "options"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "client_configurations"
+                    ],
+                    "type": "object"
+                },
+                "origin_snapshot": {
+                    "properties": {
+                        "copy_strategy": {
+                            "type": "string"
+                        },
+                        "snapshot_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "copy_strategy",
+                        "snapshot_arn"
+                    ],
+                    "type": "object"
+                },
+                "parent_volume_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "read_only": {
+                    "type": "boolean"
+                },
+                "record_size_kib": {
+                    "type": "number"
+                },
+                "storage_capacity_quota_gib": {
+                    "type": "number"
+                },
+                "storage_capacity_reservation_gib": {
+                    "type": "number"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "user_and_group_quotas": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "number"
+                            },
+                            "storage_capacity_quota_gib": {
+                                "type": "number"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "storage_capacity_quota_gib",
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "volume_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "parent_volume_id"
+            ],
+            "type": "object"
+        },
+        "aws_fsx_windows_file_system": {
+            "properties": {
+                "active_directory_id": {
+                    "type": "string"
+                },
+                "aliases": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "audit_log_configuration": {
+                    "properties": {
+                        "audit_log_destination": {
+                            "type": "string"
+                        },
+                        "file_access_audit_log_level": {
+                            "type": "string"
+                        },
+                        "file_share_access_audit_log_level": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "automatic_backup_retention_days": {
+                    "type": "number"
+                },
+                "backup_id": {
+                    "type": "string"
+                },
+                "copy_tags_to_backups": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "daily_automatic_backup_start_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_type": {
+                    "type": "string"
+                },
+                "disk_iops_configuration": {
+                    "properties": {
+                        "iops": {
+                            "type": "number"
+                        },
+                        "mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "final_backup_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "network_interface_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "preferred_file_server_ip": {
+                    "type": "string"
+                },
+                "preferred_subnet_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "remote_administration_endpoint": {
+                    "type": "string"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "self_managed_active_directory": {
+                    "properties": {
+                        "dns_ips": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "domain_name": {
+                            "type": "string"
+                        },
+                        "file_system_administrators_group": {
+                            "type": "string"
+                        },
+                        "organizational_unit_distinguished_name": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "dns_ips",
+                        "domain_name",
+                        "password",
+                        "username"
+                    ],
+                    "type": "object"
+                },
+                "skip_final_backup": {
+                    "type": "boolean"
+                },
+                "storage_capacity": {
+                    "type": "number"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "throughput_capacity": {
+                    "type": "number"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "weekly_maintenance_start_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "subnet_ids",
+                "throughput_capacity"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_fsx_backup": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_backup"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_data_repository_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_data_repository_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_file_cache": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_file_cache"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_lustre_file_system": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_lustre_file_system"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_ontap_file_system": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_ontap_file_system"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_ontap_storage_virtual_machine": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_ontap_storage_virtual_machine"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_ontap_volume": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_ontap_volume"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_openzfs_file_system": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_openzfs_file_system"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_openzfs_snapshot": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_openzfs_snapshot"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_openzfs_volume": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_openzfs_volume"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_fsx_windows_file_system": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_fsx_windows_file_system"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

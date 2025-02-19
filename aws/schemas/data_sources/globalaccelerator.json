@@ -1,0 +1,190 @@
+{
+    "$defs": {
+        "aws_globalaccelerator_accelerator": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "attributes": {
+                    "items": {
+                        "properties": {
+                            "flow_logs_enabled": {
+                                "type": "boolean"
+                            },
+                            "flow_logs_s3_bucket": {
+                                "type": "string"
+                            },
+                            "flow_logs_s3_prefix": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "dual_stack_dns_name": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "hosted_zone_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_address_type": {
+                    "type": "string"
+                },
+                "ip_sets": {
+                    "items": {
+                        "properties": {
+                            "ip_addresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "ip_family": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_globalaccelerator_custom_routing_accelerator": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "attributes": {
+                    "items": {
+                        "properties": {
+                            "flow_logs_enabled": {
+                                "type": "boolean"
+                            },
+                            "flow_logs_s3_bucket": {
+                                "type": "string"
+                            },
+                            "flow_logs_s3_prefix": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "dns_name": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "hosted_zone_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_address_type": {
+                    "type": "string"
+                },
+                "ip_sets": {
+                    "items": {
+                        "properties": {
+                            "ip_addresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "ip_family": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_globalaccelerator_accelerator": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_globalaccelerator_accelerator"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_globalaccelerator_custom_routing_accelerator": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_globalaccelerator_custom_routing_accelerator"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

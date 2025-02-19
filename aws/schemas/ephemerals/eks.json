@@ -1,0 +1,44 @@
+{
+    "$defs": {
+        "aws_eks_cluster_auth": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "ephemeral": {
+            "properties": {
+                "aws_eks_cluster_auth": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_eks_cluster_auth"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

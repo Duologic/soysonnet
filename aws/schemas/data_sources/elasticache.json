@@ -1,0 +1,566 @@
+{
+    "$defs": {
+        "aws_elasticache_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "cache_nodes": {
+                    "items": {
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "availability_zone": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "outpost_arn": {
+                                "type": "string"
+                            },
+                            "port": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "cluster_address": {
+                    "type": "string"
+                },
+                "cluster_id": {
+                    "type": "string"
+                },
+                "configuration_endpoint": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "engine_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_discovery": {
+                    "type": "string"
+                },
+                "log_delivery_configuration": {
+                    "items": {
+                        "properties": {
+                            "destination": {
+                                "type": "string"
+                            },
+                            "destination_type": {
+                                "type": "string"
+                            },
+                            "log_format": {
+                                "type": "string"
+                            },
+                            "log_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "maintenance_window": {
+                    "type": "string"
+                },
+                "network_type": {
+                    "type": "string"
+                },
+                "node_type": {
+                    "type": "string"
+                },
+                "notification_topic_arn": {
+                    "type": "string"
+                },
+                "num_cache_nodes": {
+                    "type": "number"
+                },
+                "parameter_group_name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "preferred_outpost_arn": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "replication_group_id": {
+                    "type": "string"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "snapshot_retention_limit": {
+                    "type": "number"
+                },
+                "snapshot_window": {
+                    "type": "string"
+                },
+                "subnet_group_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "cluster_id"
+            ],
+            "type": "object"
+        },
+        "aws_elasticache_replication_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auth_token_enabled": {
+                    "type": "boolean"
+                },
+                "automatic_failover_enabled": {
+                    "type": "boolean"
+                },
+                "cluster_mode": {
+                    "type": "string"
+                },
+                "configuration_endpoint_address": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "log_delivery_configuration": {
+                    "items": {
+                        "properties": {
+                            "destination": {
+                                "type": "string"
+                            },
+                            "destination_type": {
+                                "type": "string"
+                            },
+                            "log_format": {
+                                "type": "string"
+                            },
+                            "log_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "member_clusters": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "multi_az_enabled": {
+                    "type": "boolean"
+                },
+                "node_type": {
+                    "type": "string"
+                },
+                "num_cache_clusters": {
+                    "type": "number"
+                },
+                "num_node_groups": {
+                    "type": "number"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "primary_endpoint_address": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "reader_endpoint_address": {
+                    "type": "string"
+                },
+                "replicas_per_node_group": {
+                    "type": "number"
+                },
+                "replication_group_id": {
+                    "type": "string"
+                },
+                "snapshot_retention_limit": {
+                    "type": "number"
+                },
+                "snapshot_window": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "replication_group_id"
+            ],
+            "type": "object"
+        },
+        "aws_elasticache_reserved_cache_node_offering": {
+            "properties": {
+                "cache_node_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "fixed_price": {
+                    "type": "number"
+                },
+                "offering_id": {
+                    "type": "string"
+                },
+                "offering_type": {
+                    "type": "string"
+                },
+                "product_description": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cache_node_type",
+                "duration",
+                "offering_type",
+                "product_description"
+            ],
+            "type": "object"
+        },
+        "aws_elasticache_serverless_cache": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cache_usage_limits": {
+                    "properties": {
+                        "data_storage": {
+                            "properties": {
+                                "maximum": {
+                                    "type": "number"
+                                },
+                                "minimum": {
+                                    "type": "number"
+                                },
+                                "unit": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "ecpu_per_second": {
+                            "properties": {
+                                "maximum": {
+                                    "type": "number"
+                                },
+                                "minimum": {
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "daily_snapshot_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "endpoint": {
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "full_engine_version": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "major_engine_version": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "reader_endpoint": {
+                    "properties": {
+                        "address": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "snapshot_retention_limit": {
+                    "type": "number"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "user_group_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_elasticache_subnet_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_elasticache_user": {
+            "properties": {
+                "access_string": {
+                    "type": "string"
+                },
+                "authentication_mode": {
+                    "items": {
+                        "properties": {
+                            "password_count": {
+                                "type": "number"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "no_password_required": {
+                    "type": "boolean"
+                },
+                "passwords": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_elasticache_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elasticache_replication_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_replication_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elasticache_reserved_cache_node_offering": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_reserved_cache_node_offering"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elasticache_serverless_cache": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_serverless_cache"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elasticache_subnet_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_subnet_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_elasticache_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_elasticache_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

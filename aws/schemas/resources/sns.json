@@ -1,0 +1,725 @@
+{
+    "$defs": {
+        "aws_sns_platform_application": {
+            "properties": {
+                "apple_platform_bundle_id": {
+                    "type": "string"
+                },
+                "apple_platform_team_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "event_delivery_failure_topic_arn": {
+                    "type": "string"
+                },
+                "event_endpoint_created_topic_arn": {
+                    "type": "string"
+                },
+                "event_endpoint_deleted_topic_arn": {
+                    "type": "string"
+                },
+                "event_endpoint_updated_topic_arn": {
+                    "type": "string"
+                },
+                "failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "platform": {
+                    "type": "string"
+                },
+                "platform_credential": {
+                    "type": "string"
+                },
+                "platform_principal": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "success_feedback_sample_rate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "platform",
+                "platform_credential"
+            ],
+            "type": "object"
+        },
+        "aws_sns_sms_preferences": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "default_sender_id": {
+                    "type": "string"
+                },
+                "default_sms_type": {
+                    "type": "string"
+                },
+                "delivery_status_iam_role_arn": {
+                    "type": "string"
+                },
+                "delivery_status_success_sampling_rate": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "monthly_spend_limit": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "usage_report_s3_bucket": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_sns_topic": {
+            "properties": {
+                "application_failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "application_success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "application_success_feedback_sample_rate": {
+                    "type": "number"
+                },
+                "archive_policy": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "beginning_archive_time": {
+                    "type": "string"
+                },
+                "content_based_deduplication": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delivery_policy": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "fifo_topic": {
+                    "type": "boolean"
+                },
+                "firehose_failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "firehose_success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "firehose_success_feedback_sample_rate": {
+                    "type": "number"
+                },
+                "http_failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "http_success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "http_success_feedback_sample_rate": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_master_key_id": {
+                    "type": "string"
+                },
+                "lambda_failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "lambda_success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "lambda_success_feedback_sample_rate": {
+                    "type": "number"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "signature_version": {
+                    "type": "number"
+                },
+                "sqs_failure_feedback_role_arn": {
+                    "type": "string"
+                },
+                "sqs_success_feedback_role_arn": {
+                    "type": "string"
+                },
+                "sqs_success_feedback_sample_rate": {
+                    "type": "number"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tracing_config": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_sns_topic_data_protection_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "arn",
+                "policy"
+            ],
+            "type": "object"
+        },
+        "aws_sns_topic_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "arn",
+                "policy"
+            ],
+            "type": "object"
+        },
+        "aws_sns_topic_subscription": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "confirmation_timeout_in_minutes": {
+                    "type": "number"
+                },
+                "confirmation_was_authenticated": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delivery_policy": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "endpoint_auto_confirms": {
+                    "type": "boolean"
+                },
+                "filter_policy": {
+                    "type": "string"
+                },
+                "filter_policy_scope": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "pending_confirmation": {
+                    "type": "boolean"
+                },
+                "protocol": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "raw_message_delivery": {
+                    "type": "boolean"
+                },
+                "redrive_policy": {
+                    "type": "string"
+                },
+                "replay_policy": {
+                    "type": "string"
+                },
+                "subscription_role_arn": {
+                    "type": "string"
+                },
+                "topic_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "endpoint",
+                "protocol",
+                "topic_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_sns_platform_application": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_platform_application"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_sns_sms_preferences": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_sms_preferences"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_sns_topic": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_topic"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_sns_topic_data_protection_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_topic_data_protection_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_sns_topic_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_topic_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_sns_topic_subscription": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_sns_topic_subscription"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

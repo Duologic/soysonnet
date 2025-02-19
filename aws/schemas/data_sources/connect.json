@@ -1,0 +1,1327 @@
+{
+    "$defs": {
+        "aws_connect_bot_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "lex_bot": {
+                    "properties": {
+                        "lex_region": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id",
+                "lex_bot"
+            ],
+            "type": "object"
+        },
+        "aws_connect_contact_flow": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "contact_flow_id": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_contact_flow_module": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "contact_flow_module_id": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_hours_of_operation": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "config": {
+                    "items": {
+                        "properties": {
+                            "day": {
+                                "type": "string"
+                            },
+                            "end_time": {
+                                "items": {
+                                    "properties": {
+                                        "hours": {
+                                            "type": "number"
+                                        },
+                                        "minutes": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "start_time": {
+                                "items": {
+                                    "properties": {
+                                        "hours": {
+                                            "type": "number"
+                                        },
+                                        "minutes": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "hours_of_operation_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "time_zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_instance": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_resolve_best_voices_enabled": {
+                    "type": "boolean"
+                },
+                "contact_flow_logs_enabled": {
+                    "type": "boolean"
+                },
+                "contact_lens_enabled": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "early_media_enabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_management_type": {
+                    "type": "string"
+                },
+                "inbound_calls_enabled": {
+                    "type": "boolean"
+                },
+                "instance_alias": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "multi_party_conference_enabled": {
+                    "type": "boolean"
+                },
+                "outbound_calls_enabled": {
+                    "type": "boolean"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "service_role": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_connect_instance_storage_config": {
+            "properties": {
+                "association_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource_type": {
+                    "type": "string"
+                },
+                "storage_config": {
+                    "items": {
+                        "properties": {
+                            "kinesis_firehose_config": {
+                                "items": {
+                                    "properties": {
+                                        "firehose_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "kinesis_stream_config": {
+                                "items": {
+                                    "properties": {
+                                        "stream_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "kinesis_video_stream_config": {
+                                "items": {
+                                    "properties": {
+                                        "encryption_config": {
+                                            "items": {
+                                                "properties": {
+                                                    "encryption_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "key_id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "prefix": {
+                                            "type": "string"
+                                        },
+                                        "retention_period_hours": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "s3_config": {
+                                "items": {
+                                    "properties": {
+                                        "bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "bucket_prefix": {
+                                            "type": "string"
+                                        },
+                                        "encryption_config": {
+                                            "items": {
+                                                "properties": {
+                                                    "encryption_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "key_id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "storage_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "association_id",
+                "instance_id",
+                "resource_type"
+            ],
+            "type": "object"
+        },
+        "aws_connect_lambda_function_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "function_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "function_arn",
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_prompt": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "prompt_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_connect_queue": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "hours_of_operation_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "max_contacts": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "outbound_caller_config": {
+                    "items": {
+                        "properties": {
+                            "outbound_caller_id_name": {
+                                "type": "string"
+                            },
+                            "outbound_caller_id_number_id": {
+                                "type": "string"
+                            },
+                            "outbound_flow_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "queue_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_quick_connect": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "quick_connect_config": {
+                    "items": {
+                        "properties": {
+                            "phone_config": {
+                                "items": {
+                                    "properties": {
+                                        "phone_number": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "queue_config": {
+                                "items": {
+                                    "properties": {
+                                        "contact_flow_id": {
+                                            "type": "string"
+                                        },
+                                        "queue_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "quick_connect_type": {
+                                "type": "string"
+                            },
+                            "user_config": {
+                                "items": {
+                                    "properties": {
+                                        "contact_flow_id": {
+                                            "type": "string"
+                                        },
+                                        "user_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "quick_connect_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_routing_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_outbound_queue_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "media_concurrencies": {
+                    "items": {
+                        "properties": {
+                            "channel": {
+                                "type": "string"
+                            },
+                            "concurrency": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "queue_configs": {
+                    "items": {
+                        "properties": {
+                            "channel": {
+                                "type": "string"
+                            },
+                            "delay": {
+                                "type": "number"
+                            },
+                            "priority": {
+                                "type": "number"
+                            },
+                            "queue_arn": {
+                                "type": "string"
+                            },
+                            "queue_id": {
+                                "type": "string"
+                            },
+                            "queue_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "routing_profile_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_security_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_resource_id": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "security_profile_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_user": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "directory_user_id": {
+                    "type": "string"
+                },
+                "hierarchy_group_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_info": {
+                    "items": {
+                        "properties": {
+                            "email": {
+                                "type": "string"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone_config": {
+                    "items": {
+                        "properties": {
+                            "after_contact_work_time_limit": {
+                                "type": "number"
+                            },
+                            "auto_accept": {
+                                "type": "boolean"
+                            },
+                            "desk_phone_number": {
+                                "type": "string"
+                            },
+                            "phone_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "routing_profile_id": {
+                    "type": "string"
+                },
+                "security_profile_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_user_hierarchy_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hierarchy_group_id": {
+                    "type": "string"
+                },
+                "hierarchy_path": {
+                    "items": {
+                        "properties": {
+                            "level_five": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_four": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_one": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_three": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_two": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "level_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_user_hierarchy_structure": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hierarchy_structure": {
+                    "items": {
+                        "properties": {
+                            "level_five": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_four": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_one": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_three": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "level_two": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_connect_vocabulary": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "failure_reason": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_id": {
+                    "type": "string"
+                },
+                "language_code": {
+                    "type": "string"
+                },
+                "last_modified_time": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vocabulary_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "instance_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_connect_bot_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_bot_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_contact_flow": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_contact_flow"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_contact_flow_module": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_contact_flow_module"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_hours_of_operation": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_hours_of_operation"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_instance": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_instance"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_instance_storage_config": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_instance_storage_config"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_lambda_function_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_lambda_function_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_prompt": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_prompt"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_queue": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_queue"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_quick_connect": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_quick_connect"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_routing_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_routing_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_security_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_security_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_user_hierarchy_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_user_hierarchy_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_user_hierarchy_structure": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_user_hierarchy_structure"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_connect_vocabulary": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_connect_vocabulary"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

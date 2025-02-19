@@ -1,0 +1,148 @@
+{
+    "$defs": {
+        "aws_devopsguru_notification_channel": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filters": {
+                    "items": {
+                        "properties": {
+                            "message_types": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "severities": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "sns": {
+                    "items": {
+                        "properties": {
+                            "topic_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "aws_devopsguru_resource_collection": {
+            "properties": {
+                "cloudformation": {
+                    "items": {
+                        "properties": {
+                            "stack_names": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "properties": {
+                            "app_boundary_key": {
+                                "type": "string"
+                            },
+                            "tag_values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_devopsguru_notification_channel": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_devopsguru_notification_channel"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_devopsguru_resource_collection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_devopsguru_resource_collection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

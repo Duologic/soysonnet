@@ -1,0 +1,922 @@
+{
+    "$defs": {
+        "aws_redshiftserverless_custom_domain_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "custom_domain_certificate_arn": {
+                    "type": "string"
+                },
+                "custom_domain_certificate_expiry_time": {
+                    "type": "string"
+                },
+                "custom_domain_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "workgroup_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "custom_domain_certificate_arn",
+                "custom_domain_name",
+                "workgroup_name"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_endpoint_access": {
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoint_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner_account": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "vpc_endpoint": {
+                    "items": {
+                        "properties": {
+                            "network_interface": {
+                                "items": {
+                                    "properties": {
+                                        "availability_zone": {
+                                            "type": "string"
+                                        },
+                                        "network_interface_id": {
+                                            "type": "string"
+                                        },
+                                        "private_ip_address": {
+                                            "type": "string"
+                                        },
+                                        "subnet_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "vpc_endpoint_id": {
+                                "type": "string"
+                            },
+                            "vpc_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "vpc_security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "workgroup_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "endpoint_name",
+                "subnet_ids",
+                "workgroup_name"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_namespace": {
+            "properties": {
+                "admin_password_secret_arn": {
+                    "type": "string"
+                },
+                "admin_password_secret_kms_key_id": {
+                    "type": "string"
+                },
+                "admin_user_password": {
+                    "type": "string"
+                },
+                "admin_username": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "db_name": {
+                    "type": "string"
+                },
+                "default_iam_role_arn": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iam_roles": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "log_exports": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "manage_admin_password": {
+                    "type": "boolean"
+                },
+                "namespace_id": {
+                    "type": "string"
+                },
+                "namespace_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "namespace_name"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_resource_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "policy",
+                "resource_arn"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_snapshot": {
+            "properties": {
+                "accounts_with_provisioned_restore_access": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "accounts_with_restore_access": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "admin_username": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "namespace_arn": {
+                    "type": "string"
+                },
+                "namespace_name": {
+                    "type": "string"
+                },
+                "owner_account": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "retention_period": {
+                    "type": "number"
+                },
+                "snapshot_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "namespace_name",
+                "snapshot_name"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_usage_limit": {
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "breach_action": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "period": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_arn": {
+                    "type": "string"
+                },
+                "usage_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amount",
+                "resource_arn",
+                "usage_type"
+            ],
+            "type": "object"
+        },
+        "aws_redshiftserverless_workgroup": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "base_capacity": {
+                    "type": "number"
+                },
+                "config_parameter": {
+                    "items": {
+                        "properties": {
+                            "parameter_key": {
+                                "type": "string"
+                            },
+                            "parameter_value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "parameter_key",
+                            "parameter_value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoint": {
+                    "items": {
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "port": {
+                                "type": "number"
+                            },
+                            "vpc_endpoint": {
+                                "items": {
+                                    "properties": {
+                                        "network_interface": {
+                                            "items": {
+                                                "properties": {
+                                                    "availability_zone": {
+                                                        "type": "string"
+                                                    },
+                                                    "network_interface_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "private_ip_address": {
+                                                        "type": "string"
+                                                    },
+                                                    "subnet_id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "vpc_endpoint_id": {
+                                            "type": "string"
+                                        },
+                                        "vpc_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "enhanced_vpc_routing": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_capacity": {
+                    "type": "number"
+                },
+                "namespace_name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "publicly_accessible": {
+                    "type": "boolean"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "workgroup_id": {
+                    "type": "string"
+                },
+                "workgroup_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "namespace_name",
+                "workgroup_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_redshiftserverless_custom_domain_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_custom_domain_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_endpoint_access": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_endpoint_access"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_namespace": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_namespace"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_resource_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_resource_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_snapshot": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_snapshot"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_usage_limit": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_usage_limit"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_redshiftserverless_workgroup": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_redshiftserverless_workgroup"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "$defs": {
+        "aws_ip_ranges": {
+            "properties": {
+                "cidr_blocks": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipv6_cidr_blocks": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "regions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "services": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "sync_token": {
+                    "type": "number"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "services"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ip_ranges": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ip_ranges"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

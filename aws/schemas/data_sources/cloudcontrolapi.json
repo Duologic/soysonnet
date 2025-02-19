@@ -1,0 +1,57 @@
+{
+    "$defs": {
+        "aws_cloudcontrolapi_resource": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identifier": {
+                    "type": "string"
+                },
+                "properties": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "type_name": {
+                    "type": "string"
+                },
+                "type_version_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier",
+                "type_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_cloudcontrolapi_resource": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cloudcontrolapi_resource"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

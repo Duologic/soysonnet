@@ -1,0 +1,276 @@
+{
+    "$defs": {
+        "aws_dx_connection": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "aws_device": {
+                    "type": "string"
+                },
+                "bandwidth": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owner_account_id": {
+                    "type": "string"
+                },
+                "partner_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vlan_id": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_dx_gateway": {
+            "properties": {
+                "amazon_side_asn": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owner_account_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_dx_location": {
+            "properties": {
+                "available_macsec_port_speeds": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "available_port_speeds": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "available_providers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "location_code": {
+                    "type": "string"
+                },
+                "location_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "location_code"
+            ],
+            "type": "object"
+        },
+        "aws_dx_locations": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "location_codes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_dx_router_configuration": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "customer_router_config": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "router": {
+                    "items": {
+                        "properties": {
+                            "platform": {
+                                "type": "string"
+                            },
+                            "router_type_identifier": {
+                                "type": "string"
+                            },
+                            "software": {
+                                "type": "string"
+                            },
+                            "vendor": {
+                                "type": "string"
+                            },
+                            "xslt_template_name": {
+                                "type": "string"
+                            },
+                            "xslt_template_name_for_mac_sec": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "router_type_identifier": {
+                    "type": "string"
+                },
+                "virtual_interface_id": {
+                    "type": "string"
+                },
+                "virtual_interface_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "router_type_identifier",
+                "virtual_interface_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_dx_connection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dx_connection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_dx_gateway": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dx_gateway"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_dx_location": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dx_location"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_dx_locations": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dx_locations"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_dx_router_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dx_router_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

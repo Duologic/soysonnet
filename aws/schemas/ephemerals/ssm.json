@@ -1,0 +1,56 @@
+{
+    "$defs": {
+        "aws_ssm_parameter": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "number"
+                },
+                "with_decryption": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "ephemeral": {
+            "properties": {
+                "aws_ssm_parameter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_parameter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,1288 @@
+{
+    "$defs": {
+        "aws_spot_datafeed_subscription": {
+            "properties": {
+                "bucket": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "bucket"
+            ],
+            "type": "object"
+        },
+        "aws_spot_fleet_request": {
+            "properties": {
+                "allocation_strategy": {
+                    "type": "string"
+                },
+                "client_token": {
+                    "type": "string"
+                },
+                "context": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "excess_capacity_termination_policy": {
+                    "type": "string"
+                },
+                "fleet_type": {
+                    "type": "string"
+                },
+                "iam_fleet_role": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_interruption_behaviour": {
+                    "type": "string"
+                },
+                "instance_pools_to_use_count": {
+                    "type": "number"
+                },
+                "launch_specification": {
+                    "items": {
+                        "properties": {
+                            "ami": {
+                                "type": "string"
+                            },
+                            "associate_public_ip_address": {
+                                "type": "boolean"
+                            },
+                            "availability_zone": {
+                                "type": "string"
+                            },
+                            "ebs_block_device": {
+                                "items": {
+                                    "properties": {
+                                        "delete_on_termination": {
+                                            "type": "boolean"
+                                        },
+                                        "device_name": {
+                                            "type": "string"
+                                        },
+                                        "encrypted": {
+                                            "type": "boolean"
+                                        },
+                                        "iops": {
+                                            "type": "number"
+                                        },
+                                        "kms_key_id": {
+                                            "type": "string"
+                                        },
+                                        "snapshot_id": {
+                                            "type": "string"
+                                        },
+                                        "throughput": {
+                                            "type": "number"
+                                        },
+                                        "volume_size": {
+                                            "type": "number"
+                                        },
+                                        "volume_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "device_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "ebs_optimized": {
+                                "type": "boolean"
+                            },
+                            "ephemeral_block_device": {
+                                "items": {
+                                    "properties": {
+                                        "device_name": {
+                                            "type": "string"
+                                        },
+                                        "virtual_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "device_name",
+                                        "virtual_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "iam_instance_profile": {
+                                "type": "string"
+                            },
+                            "iam_instance_profile_arn": {
+                                "type": "string"
+                            },
+                            "instance_type": {
+                                "type": "string"
+                            },
+                            "key_name": {
+                                "type": "string"
+                            },
+                            "monitoring": {
+                                "type": "boolean"
+                            },
+                            "placement_group": {
+                                "type": "string"
+                            },
+                            "placement_tenancy": {
+                                "type": "string"
+                            },
+                            "root_block_device": {
+                                "items": {
+                                    "properties": {
+                                        "delete_on_termination": {
+                                            "type": "boolean"
+                                        },
+                                        "encrypted": {
+                                            "type": "boolean"
+                                        },
+                                        "iops": {
+                                            "type": "number"
+                                        },
+                                        "kms_key_id": {
+                                            "type": "string"
+                                        },
+                                        "throughput": {
+                                            "type": "number"
+                                        },
+                                        "volume_size": {
+                                            "type": "number"
+                                        },
+                                        "volume_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "spot_price": {
+                                "type": "string"
+                            },
+                            "subnet_id": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "user_data": {
+                                "type": "string"
+                            },
+                            "vpc_security_group_ids": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "weighted_capacity": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "ami",
+                            "instance_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "launch_template_config": {
+                    "items": {
+                        "properties": {
+                            "launch_template_specification": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "version": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "overrides": {
+                                "items": {
+                                    "properties": {
+                                        "availability_zone": {
+                                            "type": "string"
+                                        },
+                                        "instance_requirements": {
+                                            "properties": {
+                                                "accelerator_count": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "accelerator_manufacturers": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "accelerator_names": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "accelerator_total_memory_mib": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "accelerator_types": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "allowed_instance_types": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "bare_metal": {
+                                                    "type": "string"
+                                                },
+                                                "baseline_ebs_bandwidth_mbps": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "burstable_performance": {
+                                                    "type": "string"
+                                                },
+                                                "cpu_manufacturers": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "excluded_instance_types": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "instance_generations": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "local_storage": {
+                                                    "type": "string"
+                                                },
+                                                "local_storage_types": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array",
+                                                    "uniqueItems": true
+                                                },
+                                                "memory_gib_per_vcpu": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "memory_mib": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "network_bandwidth_gbps": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "network_interface_count": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "on_demand_max_price_percentage_over_lowest_price": {
+                                                    "type": "number"
+                                                },
+                                                "require_hibernate_support": {
+                                                    "type": "boolean"
+                                                },
+                                                "spot_max_price_percentage_over_lowest_price": {
+                                                    "type": "number"
+                                                },
+                                                "total_local_storage_gb": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "vcpu_count": {
+                                                    "properties": {
+                                                        "max": {
+                                                            "type": "number"
+                                                        },
+                                                        "min": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "instance_type": {
+                                            "type": "string"
+                                        },
+                                        "priority": {
+                                            "type": "number"
+                                        },
+                                        "spot_price": {
+                                            "type": "string"
+                                        },
+                                        "subnet_id": {
+                                            "type": "string"
+                                        },
+                                        "weighted_capacity": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "launch_template_specification"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "load_balancers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "on_demand_allocation_strategy": {
+                    "type": "string"
+                },
+                "on_demand_max_total_price": {
+                    "type": "string"
+                },
+                "on_demand_target_capacity": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "replace_unhealthy_instances": {
+                    "type": "boolean"
+                },
+                "spot_maintenance_strategies": {
+                    "properties": {
+                        "capacity_rebalance": {
+                            "properties": {
+                                "replacement_strategy": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "spot_price": {
+                    "type": "string"
+                },
+                "spot_request_state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_capacity": {
+                    "type": "number"
+                },
+                "target_capacity_unit_type": {
+                    "type": "string"
+                },
+                "target_group_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "terminate_instances_on_delete": {
+                    "type": "string"
+                },
+                "terminate_instances_with_expiration": {
+                    "type": "boolean"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "valid_from": {
+                    "type": "string"
+                },
+                "valid_until": {
+                    "type": "string"
+                },
+                "wait_for_fulfillment": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "iam_fleet_role",
+                "target_capacity"
+            ],
+            "type": "object"
+        },
+        "aws_spot_instance_request": {
+            "properties": {
+                "ami": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "associate_public_ip_address": {
+                    "type": "boolean"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "block_duration_minutes": {
+                    "type": "number"
+                },
+                "capacity_reservation_specification": {
+                    "properties": {
+                        "capacity_reservation_preference": {
+                            "type": "string"
+                        },
+                        "capacity_reservation_target": {
+                            "properties": {
+                                "capacity_reservation_id": {
+                                    "type": "string"
+                                },
+                                "capacity_reservation_resource_group_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "cpu_core_count": {
+                    "type": "number"
+                },
+                "cpu_options": {
+                    "properties": {
+                        "amd_sev_snp": {
+                            "type": "string"
+                        },
+                        "core_count": {
+                            "type": "number"
+                        },
+                        "threads_per_core": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "cpu_threads_per_core": {
+                    "type": "number"
+                },
+                "credit_specification": {
+                    "properties": {
+                        "cpu_credits": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "disable_api_stop": {
+                    "type": "boolean"
+                },
+                "disable_api_termination": {
+                    "type": "boolean"
+                },
+                "ebs_block_device": {
+                    "items": {
+                        "properties": {
+                            "delete_on_termination": {
+                                "type": "boolean"
+                            },
+                            "device_name": {
+                                "type": "string"
+                            },
+                            "encrypted": {
+                                "type": "boolean"
+                            },
+                            "iops": {
+                                "type": "number"
+                            },
+                            "kms_key_id": {
+                                "type": "string"
+                            },
+                            "snapshot_id": {
+                                "type": "string"
+                            },
+                            "tags": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "tags_all": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "throughput": {
+                                "type": "number"
+                            },
+                            "volume_id": {
+                                "type": "string"
+                            },
+                            "volume_size": {
+                                "type": "number"
+                            },
+                            "volume_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "device_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ebs_optimized": {
+                    "type": "boolean"
+                },
+                "enable_primary_ipv6": {
+                    "type": "boolean"
+                },
+                "enclave_options": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "ephemeral_block_device": {
+                    "items": {
+                        "properties": {
+                            "device_name": {
+                                "type": "string"
+                            },
+                            "no_device": {
+                                "type": "boolean"
+                            },
+                            "virtual_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "device_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "get_password_data": {
+                    "type": "boolean"
+                },
+                "hibernation": {
+                    "type": "boolean"
+                },
+                "host_id": {
+                    "type": "string"
+                },
+                "host_resource_group_arn": {
+                    "type": "string"
+                },
+                "iam_instance_profile": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_initiated_shutdown_behavior": {
+                    "type": "string"
+                },
+                "instance_interruption_behavior": {
+                    "type": "string"
+                },
+                "instance_state": {
+                    "type": "string"
+                },
+                "instance_type": {
+                    "type": "string"
+                },
+                "ipv6_address_count": {
+                    "type": "number"
+                },
+                "ipv6_addresses": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "key_name": {
+                    "type": "string"
+                },
+                "launch_group": {
+                    "type": "string"
+                },
+                "launch_template": {
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "maintenance_options": {
+                    "properties": {
+                        "auto_recovery": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "metadata_options": {
+                    "properties": {
+                        "http_endpoint": {
+                            "type": "string"
+                        },
+                        "http_protocol_ipv6": {
+                            "type": "string"
+                        },
+                        "http_put_response_hop_limit": {
+                            "type": "number"
+                        },
+                        "http_tokens": {
+                            "type": "string"
+                        },
+                        "instance_metadata_tags": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "monitoring": {
+                    "type": "boolean"
+                },
+                "network_interface": {
+                    "items": {
+                        "properties": {
+                            "delete_on_termination": {
+                                "type": "boolean"
+                            },
+                            "device_index": {
+                                "type": "number"
+                            },
+                            "network_card_index": {
+                                "type": "number"
+                            },
+                            "network_interface_id": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "device_index",
+                            "network_interface_id"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "outpost_arn": {
+                    "type": "string"
+                },
+                "password_data": {
+                    "type": "string"
+                },
+                "placement_group": {
+                    "type": "string"
+                },
+                "placement_partition_number": {
+                    "type": "number"
+                },
+                "primary_network_interface_id": {
+                    "type": "string"
+                },
+                "private_dns": {
+                    "type": "string"
+                },
+                "private_dns_name_options": {
+                    "properties": {
+                        "enable_resource_name_dns_a_record": {
+                            "type": "boolean"
+                        },
+                        "enable_resource_name_dns_aaaa_record": {
+                            "type": "boolean"
+                        },
+                        "hostname_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "private_ip": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "public_dns": {
+                    "type": "string"
+                },
+                "public_ip": {
+                    "type": "string"
+                },
+                "root_block_device": {
+                    "properties": {
+                        "delete_on_termination": {
+                            "type": "boolean"
+                        },
+                        "device_name": {
+                            "type": "string"
+                        },
+                        "encrypted": {
+                            "type": "boolean"
+                        },
+                        "iops": {
+                            "type": "number"
+                        },
+                        "kms_key_id": {
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "tags_all": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "throughput": {
+                            "type": "number"
+                        },
+                        "volume_id": {
+                            "type": "string"
+                        },
+                        "volume_size": {
+                            "type": "number"
+                        },
+                        "volume_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "secondary_private_ips": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "security_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "source_dest_check": {
+                    "type": "boolean"
+                },
+                "spot_bid_status": {
+                    "type": "string"
+                },
+                "spot_instance_id": {
+                    "type": "string"
+                },
+                "spot_price": {
+                    "type": "string"
+                },
+                "spot_request_state": {
+                    "type": "string"
+                },
+                "spot_type": {
+                    "type": "string"
+                },
+                "subnet_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tenancy": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "read": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "user_data": {
+                    "type": "string"
+                },
+                "user_data_base64": {
+                    "type": "string"
+                },
+                "user_data_replace_on_change": {
+                    "type": "boolean"
+                },
+                "valid_from": {
+                    "type": "string"
+                },
+                "valid_until": {
+                    "type": "string"
+                },
+                "volume_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "wait_for_fulfillment": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_spot_datafeed_subscription": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_spot_datafeed_subscription"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_spot_fleet_request": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_spot_fleet_request"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_spot_instance_request": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_spot_instance_request"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

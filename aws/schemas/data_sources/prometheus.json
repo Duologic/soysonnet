@@ -1,0 +1,149 @@
+{
+    "$defs": {
+        "aws_prometheus_default_scraper_configuration": {
+            "properties": {
+                "configuration": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_prometheus_workspace": {
+            "properties": {
+                "alias": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_arn": {
+                    "type": "string"
+                },
+                "prometheus_endpoint": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "workspace_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "workspace_id"
+            ],
+            "type": "object"
+        },
+        "aws_prometheus_workspaces": {
+            "properties": {
+                "alias_prefix": {
+                    "type": "string"
+                },
+                "aliases": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "workspace_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_prometheus_default_scraper_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_default_scraper_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_prometheus_workspace": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_workspace"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_prometheus_workspaces": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_prometheus_workspaces"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

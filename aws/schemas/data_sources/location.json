@@ -1,0 +1,380 @@
+{
+    "$defs": {
+        "aws_location_geofence_collection": {
+            "properties": {
+                "collection_arn": {
+                    "type": "string"
+                },
+                "collection_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "collection_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_map": {
+            "properties": {
+                "configuration": {
+                    "items": {
+                        "properties": {
+                            "style": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "map_arn": {
+                    "type": "string"
+                },
+                "map_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "map_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_place_index": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "data_source": {
+                    "type": "string"
+                },
+                "data_source_configuration": {
+                    "items": {
+                        "properties": {
+                            "intended_use": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "index_arn": {
+                    "type": "string"
+                },
+                "index_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "index_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_route_calculator": {
+            "properties": {
+                "calculator_arn": {
+                    "type": "string"
+                },
+                "calculator_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "data_source": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "calculator_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_tracker": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "position_filtering": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tracker_arn": {
+                    "type": "string"
+                },
+                "tracker_name": {
+                    "type": "string"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "tracker_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_tracker_association": {
+            "properties": {
+                "consumer_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tracker_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "consumer_arn",
+                "tracker_name"
+            ],
+            "type": "object"
+        },
+        "aws_location_tracker_associations": {
+            "properties": {
+                "consumer_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tracker_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "tracker_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_location_geofence_collection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_geofence_collection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_map": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_map"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_place_index": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_place_index"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_route_calculator": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_route_calculator"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_tracker": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_tracker"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_tracker_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_tracker_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_location_tracker_associations": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_location_tracker_associations"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

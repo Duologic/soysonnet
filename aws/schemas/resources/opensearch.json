@@ -1,0 +1,1474 @@
+{
+    "$defs": {
+        "aws_opensearch_authorize_vpc_endpoint_access": {
+            "properties": {
+                "account": {
+                    "type": "string"
+                },
+                "authorized_principal": {
+                    "items": {
+                        "properties": {
+                            "principal": {
+                                "type": "string"
+                            },
+                            "principal_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "account",
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_domain": {
+            "properties": {
+                "access_policies": {
+                    "type": "string"
+                },
+                "advanced_options": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "advanced_security_options": {
+                    "properties": {
+                        "anonymous_auth_enabled": {
+                            "type": "boolean"
+                        },
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "internal_user_database_enabled": {
+                            "type": "boolean"
+                        },
+                        "master_user_options": {
+                            "properties": {
+                                "master_user_arn": {
+                                    "type": "string"
+                                },
+                                "master_user_name": {
+                                    "type": "string"
+                                },
+                                "master_user_password": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "enabled"
+                    ],
+                    "type": "object"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "auto_tune_options": {
+                    "properties": {
+                        "desired_state": {
+                            "type": "string"
+                        },
+                        "maintenance_schedule": {
+                            "items": {
+                                "properties": {
+                                    "cron_expression_for_recurrence": {
+                                        "type": "string"
+                                    },
+                                    "duration": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "start_at": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cron_expression_for_recurrence",
+                                    "duration",
+                                    "start_at"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "rollback_on_disable": {
+                            "type": "string"
+                        },
+                        "use_off_peak_window": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "desired_state"
+                    ],
+                    "type": "object"
+                },
+                "cluster_config": {
+                    "properties": {
+                        "cold_storage_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "dedicated_master_count": {
+                            "type": "number"
+                        },
+                        "dedicated_master_enabled": {
+                            "type": "boolean"
+                        },
+                        "dedicated_master_type": {
+                            "type": "string"
+                        },
+                        "instance_count": {
+                            "type": "number"
+                        },
+                        "instance_type": {
+                            "type": "string"
+                        },
+                        "multi_az_with_standby_enabled": {
+                            "type": "boolean"
+                        },
+                        "warm_count": {
+                            "type": "number"
+                        },
+                        "warm_enabled": {
+                            "type": "boolean"
+                        },
+                        "warm_type": {
+                            "type": "string"
+                        },
+                        "zone_awareness_config": {
+                            "properties": {
+                                "availability_zone_count": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "zone_awareness_enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "cognito_options": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "identity_pool_id": {
+                            "type": "string"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "user_pool_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "identity_pool_id",
+                        "role_arn",
+                        "user_pool_id"
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "dashboard_endpoint": {
+                    "type": "string"
+                },
+                "dashboard_endpoint_v2": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_endpoint_options": {
+                    "properties": {
+                        "custom_endpoint": {
+                            "type": "string"
+                        },
+                        "custom_endpoint_certificate_arn": {
+                            "type": "string"
+                        },
+                        "custom_endpoint_enabled": {
+                            "type": "boolean"
+                        },
+                        "enforce_https": {
+                            "type": "boolean"
+                        },
+                        "tls_security_policy": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "domain_endpoint_v2_hosted_zone_id": {
+                    "type": "string"
+                },
+                "domain_id": {
+                    "type": "string"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "ebs_options": {
+                    "properties": {
+                        "ebs_enabled": {
+                            "type": "boolean"
+                        },
+                        "iops": {
+                            "type": "number"
+                        },
+                        "throughput": {
+                            "type": "number"
+                        },
+                        "volume_size": {
+                            "type": "number"
+                        },
+                        "volume_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "ebs_enabled"
+                    ],
+                    "type": "object"
+                },
+                "encrypt_at_rest": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "kms_key_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "enabled"
+                    ],
+                    "type": "object"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "endpoint_v2": {
+                    "type": "string"
+                },
+                "engine_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_address_type": {
+                    "type": "string"
+                },
+                "kibana_endpoint": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "log_publishing_options": {
+                    "items": {
+                        "properties": {
+                            "cloudwatch_log_group_arn": {
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "log_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "cloudwatch_log_group_arn",
+                            "log_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "node_to_node_encryption": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "enabled"
+                    ],
+                    "type": "object"
+                },
+                "off_peak_window_options": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "off_peak_window": {
+                            "properties": {
+                                "window_start_time": {
+                                    "properties": {
+                                        "hours": {
+                                            "type": "number"
+                                        },
+                                        "minutes": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "snapshot_options": {
+                    "properties": {
+                        "automated_snapshot_start_hour": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "automated_snapshot_start_hour"
+                    ],
+                    "type": "object"
+                },
+                "software_update_options": {
+                    "properties": {
+                        "auto_software_update_enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_options": {
+                    "properties": {
+                        "availability_zones": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "security_group_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnet_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "vpc_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_domain_policy": {
+            "properties": {
+                "access_policies": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "access_policies",
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_domain_saml_options": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "saml_options": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "idp": {
+                            "properties": {
+                                "entity_id": {
+                                    "type": "string"
+                                },
+                                "metadata_content": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "entity_id",
+                                "metadata_content"
+                            ],
+                            "type": "object"
+                        },
+                        "master_backend_role": {
+                            "type": "string"
+                        },
+                        "master_user_name": {
+                            "type": "string"
+                        },
+                        "roles_key": {
+                            "type": "string"
+                        },
+                        "session_timeout_minutes": {
+                            "type": "number"
+                        },
+                        "subject_key": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_inbound_connection_accepter": {
+            "properties": {
+                "connection_id": {
+                    "type": "string"
+                },
+                "connection_status": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "connection_id"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_outbound_connection": {
+            "properties": {
+                "accept_connection": {
+                    "type": "boolean"
+                },
+                "connection_alias": {
+                    "type": "string"
+                },
+                "connection_mode": {
+                    "type": "string"
+                },
+                "connection_properties": {
+                    "properties": {
+                        "cross_cluster_search": {
+                            "properties": {
+                                "skip_unavailable": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "endpoint": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "connection_status": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "local_domain_info": {
+                    "properties": {
+                        "domain_name": {
+                            "type": "string"
+                        },
+                        "owner_id": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "domain_name",
+                        "owner_id",
+                        "region"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "remote_domain_info": {
+                    "properties": {
+                        "domain_name": {
+                            "type": "string"
+                        },
+                        "owner_id": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "domain_name",
+                        "owner_id",
+                        "region"
+                    ],
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "connection_alias",
+                "local_domain_info",
+                "remote_domain_info"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_package": {
+            "properties": {
+                "available_package_version": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "package_description": {
+                    "type": "string"
+                },
+                "package_id": {
+                    "type": "string"
+                },
+                "package_name": {
+                    "type": "string"
+                },
+                "package_source": {
+                    "properties": {
+                        "s3_bucket_name": {
+                            "type": "string"
+                        },
+                        "s3_key": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "s3_bucket_name",
+                        "s3_key"
+                    ],
+                    "type": "object"
+                },
+                "package_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "package_name",
+                "package_source",
+                "package_type"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_package_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "package_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "reference_path": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_name",
+                "package_id"
+            ],
+            "type": "object"
+        },
+        "aws_opensearch_vpc_endpoint": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_arn": {
+                    "type": "string"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_options": {
+                    "properties": {
+                        "availability_zones": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "security_group_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnet_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "vpc_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "subnet_ids"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_arn",
+                "vpc_options"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_opensearch_authorize_vpc_endpoint_access": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_authorize_vpc_endpoint_access"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_domain": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_domain"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_domain_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_domain_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_domain_saml_options": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_domain_saml_options"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_inbound_connection_accepter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_inbound_connection_accepter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_outbound_connection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_outbound_connection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_package": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_package"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_package_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_package_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearch_vpc_endpoint": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearch_vpc_endpoint"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

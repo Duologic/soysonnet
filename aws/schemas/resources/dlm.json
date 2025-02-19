@@ -1,0 +1,442 @@
+{
+    "$defs": {
+        "aws_dlm_lifecycle_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "execution_role_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy_details": {
+                    "properties": {
+                        "action": {
+                            "properties": {
+                                "cross_region_copy": {
+                                    "items": {
+                                        "properties": {
+                                            "encryption_configuration": {
+                                                "properties": {
+                                                    "cmk_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "encrypted": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "retain_rule": {
+                                                "properties": {
+                                                    "interval": {
+                                                        "type": "number"
+                                                    },
+                                                    "interval_unit": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "interval",
+                                                    "interval_unit"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "target": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "encryption_configuration",
+                                            "target"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "cross_region_copy",
+                                "name"
+                            ],
+                            "type": "object"
+                        },
+                        "event_source": {
+                            "properties": {
+                                "parameters": {
+                                    "properties": {
+                                        "description_regex": {
+                                            "type": "string"
+                                        },
+                                        "event_type": {
+                                            "type": "string"
+                                        },
+                                        "snapshot_owner": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "description_regex",
+                                        "event_type",
+                                        "snapshot_owner"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "parameters",
+                                "type"
+                            ],
+                            "type": "object"
+                        },
+                        "parameters": {
+                            "properties": {
+                                "exclude_boot_volume": {
+                                    "type": "boolean"
+                                },
+                                "no_reboot": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "policy_type": {
+                            "type": "string"
+                        },
+                        "resource_locations": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "resource_types": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "schedule": {
+                            "items": {
+                                "properties": {
+                                    "copy_tags": {
+                                        "type": "boolean"
+                                    },
+                                    "create_rule": {
+                                        "properties": {
+                                            "cron_expression": {
+                                                "type": "string"
+                                            },
+                                            "interval": {
+                                                "type": "number"
+                                            },
+                                            "interval_unit": {
+                                                "type": "string"
+                                            },
+                                            "location": {
+                                                "type": "string"
+                                            },
+                                            "times": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "cross_region_copy_rule": {
+                                        "items": {
+                                            "properties": {
+                                                "cmk_arn": {
+                                                    "type": "string"
+                                                },
+                                                "copy_tags": {
+                                                    "type": "boolean"
+                                                },
+                                                "deprecate_rule": {
+                                                    "properties": {
+                                                        "interval": {
+                                                            "type": "number"
+                                                        },
+                                                        "interval_unit": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "interval",
+                                                        "interval_unit"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "encrypted": {
+                                                    "type": "boolean"
+                                                },
+                                                "retain_rule": {
+                                                    "properties": {
+                                                        "interval": {
+                                                            "type": "number"
+                                                        },
+                                                        "interval_unit": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "interval",
+                                                        "interval_unit"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "target": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "encrypted",
+                                                "target"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "deprecate_rule": {
+                                        "properties": {
+                                            "count": {
+                                                "type": "number"
+                                            },
+                                            "interval": {
+                                                "type": "number"
+                                            },
+                                            "interval_unit": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "fast_restore_rule": {
+                                        "properties": {
+                                            "availability_zones": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "count": {
+                                                "type": "number"
+                                            },
+                                            "interval": {
+                                                "type": "number"
+                                            },
+                                            "interval_unit": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "availability_zones"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "retain_rule": {
+                                        "properties": {
+                                            "count": {
+                                                "type": "number"
+                                            },
+                                            "interval": {
+                                                "type": "number"
+                                            },
+                                            "interval_unit": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "share_rule": {
+                                        "properties": {
+                                            "target_accounts": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "unshare_interval": {
+                                                "type": "number"
+                                            },
+                                            "unshare_interval_unit": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "target_accounts"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "tags_to_add": {
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        },
+                                        "type": "object"
+                                    },
+                                    "variable_tags": {
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "create_rule",
+                                    "name",
+                                    "retain_rule"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "target_tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "description",
+                "execution_role_arn",
+                "policy_details"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_dlm_lifecycle_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_dlm_lifecycle_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

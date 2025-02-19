@@ -1,0 +1,404 @@
+{
+    "$defs": {
+        "aws_chimesdkmediapipelines_media_insights_pipeline_configuration": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "elements": {
+                    "items": {
+                        "properties": {
+                            "amazon_transcribe_call_analytics_processor_configuration": {
+                                "properties": {
+                                    "call_analytics_stream_categories": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "content_identification_type": {
+                                        "type": "string"
+                                    },
+                                    "content_redaction_type": {
+                                        "type": "string"
+                                    },
+                                    "enable_partial_results_stabilization": {
+                                        "type": "boolean"
+                                    },
+                                    "filter_partial_results": {
+                                        "type": "boolean"
+                                    },
+                                    "language_code": {
+                                        "type": "string"
+                                    },
+                                    "language_model_name": {
+                                        "type": "string"
+                                    },
+                                    "partial_results_stability": {
+                                        "type": "string"
+                                    },
+                                    "pii_entity_types": {
+                                        "type": "string"
+                                    },
+                                    "post_call_analytics_settings": {
+                                        "properties": {
+                                            "content_redaction_output": {
+                                                "type": "string"
+                                            },
+                                            "data_access_role_arn": {
+                                                "type": "string"
+                                            },
+                                            "output_encryption_kms_key_id": {
+                                                "type": "string"
+                                            },
+                                            "output_location": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "data_access_role_arn",
+                                            "output_location"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "vocabulary_filter_method": {
+                                        "type": "string"
+                                    },
+                                    "vocabulary_filter_name": {
+                                        "type": "string"
+                                    },
+                                    "vocabulary_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "language_code"
+                                ],
+                                "type": "object"
+                            },
+                            "amazon_transcribe_processor_configuration": {
+                                "properties": {
+                                    "content_identification_type": {
+                                        "type": "string"
+                                    },
+                                    "content_redaction_type": {
+                                        "type": "string"
+                                    },
+                                    "enable_partial_results_stabilization": {
+                                        "type": "boolean"
+                                    },
+                                    "filter_partial_results": {
+                                        "type": "boolean"
+                                    },
+                                    "language_code": {
+                                        "type": "string"
+                                    },
+                                    "language_model_name": {
+                                        "type": "string"
+                                    },
+                                    "partial_results_stability": {
+                                        "type": "string"
+                                    },
+                                    "pii_entity_types": {
+                                        "type": "string"
+                                    },
+                                    "show_speaker_label": {
+                                        "type": "boolean"
+                                    },
+                                    "vocabulary_filter_method": {
+                                        "type": "string"
+                                    },
+                                    "vocabulary_filter_name": {
+                                        "type": "string"
+                                    },
+                                    "vocabulary_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "language_code"
+                                ],
+                                "type": "object"
+                            },
+                            "kinesis_data_stream_sink_configuration": {
+                                "properties": {
+                                    "insights_target": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "insights_target"
+                                ],
+                                "type": "object"
+                            },
+                            "lambda_function_sink_configuration": {
+                                "properties": {
+                                    "insights_target": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "insights_target"
+                                ],
+                                "type": "object"
+                            },
+                            "s3_recording_sink_configuration": {
+                                "properties": {
+                                    "destination": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "sns_topic_sink_configuration": {
+                                "properties": {
+                                    "insights_target": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "insights_target"
+                                ],
+                                "type": "object"
+                            },
+                            "sqs_queue_sink_configuration": {
+                                "properties": {
+                                    "insights_target": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "insights_target"
+                                ],
+                                "type": "object"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "voice_analytics_processor_configuration": {
+                                "properties": {
+                                    "speaker_search_status": {
+                                        "type": "string"
+                                    },
+                                    "voice_tone_analysis_status": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "speaker_search_status",
+                                    "voice_tone_analysis_status"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "real_time_alert_configuration": {
+                    "properties": {
+                        "disabled": {
+                            "type": "boolean"
+                        },
+                        "rules": {
+                            "items": {
+                                "properties": {
+                                    "issue_detection_configuration": {
+                                        "properties": {
+                                            "rule_name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "rule_name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "keyword_match_configuration": {
+                                        "properties": {
+                                            "keywords": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "negate": {
+                                                "type": "boolean"
+                                            },
+                                            "rule_name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "keywords",
+                                            "rule_name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "sentiment_configuration": {
+                                        "properties": {
+                                            "rule_name": {
+                                                "type": "string"
+                                            },
+                                            "sentiment_type": {
+                                                "type": "string"
+                                            },
+                                            "time_period": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "rule_name",
+                                            "sentiment_type",
+                                            "time_period"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "rules"
+                    ],
+                    "type": "object"
+                },
+                "resource_access_role_arn": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "elements",
+                "name",
+                "resource_access_role_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_chimesdkmediapipelines_media_insights_pipeline_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_chimesdkmediapipelines_media_insights_pipeline_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

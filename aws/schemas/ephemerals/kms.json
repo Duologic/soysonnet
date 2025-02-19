@@ -1,0 +1,80 @@
+{
+    "$defs": {
+        "aws_kms_secrets": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "plaintext": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "secret": {
+                    "items": {
+                        "properties": {
+                            "context": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "encryption_algorithm": {
+                                "type": "string"
+                            },
+                            "grant_tokens": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "key_id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "payload": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "payload"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "ephemeral": {
+            "properties": {
+                "aws_kms_secrets": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_secrets"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

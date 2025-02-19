@@ -1,0 +1,959 @@
+{
+    "$defs": {
+        "aws_gamelift_alias": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "routing_strategy": {
+                    "properties": {
+                        "fleet_id": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "routing_strategy"
+            ],
+            "type": "object"
+        },
+        "aws_gamelift_build": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "operating_system": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "storage_location": {
+                    "properties": {
+                        "bucket": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "object_version": {
+                            "type": "string"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucket",
+                        "key",
+                        "role_arn"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "operating_system",
+                "storage_location"
+            ],
+            "type": "object"
+        },
+        "aws_gamelift_fleet": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "build_arn": {
+                    "type": "string"
+                },
+                "build_id": {
+                    "type": "string"
+                },
+                "certificate_configuration": {
+                    "properties": {
+                        "certificate_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "ec2_inbound_permission": {
+                    "items": {
+                        "properties": {
+                            "from_port": {
+                                "type": "number"
+                            },
+                            "ip_range": {
+                                "type": "string"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "to_port": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "from_port",
+                            "ip_range",
+                            "protocol",
+                            "to_port"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ec2_instance_type": {
+                    "type": "string"
+                },
+                "fleet_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_role_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "log_paths": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "metric_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "new_game_session_protection_policy": {
+                    "type": "string"
+                },
+                "operating_system": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_creation_limit_policy": {
+                    "properties": {
+                        "new_game_sessions_per_creator": {
+                            "type": "number"
+                        },
+                        "policy_period_in_minutes": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "runtime_configuration": {
+                    "properties": {
+                        "game_session_activation_timeout_seconds": {
+                            "type": "number"
+                        },
+                        "max_concurrent_game_session_activations": {
+                            "type": "number"
+                        },
+                        "server_process": {
+                            "items": {
+                                "properties": {
+                                    "concurrent_executions": {
+                                        "type": "number"
+                                    },
+                                    "launch_path": {
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "concurrent_executions",
+                                    "launch_path"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "script_arn": {
+                    "type": "string"
+                },
+                "script_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "ec2_instance_type",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_gamelift_game_server_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_scaling_group_arn": {
+                    "type": "string"
+                },
+                "auto_scaling_policy": {
+                    "properties": {
+                        "estimated_instance_warmup": {
+                            "type": "number"
+                        },
+                        "target_tracking_configuration": {
+                            "properties": {
+                                "target_value": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "target_value"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "target_tracking_configuration"
+                    ],
+                    "type": "object"
+                },
+                "balancing_strategy": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "game_server_group_name": {
+                    "type": "string"
+                },
+                "game_server_protection_policy": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_definition": {
+                    "items": {
+                        "properties": {
+                            "instance_type": {
+                                "type": "string"
+                            },
+                            "weighted_capacity": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "instance_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "launch_template": {
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_size": {
+                    "type": "number"
+                },
+                "min_size": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_subnets": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "game_server_group_name",
+                "instance_definition",
+                "launch_template",
+                "max_size",
+                "min_size",
+                "role_arn"
+            ],
+            "type": "object"
+        },
+        "aws_gamelift_game_session_queue": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "custom_event_data": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "destinations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "notification_target": {
+                    "type": "string"
+                },
+                "player_latency_policy": {
+                    "items": {
+                        "properties": {
+                            "maximum_individual_player_latency_milliseconds": {
+                                "type": "number"
+                            },
+                            "policy_duration_seconds": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "maximum_individual_player_latency_milliseconds"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeout_in_seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_gamelift_script": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "storage_location": {
+                    "properties": {
+                        "bucket": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "object_version": {
+                            "type": "string"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucket",
+                        "key",
+                        "role_arn"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "zip_file": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_gamelift_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_gamelift_build": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_build"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_gamelift_fleet": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_fleet"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_gamelift_game_server_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_game_server_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_gamelift_game_session_queue": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_game_session_queue"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_gamelift_script": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_gamelift_script"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

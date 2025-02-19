@@ -1,0 +1,50 @@
+{
+    "$defs": {
+        "aws_controltower_controls": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enabled_controls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "target_identifier": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "target_identifier"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_controltower_controls": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_controltower_controls"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

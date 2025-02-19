@@ -1,0 +1,509 @@
+{
+    "$defs": {
+        "aws_ssm_document": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "document_format": {
+                    "type": "string"
+                },
+                "document_type": {
+                    "type": "string"
+                },
+                "document_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_ssm_instances": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ssm_maintenance_windows": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ssm_parameter": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "insecure_value": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "number"
+                },
+                "with_decryption": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_ssm_parameters_by_path": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "recursive": {
+                    "type": "boolean"
+                },
+                "types": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "values": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "with_decryption": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "type": "object"
+        },
+        "aws_ssm_patch_baseline": {
+            "properties": {
+                "approval_rule": {
+                    "items": {
+                        "properties": {
+                            "approve_after_days": {
+                                "type": "number"
+                            },
+                            "approve_until_date": {
+                                "type": "string"
+                            },
+                            "compliance_level": {
+                                "type": "string"
+                            },
+                            "enable_non_security": {
+                                "type": "boolean"
+                            },
+                            "patch_filter": {
+                                "items": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "approved_patches": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "approved_patches_compliance_level": {
+                    "type": "string"
+                },
+                "approved_patches_enable_non_security": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_baseline": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "global_filter": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "json": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "operating_system": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rejected_patches": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rejected_patches_action": {
+                    "type": "string"
+                },
+                "source": {
+                    "items": {
+                        "properties": {
+                            "configuration": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "products": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "owner"
+            ],
+            "type": "object"
+        },
+        "aws_ssm_patch_baselines": {
+            "properties": {
+                "baseline_identities": {
+                    "items": {
+                        "properties": {
+                            "baseline_description": {
+                                "type": "string"
+                            },
+                            "baseline_id": {
+                                "type": "string"
+                            },
+                            "baseline_name": {
+                                "type": "string"
+                            },
+                            "default_baseline": {
+                                "type": "boolean"
+                            },
+                            "operating_system": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_baselines": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ssm_document": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_document"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_instances": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_instances"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_maintenance_windows": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_maintenance_windows"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_parameter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_parameter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_parameters_by_path": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_parameters_by_path"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_patch_baseline": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_patch_baseline"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssm_patch_baselines": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssm_patch_baselines"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

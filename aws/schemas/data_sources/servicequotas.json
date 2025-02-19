@@ -1,0 +1,209 @@
+{
+    "$defs": {
+        "aws_servicequotas_service": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "service_code": {
+                    "type": "string"
+                },
+                "service_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "service_name"
+            ],
+            "type": "object"
+        },
+        "aws_servicequotas_service_quota": {
+            "properties": {
+                "adjustable": {
+                    "type": "boolean"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_value": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "global_quota": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "quota_code": {
+                    "type": "string"
+                },
+                "quota_name": {
+                    "type": "string"
+                },
+                "service_code": {
+                    "type": "string"
+                },
+                "service_name": {
+                    "type": "string"
+                },
+                "usage_metric": {
+                    "items": {
+                        "properties": {
+                            "metric_dimensions": {
+                                "items": {
+                                    "properties": {
+                                        "class": {
+                                            "type": "string"
+                                        },
+                                        "resource": {
+                                            "type": "string"
+                                        },
+                                        "service": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "metric_name": {
+                                "type": "string"
+                            },
+                            "metric_namespace": {
+                                "type": "string"
+                            },
+                            "metric_statistic_recommendation": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "service_code"
+            ],
+            "type": "object"
+        },
+        "aws_servicequotas_templates": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "templates": {
+                    "items": {
+                        "properties": {
+                            "global_quota": {
+                                "type": "boolean"
+                            },
+                            "quota_code": {
+                                "type": "string"
+                            },
+                            "quota_name": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "service_code": {
+                                "type": "string"
+                            },
+                            "service_name": {
+                                "type": "string"
+                            },
+                            "unit": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "region"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_servicequotas_service": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_servicequotas_service"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_servicequotas_service_quota": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_servicequotas_service_quota"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_servicequotas_templates": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_servicequotas_templates"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

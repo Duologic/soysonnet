@@ -1,0 +1,44 @@
+{
+    "$defs": {
+        "aws_chatbot_slack_workspace": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "slack_team_id": {
+                    "type": "string"
+                },
+                "slack_team_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "slack_team_name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_chatbot_slack_workspace": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_chatbot_slack_workspace"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

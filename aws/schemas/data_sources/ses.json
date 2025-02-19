@@ -1,0 +1,122 @@
+{
+    "$defs": {
+        "aws_ses_active_receipt_rule_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rule_set_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ses_domain_identity": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "verification_token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "domain"
+            ],
+            "type": "object"
+        },
+        "aws_ses_email_identity": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ses_active_receipt_rule_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_active_receipt_rule_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_domain_identity": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_domain_identity"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ses_email_identity": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ses_email_identity"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

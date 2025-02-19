@@ -1,0 +1,179 @@
+{
+    "$defs": {
+        "aws_waf_ipset": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_waf_rate_based_rule": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_waf_rule": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_waf_subscribed_rule_group": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "metric_name": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_waf_web_acl": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_waf_ipset": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_waf_ipset"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_waf_rate_based_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_waf_rate_based_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_waf_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_waf_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_waf_subscribed_rule_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_waf_subscribed_rule_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_waf_web_acl": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_waf_web_acl"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,391 @@
+{
+    "$defs": {
+        "aws_networkfirewall_firewall": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "delete_protection": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "encryption_configuration": {
+                    "items": {
+                        "properties": {
+                            "key_id": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "firewall_policy_arn": {
+                    "type": "string"
+                },
+                "firewall_policy_change_protection": {
+                    "type": "boolean"
+                },
+                "firewall_status": {
+                    "items": {
+                        "properties": {
+                            "capacity_usage_summary": {
+                                "items": {
+                                    "properties": {
+                                        "cidrs": {
+                                            "items": {
+                                                "properties": {
+                                                    "available_cidr_count": {
+                                                        "type": "number"
+                                                    },
+                                                    "ip_set_references": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "resolved_cidr_count": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "utilized_cidr_count": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "configuration_sync_state_summary": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "sync_states": {
+                                "items": {
+                                    "properties": {
+                                        "attachment": {
+                                            "items": {
+                                                "properties": {
+                                                    "endpoint_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "status": {
+                                                        "type": "string"
+                                                    },
+                                                    "subnet_id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "availability_zone": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "subnet_change_protection": {
+                    "type": "boolean"
+                },
+                "subnet_mapping": {
+                    "items": {
+                        "properties": {
+                            "subnet_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_token": {
+                    "type": "string"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_networkfirewall_firewall_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "firewall_policy": {
+                    "items": {
+                        "properties": {
+                            "stateful_default_actions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "stateful_engine_options": {
+                                "items": {
+                                    "properties": {
+                                        "rule_order": {
+                                            "type": "string"
+                                        },
+                                        "stream_exception_policy": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "stateful_rule_group_reference": {
+                                "items": {
+                                    "properties": {
+                                        "override": {
+                                            "items": {
+                                                "properties": {
+                                                    "action": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "priority": {
+                                            "type": "number"
+                                        },
+                                        "resource_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "stateless_custom_action": {
+                                "items": {
+                                    "properties": {
+                                        "action_definition": {
+                                            "items": {
+                                                "properties": {
+                                                    "publish_metric_action": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "value": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "action_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "stateless_default_actions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "stateless_fragment_default_actions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "stateless_rule_group_reference": {
+                                "items": {
+                                    "properties": {
+                                        "priority": {
+                                            "type": "number"
+                                        },
+                                        "resource_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "tls_inspection_configuration_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_token": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_networkfirewall_resource_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "resource_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_networkfirewall_firewall": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_networkfirewall_firewall"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_networkfirewall_firewall_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_networkfirewall_firewall_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_networkfirewall_resource_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_networkfirewall_resource_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

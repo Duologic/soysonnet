@@ -1,0 +1,224 @@
+{
+    "$defs": {
+        "aws_oam_link": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "label_template": {
+                    "type": "string"
+                },
+                "link_configuration": {
+                    "items": {
+                        "properties": {
+                            "log_group_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "filter": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "metric_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "filter": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "link_id": {
+                    "type": "string"
+                },
+                "link_identifier": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource_types": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "sink_arn": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "link_identifier"
+            ],
+            "type": "object"
+        },
+        "aws_oam_links": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_oam_sink": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "sink_id": {
+                    "type": "string"
+                },
+                "sink_identifier": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "sink_identifier"
+            ],
+            "type": "object"
+        },
+        "aws_oam_sinks": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_oam_link": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_oam_link"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_oam_links": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_oam_links"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_oam_sink": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_oam_sink"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_oam_sinks": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_oam_sinks"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

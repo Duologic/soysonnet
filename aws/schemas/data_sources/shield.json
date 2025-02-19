@@ -1,0 +1,53 @@
+{
+    "$defs": {
+        "aws_shield_protection": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "protection_arn": {
+                    "type": "string"
+                },
+                "protection_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_shield_protection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_shield_protection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,595 @@
+{
+    "$defs": {
+        "aws_glue_catalog_table": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "partition_index": {
+                    "items": {
+                        "properties": {
+                            "index_name": {
+                                "type": "string"
+                            },
+                            "index_status": {
+                                "type": "string"
+                            },
+                            "keys": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "partition_keys": {
+                    "items": {
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "query_as_of_time": {
+                    "type": "string"
+                },
+                "retention": {
+                    "type": "number"
+                },
+                "storage_descriptor": {
+                    "items": {
+                        "properties": {
+                            "additional_locations": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "bucket_columns": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "columns": {
+                                "items": {
+                                    "properties": {
+                                        "comment": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "parameters": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "compressed": {
+                                "type": "boolean"
+                            },
+                            "input_format": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "string"
+                            },
+                            "number_of_buckets": {
+                                "type": "number"
+                            },
+                            "output_format": {
+                                "type": "string"
+                            },
+                            "parameters": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "schema_reference": {
+                                "items": {
+                                    "properties": {
+                                        "schema_id": {
+                                            "items": {
+                                                "properties": {
+                                                    "registry_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "schema_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "schema_name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "schema_version_id": {
+                                            "type": "string"
+                                        },
+                                        "schema_version_number": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "ser_de_info": {
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "parameters": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "serialization_library": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "skewed_info": {
+                                "items": {
+                                    "properties": {
+                                        "skewed_column_names": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "skewed_column_value_location_maps": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "skewed_column_values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "sort_columns": {
+                                "items": {
+                                    "properties": {
+                                        "column": {
+                                            "type": "string"
+                                        },
+                                        "sort_order": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "stored_as_sub_directories": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "table_type": {
+                    "type": "string"
+                },
+                "target_table": {
+                    "items": {
+                        "properties": {
+                            "catalog_id": {
+                                "type": "string"
+                            },
+                            "database_name": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "transaction_id": {
+                    "type": "number"
+                },
+                "view_expanded_text": {
+                    "type": "string"
+                },
+                "view_original_text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "database_name",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_connection": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "connection_properties": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "connection_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "match_criteria": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "physical_connection_requirements": {
+                    "items": {
+                        "properties": {
+                            "availability_zone": {
+                                "type": "string"
+                            },
+                            "security_group_id_list": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "subnet_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "aws_glue_data_catalog_encryption_settings": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_catalog_encryption_settings": {
+                    "items": {
+                        "properties": {
+                            "connection_password_encryption": {
+                                "items": {
+                                    "properties": {
+                                        "aws_kms_key_id": {
+                                            "type": "string"
+                                        },
+                                        "return_connection_password_encrypted": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "encryption_at_rest": {
+                                "items": {
+                                    "properties": {
+                                        "catalog_encryption_mode": {
+                                            "type": "string"
+                                        },
+                                        "catalog_encryption_service_role": {
+                                            "type": "string"
+                                        },
+                                        "sse_aws_kms_key_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "catalog_id"
+            ],
+            "type": "object"
+        },
+        "aws_glue_registry": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_script": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "dag_edge": {
+                    "items": {
+                        "properties": {
+                            "source": {
+                                "type": "string"
+                            },
+                            "target": {
+                                "type": "string"
+                            },
+                            "target_parameter": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "target"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "dag_node": {
+                    "items": {
+                        "properties": {
+                            "args": {
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "param": {
+                                            "type": "boolean"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "name",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "line_number": {
+                                "type": "number"
+                            },
+                            "node_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "args",
+                            "id",
+                            "node_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "python_script": {
+                    "type": "string"
+                },
+                "scala_code": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dag_edge",
+                "dag_node"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_glue_catalog_table": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_catalog_table"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_connection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_connection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_data_catalog_encryption_settings": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_data_catalog_encryption_settings"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_registry": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_registry"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_script": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_script"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

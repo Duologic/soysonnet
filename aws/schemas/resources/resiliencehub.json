@@ -1,0 +1,220 @@
+{
+    "$defs": {
+        "aws_resiliencehub_resiliency_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_location_constraint": {
+                    "description": "Specifies a high-level geographical location constraint for where resilience policy data can be stored.",
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "The description for the policy.",
+                    "type": "string"
+                },
+                "estimated_cost_tier": {
+                    "description": "Specifies the estimated cost tier of the resiliency policy.",
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "description": "The name of the policy.",
+                    "type": "string"
+                },
+                "policy": {
+                    "properties": {
+                        "az": {
+                            "properties": {
+                                "rpo": {
+                                    "description": "Recovery Point Objective (RPO) as a Go duration.",
+                                    "type": "string"
+                                },
+                                "rto": {
+                                    "description": "Recovery Time Objective (RTO) as a Go duration.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "rpo",
+                                "rto"
+                            ],
+                            "type": "object"
+                        },
+                        "hardware": {
+                            "properties": {
+                                "rpo": {
+                                    "description": "Recovery Point Objective (RPO) as a Go duration.",
+                                    "type": "string"
+                                },
+                                "rto": {
+                                    "description": "Recovery Time Objective (RTO) as a Go duration.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "rpo",
+                                "rto"
+                            ],
+                            "type": "object"
+                        },
+                        "region": {
+                            "properties": {
+                                "rpo": {
+                                    "description": "Recovery Point Objective (RPO) as a Go duration.",
+                                    "type": "string"
+                                },
+                                "rto": {
+                                    "description": "Recovery Time Objective (RTO) as a Go duration.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "software": {
+                            "properties": {
+                                "rpo": {
+                                    "description": "Recovery Point Objective (RPO) as a Go duration.",
+                                    "type": "string"
+                                },
+                                "rto": {
+                                    "description": "Recovery Time Objective (RTO) as a Go duration.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "rpo",
+                                "rto"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tier": {
+                    "description": "The tier for the resiliency policy, ranging from the highest severity (MissionCritical) to lowest (NonCritical).",
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "tier"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_resiliencehub_resiliency_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_resiliencehub_resiliency_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

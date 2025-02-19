@@ -1,0 +1,210 @@
+{
+    "$defs": {
+        "aws_drs_replication_configuration_template": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "associate_default_security_group": {
+                    "type": "boolean"
+                },
+                "auto_replicate_new_disks": {
+                    "type": "boolean"
+                },
+                "bandwidth_throttling": {
+                    "type": "number"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_public_ip": {
+                    "type": "boolean"
+                },
+                "data_plane_routing": {
+                    "type": "string"
+                },
+                "default_large_staging_disk_type": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "ebs_encryption": {
+                    "type": "string"
+                },
+                "ebs_encryption_key_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "pit_policy": {
+                    "items": {
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "interval": {
+                                "type": "number"
+                            },
+                            "retention_duration": {
+                                "type": "number"
+                            },
+                            "rule_id": {
+                                "type": "number"
+                            },
+                            "units": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "interval",
+                            "retention_duration",
+                            "units"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "replication_server_instance_type": {
+                    "type": "string"
+                },
+                "replication_servers_security_groups_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "staging_area_subnet_id": {
+                    "type": "string"
+                },
+                "staging_area_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "use_dedicated_replication_server": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "associate_default_security_group",
+                "bandwidth_throttling",
+                "create_public_ip",
+                "data_plane_routing",
+                "default_large_staging_disk_type",
+                "ebs_encryption",
+                "replication_server_instance_type",
+                "replication_servers_security_groups_ids",
+                "staging_area_subnet_id",
+                "staging_area_tags",
+                "use_dedicated_replication_server"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_drs_replication_configuration_template": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_drs_replication_configuration_template"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

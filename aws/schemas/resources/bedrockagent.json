@@ -1,0 +1,2070 @@
+{
+    "$defs": {
+        "aws_bedrockagent_agent": {
+            "properties": {
+                "agent_arn": {
+                    "type": "string"
+                },
+                "agent_collaboration": {
+                    "type": "string"
+                },
+                "agent_id": {
+                    "type": "string"
+                },
+                "agent_name": {
+                    "type": "string"
+                },
+                "agent_resource_role_arn": {
+                    "type": "string"
+                },
+                "agent_version": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "customer_encryption_key_arn": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "foundation_model": {
+                    "type": "string"
+                },
+                "guardrail_configuration": {
+                    "items": {
+                        "properties": {
+                            "guardrail_identifier": {
+                                "type": "string"
+                            },
+                            "guardrail_version": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "idle_session_ttl_in_seconds": {
+                    "type": "number"
+                },
+                "instruction": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "prepare_agent": {
+                    "type": "boolean"
+                },
+                "prompt_override_configuration": {
+                    "items": {
+                        "properties": {
+                            "override_lambda": {
+                                "type": "string"
+                            },
+                            "prompt_configurations": {
+                                "items": {
+                                    "properties": {
+                                        "base_prompt_template": {
+                                            "type": "string"
+                                        },
+                                        "inference_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "max_length": {
+                                                        "type": "number"
+                                                    },
+                                                    "stop_sequences": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "temperature": {
+                                                        "type": "number"
+                                                    },
+                                                    "top_k": {
+                                                        "type": "number"
+                                                    },
+                                                    "top_p": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "parser_mode": {
+                                            "type": "string"
+                                        },
+                                        "prompt_creation_mode": {
+                                            "type": "string"
+                                        },
+                                        "prompt_state": {
+                                            "type": "string"
+                                        },
+                                        "prompt_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "skip_resource_in_use_check": {
+                    "type": "boolean"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "agent_name",
+                "agent_resource_role_arn",
+                "foundation_model"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_agent_action_group": {
+            "properties": {
+                "action_group_executor": {
+                    "items": {
+                        "properties": {
+                            "custom_control": {
+                                "type": "string"
+                            },
+                            "lambda": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "action_group_id": {
+                    "type": "string"
+                },
+                "action_group_name": {
+                    "type": "string"
+                },
+                "action_group_state": {
+                    "type": "string"
+                },
+                "agent_id": {
+                    "type": "string"
+                },
+                "agent_version": {
+                    "type": "string"
+                },
+                "api_schema": {
+                    "items": {
+                        "properties": {
+                            "payload": {
+                                "type": "string"
+                            },
+                            "s3": {
+                                "items": {
+                                    "properties": {
+                                        "s3_bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "s3_object_key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "function_schema": {
+                    "items": {
+                        "properties": {
+                            "member_functions": {
+                                "items": {
+                                    "properties": {
+                                        "functions": {
+                                            "items": {
+                                                "properties": {
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "parameters": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "description": {
+                                                                    "type": "string"
+                                                                },
+                                                                "map_block_key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "required": {
+                                                                    "type": "boolean"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "map_block_key",
+                                                                "type"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "name"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "parent_action_group_signature": {
+                    "type": "string"
+                },
+                "prepare_agent": {
+                    "type": "boolean"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "skip_resource_in_use_check": {
+                    "type": "boolean"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "action_group_name",
+                "agent_id",
+                "agent_version"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_agent_alias": {
+            "properties": {
+                "agent_alias_arn": {
+                    "type": "string"
+                },
+                "agent_alias_id": {
+                    "type": "string"
+                },
+                "agent_alias_name": {
+                    "type": "string"
+                },
+                "agent_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "routing_configuration": {
+                    "items": {
+                        "properties": {
+                            "agent_version": {
+                                "type": "string"
+                            },
+                            "provisioned_throughput": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "agent_alias_name",
+                "agent_id"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_agent_collaborator": {
+            "properties": {
+                "agent_descriptor": {
+                    "items": {
+                        "properties": {
+                            "alias_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "alias_arn"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "agent_id": {
+                    "type": "string"
+                },
+                "agent_version": {
+                    "type": "string"
+                },
+                "collaboration_instruction": {
+                    "type": "string"
+                },
+                "collaborator_id": {
+                    "type": "string"
+                },
+                "collaborator_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "prepare_agent": {
+                    "type": "boolean"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "relay_conversation_history": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "agent_id",
+                "collaboration_instruction",
+                "collaborator_name"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_agent_knowledge_base_association": {
+            "properties": {
+                "agent_id": {
+                    "type": "string"
+                },
+                "agent_version": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "knowledge_base_id": {
+                    "type": "string"
+                },
+                "knowledge_base_state": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "agent_id",
+                "description",
+                "knowledge_base_id",
+                "knowledge_base_state"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_data_source": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "data_deletion_policy": {
+                    "type": "string"
+                },
+                "data_source_configuration": {
+                    "items": {
+                        "properties": {
+                            "confluence_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "crawler_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "filter_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "pattern_object_filter": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "filters": {
+                                                                                "items": {
+                                                                                    "properties": {
+                                                                                        "exclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "inclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "object_type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "required": [
+                                                                                        "object_type"
+                                                                                    ],
+                                                                                    "type": "object"
+                                                                                },
+                                                                                "type": "array"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "type"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "source_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "auth_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "credentials_secret_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "host_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "host_url": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "auth_type",
+                                                    "credentials_secret_arn",
+                                                    "host_type",
+                                                    "host_url"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "s3_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "bucket_arn": {
+                                            "type": "string"
+                                        },
+                                        "bucket_owner_account_id": {
+                                            "type": "string"
+                                        },
+                                        "inclusion_prefixes": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "bucket_arn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "salesforce_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "crawler_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "filter_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "pattern_object_filter": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "filters": {
+                                                                                "items": {
+                                                                                    "properties": {
+                                                                                        "exclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "inclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "object_type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "required": [
+                                                                                        "object_type"
+                                                                                    ],
+                                                                                    "type": "object"
+                                                                                },
+                                                                                "type": "array"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "type"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "source_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "auth_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "credentials_secret_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "host_url": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "auth_type",
+                                                    "credentials_secret_arn",
+                                                    "host_url"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "share_point_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "crawler_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "filter_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "pattern_object_filter": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "filters": {
+                                                                                "items": {
+                                                                                    "properties": {
+                                                                                        "exclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "inclusion_filters": {
+                                                                                            "items": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "type": "array",
+                                                                                            "uniqueItems": true
+                                                                                        },
+                                                                                        "object_type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "required": [
+                                                                                        "object_type"
+                                                                                    ],
+                                                                                    "type": "object"
+                                                                                },
+                                                                                "type": "array"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "type"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "source_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "auth_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "credentials_secret_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "domain": {
+                                                        "type": "string"
+                                                    },
+                                                    "host_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "site_urls": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "tenant_id": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "auth_type",
+                                                    "credentials_secret_arn",
+                                                    "domain",
+                                                    "host_type",
+                                                    "site_urls"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "web_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "crawler_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "crawler_limits": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "max_pages": {
+                                                                    "type": "number"
+                                                                },
+                                                                "rate_limit": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "exclusion_filters": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "inclusion_filters": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "scope": {
+                                                        "type": "string"
+                                                    },
+                                                    "user_agent": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "source_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "url_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "seed_urls": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "url": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "required": [
+
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "data_source_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "knowledge_base_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "server_side_encryption_configuration": {
+                    "items": {
+                        "properties": {
+                            "kms_key_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vector_ingestion_configuration": {
+                    "items": {
+                        "properties": {
+                            "chunking_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "chunking_strategy": {
+                                            "type": "string"
+                                        },
+                                        "fixed_size_chunking_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "max_tokens": {
+                                                        "type": "number"
+                                                    },
+                                                    "overlap_percentage": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "max_tokens",
+                                                    "overlap_percentage"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "hierarchical_chunking_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "level_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "max_tokens": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "max_tokens"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "overlap_tokens": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "overlap_tokens"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "semantic_chunking_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "breakpoint_percentile_threshold": {
+                                                        "type": "number"
+                                                    },
+                                                    "buffer_size": {
+                                                        "type": "number"
+                                                    },
+                                                    "max_token": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "breakpoint_percentile_threshold",
+                                                    "buffer_size",
+                                                    "max_token"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+                                        "chunking_strategy"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "custom_transformation_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "intermediate_storage": {
+                                            "items": {
+                                                "properties": {
+                                                    "s3_location": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "uri": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "uri"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "transformation": {
+                                            "items": {
+                                                "properties": {
+                                                    "step_to_apply": {
+                                                        "type": "string"
+                                                    },
+                                                    "transformation_function": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "transformation_lambda_configuration": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "lambda_arn": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+                                                                            "lambda_arn"
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "required": [
+
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "step_to_apply"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "parsing_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "bedrock_foundation_model_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "model_arn": {
+                                                        "type": "string"
+                                                    },
+                                                    "parsing_prompt": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "parsing_prompt_string": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "parsing_prompt_string"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "model_arn"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "parsing_strategy": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "parsing_strategy"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "knowledge_base_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_bedrockagent_knowledge_base": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "failure_reasons": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "knowledge_base_configuration": {
+                    "items": {
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "vector_knowledge_base_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "embedding_model_arn": {
+                                            "type": "string"
+                                        },
+                                        "embedding_model_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "bedrock_embedding_model_configuration": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "dimensions": {
+                                                                    "type": "number"
+                                                                },
+                                                                "embedding_data_type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "supplemental_data_storage_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "storage_location": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "s3_location": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "uri": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "required": [
+                                                                            "uri"
+                                                                        ],
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "type"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+                                        "embedding_model_arn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "storage_configuration": {
+                    "items": {
+                        "properties": {
+                            "opensearch_serverless_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "collection_arn": {
+                                            "type": "string"
+                                        },
+                                        "field_mapping": {
+                                            "items": {
+                                                "properties": {
+                                                    "metadata_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "text_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "vector_field": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "vector_index_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "collection_arn",
+                                        "vector_index_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "pinecone_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "connection_string": {
+                                            "type": "string"
+                                        },
+                                        "credentials_secret_arn": {
+                                            "type": "string"
+                                        },
+                                        "field_mapping": {
+                                            "items": {
+                                                "properties": {
+                                                    "metadata_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "text_field": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "namespace": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "connection_string",
+                                        "credentials_secret_arn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "rds_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "credentials_secret_arn": {
+                                            "type": "string"
+                                        },
+                                        "database_name": {
+                                            "type": "string"
+                                        },
+                                        "field_mapping": {
+                                            "items": {
+                                                "properties": {
+                                                    "metadata_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "primary_key_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "text_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "vector_field": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "metadata_field",
+                                                    "primary_key_field",
+                                                    "text_field",
+                                                    "vector_field"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "resource_arn": {
+                                            "type": "string"
+                                        },
+                                        "table_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "credentials_secret_arn",
+                                        "database_name",
+                                        "resource_arn",
+                                        "table_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "redis_enterprise_cloud_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "credentials_secret_arn": {
+                                            "type": "string"
+                                        },
+                                        "endpoint": {
+                                            "type": "string"
+                                        },
+                                        "field_mapping": {
+                                            "items": {
+                                                "properties": {
+                                                    "metadata_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "text_field": {
+                                                        "type": "string"
+                                                    },
+                                                    "vector_field": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "vector_index_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "credentials_secret_arn",
+                                        "endpoint",
+                                        "vector_index_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        },
+                        "delete": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.",
+                            "type": "string"
+                        },
+                        "update": {
+                            "description": "A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as \"30s\" or \"2h45m\". Valid time units are \"s\" (seconds), \"m\" (minutes), \"h\" (hours).",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "role_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_bedrockagent_agent": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_agent"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_agent_action_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_agent_action_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_agent_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_agent_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_agent_collaborator": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_agent_collaborator"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_agent_knowledge_base_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_agent_knowledge_base_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_data_source": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_data_source"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrockagent_knowledge_base": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrockagent_knowledge_base"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

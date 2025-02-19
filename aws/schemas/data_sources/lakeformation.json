@@ -1,0 +1,380 @@
+{
+    "$defs": {
+        "aws_lakeformation_data_lake_settings": {
+            "properties": {
+                "admins": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "allow_external_data_filtering": {
+                    "type": "boolean"
+                },
+                "allow_full_table_external_data_access": {
+                    "type": "boolean"
+                },
+                "authorized_session_tag_value_list": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_database_default_permissions": {
+                    "items": {
+                        "properties": {
+                            "permissions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "principal": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "create_table_default_permissions": {
+                    "items": {
+                        "properties": {
+                            "permissions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "principal": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "external_data_filtering_allow_list": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "id": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "read_only_admins": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "trusted_resource_owners": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_lakeformation_permissions": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "catalog_resource": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_cells_filter": {
+                    "properties": {
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "table_catalog_id": {
+                            "type": "string"
+                        },
+                        "table_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "database_name",
+                        "name",
+                        "table_catalog_id",
+                        "table_name"
+                    ],
+                    "type": "object"
+                },
+                "data_location": {
+                    "properties": {
+                        "arn": {
+                            "type": "string"
+                        },
+                        "catalog_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "arn"
+                    ],
+                    "type": "object"
+                },
+                "database": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lf_tag": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "values": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+                        "key",
+                        "values"
+                    ],
+                    "type": "object"
+                },
+                "lf_tag_policy": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "expression": {
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "values": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array",
+                                        "uniqueItems": true
+                                    }
+                                },
+                                "required": [
+                                    "key",
+                                    "values"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "expression",
+                        "resource_type"
+                    ],
+                    "type": "object"
+                },
+                "permissions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "permissions_with_grant_option": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "principal": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "table": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "wildcard": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "database_name"
+                    ],
+                    "type": "object"
+                },
+                "table_with_columns": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "column_names": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "excluded_column_names": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "wildcard": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "database_name",
+                        "name"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "principal"
+            ],
+            "type": "object"
+        },
+        "aws_lakeformation_resource": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_lakeformation_data_lake_settings": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lakeformation_data_lake_settings"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lakeformation_permissions": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lakeformation_permissions"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_lakeformation_resource": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_lakeformation_resource"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,488 @@
+{
+    "$defs": {
+        "aws_kms_alias": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "target_key_arn": {
+                    "type": "string"
+                },
+                "target_key_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_kms_ciphertext": {
+            "properties": {
+                "ciphertext_blob": {
+                    "type": "string"
+                },
+                "context": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_id": {
+                    "type": "string"
+                },
+                "plaintext": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key_id",
+                "plaintext"
+            ],
+            "type": "object"
+        },
+        "aws_kms_custom_key_store": {
+            "properties": {
+                "cloud_hsm_cluster_id": {
+                    "type": "string"
+                },
+                "connection_state": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "custom_key_store_id": {
+                    "type": "string"
+                },
+                "custom_key_store_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "trust_anchor_certificate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_kms_key": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "aws_account_id": {
+                    "type": "string"
+                },
+                "cloud_hsm_cluster_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "custom_key_store_id": {
+                    "type": "string"
+                },
+                "customer_master_key_spec": {
+                    "type": "string"
+                },
+                "deletion_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "expiration_model": {
+                    "type": "string"
+                },
+                "grant_tokens": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_id": {
+                    "type": "string"
+                },
+                "key_manager": {
+                    "type": "string"
+                },
+                "key_spec": {
+                    "type": "string"
+                },
+                "key_state": {
+                    "type": "string"
+                },
+                "key_usage": {
+                    "type": "string"
+                },
+                "multi_region": {
+                    "type": "boolean"
+                },
+                "multi_region_configuration": {
+                    "items": {
+                        "properties": {
+                            "multi_region_key_type": {
+                                "type": "string"
+                            },
+                            "primary_key": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "region": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "replica_keys": {
+                                "items": {
+                                    "properties": {
+                                        "arn": {
+                                            "type": "string"
+                                        },
+                                        "region": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "pending_deletion_window_in_days": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "valid_to": {
+                    "type": "string"
+                },
+                "xks_key_configuration": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "key_id"
+            ],
+            "type": "object"
+        },
+        "aws_kms_public_key": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "customer_master_key_spec": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encryption_algorithms": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "grant_tokens": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key_id": {
+                    "type": "string"
+                },
+                "key_usage": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "public_key": {
+                    "type": "string"
+                },
+                "public_key_pem": {
+                    "type": "string"
+                },
+                "signing_algorithms": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "key_id"
+            ],
+            "type": "object"
+        },
+        "aws_kms_secret": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "secret": {
+                    "items": {
+                        "properties": {
+                            "context": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "grant_tokens": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "payload": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "payload"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "secret"
+            ],
+            "type": "object"
+        },
+        "aws_kms_secrets": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "plaintext": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "secret": {
+                    "items": {
+                        "properties": {
+                            "context": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "encryption_algorithm": {
+                                "type": "string"
+                            },
+                            "grant_tokens": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "key_id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "payload": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "payload"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "secret"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_kms_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_ciphertext": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_ciphertext"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_custom_key_store": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_custom_key_store"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_public_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_public_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_secret": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_secret"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kms_secrets": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kms_secrets"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

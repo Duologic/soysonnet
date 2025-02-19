@@ -1,0 +1,572 @@
+{
+    "$defs": {
+        "aws_api_gateway_api_key": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "customer_id": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_authorizer": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "authorizer_credentials": {
+                    "type": "string"
+                },
+                "authorizer_id": {
+                    "type": "string"
+                },
+                "authorizer_result_ttl_in_seconds": {
+                    "type": "number"
+                },
+                "authorizer_uri": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_source": {
+                    "type": "string"
+                },
+                "identity_validation_expression": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provider_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "rest_api_id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "authorizer_id",
+                "rest_api_id"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_authorizers": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rest_api_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "rest_api_id"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_domain_name": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "certificate_arn": {
+                    "type": "string"
+                },
+                "certificate_name": {
+                    "type": "string"
+                },
+                "certificate_upload_date": {
+                    "type": "string"
+                },
+                "cloudfront_domain_name": {
+                    "type": "string"
+                },
+                "cloudfront_zone_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "domain_name_id": {
+                    "type": "string"
+                },
+                "endpoint_configuration": {
+                    "items": {
+                        "properties": {
+                            "types": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "regional_certificate_arn": {
+                    "type": "string"
+                },
+                "regional_certificate_name": {
+                    "type": "string"
+                },
+                "regional_domain_name": {
+                    "type": "string"
+                },
+                "regional_zone_id": {
+                    "type": "string"
+                },
+                "security_policy": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_name"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_export": {
+            "properties": {
+                "accepts": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "content_disposition": {
+                    "type": "string"
+                },
+                "content_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "export_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rest_api_id": {
+                    "type": "string"
+                },
+                "stage_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "export_type",
+                "rest_api_id",
+                "stage_name"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_resource": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "parent_id": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "path_part": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rest_api_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "path",
+                "rest_api_id"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_rest_api": {
+            "properties": {
+                "api_key_source": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "binary_media_types": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "endpoint_configuration": {
+                    "items": {
+                        "properties": {
+                            "types": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "vpc_endpoint_ids": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "execution_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "minimum_compression_size": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "root_resource_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_sdk": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "content_disposition": {
+                    "type": "string"
+                },
+                "content_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rest_api_id": {
+                    "type": "string"
+                },
+                "sdk_type": {
+                    "type": "string"
+                },
+                "stage_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "rest_api_id",
+                "sdk_type",
+                "stage_name"
+            ],
+            "type": "object"
+        },
+        "aws_api_gateway_vpc_link": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_message": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_api_gateway_api_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_api_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_authorizer": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_authorizer"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_authorizers": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_authorizers"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_domain_name": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_domain_name"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_export": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_export"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_resource": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_resource"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_rest_api": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_rest_api"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_sdk": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_sdk"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_api_gateway_vpc_link": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_api_gateway_vpc_link"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

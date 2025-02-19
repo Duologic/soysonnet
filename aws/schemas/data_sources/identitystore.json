@@ -1,0 +1,406 @@
+{
+    "$defs": {
+        "aws_identitystore_group": {
+            "properties": {
+                "alternate_identifier": {
+                    "properties": {
+                        "external_id": {
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "issuer": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "issuer"
+                            ],
+                            "type": "object"
+                        },
+                        "unique_attribute": {
+                            "properties": {
+                                "attribute_path": {
+                                    "type": "string"
+                                },
+                                "attribute_value": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "attribute_path",
+                                "attribute_value"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "external_ids": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "issuer": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "properties": {
+                        "attribute_path": {
+                            "type": "string"
+                        },
+                        "attribute_value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "attribute_path",
+                        "attribute_value"
+                    ],
+                    "type": "object"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_store_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identity_store_id"
+            ],
+            "type": "object"
+        },
+        "aws_identitystore_groups": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "groups": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "external_ids": {
+                                "items": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "issuer": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "group_id": {
+                                "type": "string"
+                            },
+                            "identity_store_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "identity_store_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identity_store_id"
+            ],
+            "type": "object"
+        },
+        "aws_identitystore_user": {
+            "properties": {
+                "addresses": {
+                    "items": {
+                        "properties": {
+                            "country": {
+                                "type": "string"
+                            },
+                            "formatted": {
+                                "type": "string"
+                            },
+                            "locality": {
+                                "type": "string"
+                            },
+                            "postal_code": {
+                                "type": "string"
+                            },
+                            "primary": {
+                                "type": "boolean"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "street_address": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "alternate_identifier": {
+                    "properties": {
+                        "external_id": {
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "issuer": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "issuer"
+                            ],
+                            "type": "object"
+                        },
+                        "unique_attribute": {
+                            "properties": {
+                                "attribute_path": {
+                                    "type": "string"
+                                },
+                                "attribute_value": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "attribute_path",
+                                "attribute_value"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "emails": {
+                    "items": {
+                        "properties": {
+                            "primary": {
+                                "type": "boolean"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "external_ids": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "issuer": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "properties": {
+                        "attribute_path": {
+                            "type": "string"
+                        },
+                        "attribute_value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "attribute_path",
+                        "attribute_value"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_store_id": {
+                    "type": "string"
+                },
+                "locale": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "properties": {
+                            "family_name": {
+                                "type": "string"
+                            },
+                            "formatted": {
+                                "type": "string"
+                            },
+                            "given_name": {
+                                "type": "string"
+                            },
+                            "honorific_prefix": {
+                                "type": "string"
+                            },
+                            "honorific_suffix": {
+                                "type": "string"
+                            },
+                            "middle_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "phone_numbers": {
+                    "items": {
+                        "properties": {
+                            "primary": {
+                                "type": "boolean"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "preferred_language": {
+                    "type": "string"
+                },
+                "profile_url": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "timezone": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                },
+                "user_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identity_store_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_identitystore_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_identitystore_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_identitystore_groups": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_identitystore_groups"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_identitystore_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_identitystore_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,2989 @@
+{
+    "$defs": {
+        "aws_kinesis_analytics_application": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cloudwatch_logging_options": {
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "log_stream_arn": {
+                            "type": "string"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "log_stream_arn",
+                        "role_arn"
+                    ],
+                    "type": "object"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_timestamp": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "inputs": {
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "kinesis_firehose": {
+                            "properties": {
+                                "resource_arn": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "resource_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "kinesis_stream": {
+                            "properties": {
+                                "resource_arn": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "resource_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "name_prefix": {
+                            "type": "string"
+                        },
+                        "parallelism": {
+                            "properties": {
+                                "count": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "lambda": {
+                                    "properties": {
+                                        "resource_arn": {
+                                            "type": "string"
+                                        },
+                                        "role_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "resource_arn",
+                                        "role_arn"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "lambda"
+                            ],
+                            "type": "object"
+                        },
+                        "schema": {
+                            "properties": {
+                                "record_columns": {
+                                    "items": {
+                                        "properties": {
+                                            "mapping": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "sql_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "sql_type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "record_encoding": {
+                                    "type": "string"
+                                },
+                                "record_format": {
+                                    "properties": {
+                                        "mapping_parameters": {
+                                            "properties": {
+                                                "csv": {
+                                                    "properties": {
+                                                        "record_column_delimiter": {
+                                                            "type": "string"
+                                                        },
+                                                        "record_row_delimiter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "record_column_delimiter",
+                                                        "record_row_delimiter"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "json": {
+                                                    "properties": {
+                                                        "record_row_path": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "record_row_path"
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "record_format_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "record_columns",
+                                "record_format"
+                            ],
+                            "type": "object"
+                        },
+                        "starting_position_configuration": {
+                            "items": {
+                                "properties": {
+                                    "starting_position": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "stream_names": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "name_prefix",
+                        "schema"
+                    ],
+                    "type": "object"
+                },
+                "last_update_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "outputs": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "kinesis_firehose": {
+                                "properties": {
+                                    "resource_arn": {
+                                        "type": "string"
+                                    },
+                                    "role_arn": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "resource_arn",
+                                    "role_arn"
+                                ],
+                                "type": "object"
+                            },
+                            "kinesis_stream": {
+                                "properties": {
+                                    "resource_arn": {
+                                        "type": "string"
+                                    },
+                                    "role_arn": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "resource_arn",
+                                    "role_arn"
+                                ],
+                                "type": "object"
+                            },
+                            "lambda": {
+                                "properties": {
+                                    "resource_arn": {
+                                        "type": "string"
+                                    },
+                                    "role_arn": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "resource_arn",
+                                    "role_arn"
+                                ],
+                                "type": "object"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "schema": {
+                                "properties": {
+                                    "record_format_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "record_format_type"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "schema"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "reference_data_sources": {
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "s3": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "file_key": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "file_key",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "schema": {
+                            "properties": {
+                                "record_columns": {
+                                    "items": {
+                                        "properties": {
+                                            "mapping": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "sql_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "sql_type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "record_encoding": {
+                                    "type": "string"
+                                },
+                                "record_format": {
+                                    "properties": {
+                                        "mapping_parameters": {
+                                            "properties": {
+                                                "csv": {
+                                                    "properties": {
+                                                        "record_column_delimiter": {
+                                                            "type": "string"
+                                                        },
+                                                        "record_row_delimiter": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "record_column_delimiter",
+                                                        "record_row_delimiter"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "json": {
+                                                    "properties": {
+                                                        "record_row_path": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "record_row_path"
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "record_format_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "record_columns",
+                                "record_format"
+                            ],
+                            "type": "object"
+                        },
+                        "table_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "s3",
+                        "schema",
+                        "table_name"
+                    ],
+                    "type": "object"
+                },
+                "start_application": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_kinesis_firehose_delivery_stream": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "destination": {
+                    "type": "string"
+                },
+                "destination_id": {
+                    "type": "string"
+                },
+                "elasticsearch_configuration": {
+                    "properties": {
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "cluster_endpoint": {
+                            "type": "string"
+                        },
+                        "domain_arn": {
+                            "type": "string"
+                        },
+                        "index_name": {
+                            "type": "string"
+                        },
+                        "index_rotation_period": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "type_name": {
+                            "type": "string"
+                        },
+                        "vpc_config": {
+                            "properties": {
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "security_group_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "subnet_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "vpc_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "role_arn",
+                                "security_group_ids",
+                                "subnet_ids"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "index_name",
+                        "role_arn",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "extended_s3_configuration": {
+                    "properties": {
+                        "bucket_arn": {
+                            "type": "string"
+                        },
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "compression_format": {
+                            "type": "string"
+                        },
+                        "custom_time_zone": {
+                            "type": "string"
+                        },
+                        "data_format_conversion_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "input_format_configuration": {
+                                    "properties": {
+                                        "deserializer": {
+                                            "properties": {
+                                                "hive_json_ser_de": {
+                                                    "properties": {
+                                                        "timestamp_formats": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "open_x_json_ser_de": {
+                                                    "properties": {
+                                                        "case_insensitive": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "column_to_json_key_mappings": {
+                                                            "additionalProperties": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "convert_dots_in_json_keys_to_underscores": {
+                                                            "type": "boolean"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "deserializer"
+                                    ],
+                                    "type": "object"
+                                },
+                                "output_format_configuration": {
+                                    "properties": {
+                                        "serializer": {
+                                            "properties": {
+                                                "orc_ser_de": {
+                                                    "properties": {
+                                                        "block_size_bytes": {
+                                                            "type": "number"
+                                                        },
+                                                        "bloom_filter_columns": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "bloom_filter_false_positive_probability": {
+                                                            "type": "number"
+                                                        },
+                                                        "compression": {
+                                                            "type": "string"
+                                                        },
+                                                        "dictionary_key_threshold": {
+                                                            "type": "number"
+                                                        },
+                                                        "enable_padding": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "format_version": {
+                                                            "type": "string"
+                                                        },
+                                                        "padding_tolerance": {
+                                                            "type": "number"
+                                                        },
+                                                        "row_index_stride": {
+                                                            "type": "number"
+                                                        },
+                                                        "stripe_size_bytes": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "parquet_ser_de": {
+                                                    "properties": {
+                                                        "block_size_bytes": {
+                                                            "type": "number"
+                                                        },
+                                                        "compression": {
+                                                            "type": "string"
+                                                        },
+                                                        "enable_dictionary_compression": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "max_padding_bytes": {
+                                                            "type": "number"
+                                                        },
+                                                        "page_size_bytes": {
+                                                            "type": "number"
+                                                        },
+                                                        "writer_version": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "serializer"
+                                    ],
+                                    "type": "object"
+                                },
+                                "schema_configuration": {
+                                    "properties": {
+                                        "catalog_id": {
+                                            "type": "string"
+                                        },
+                                        "database_name": {
+                                            "type": "string"
+                                        },
+                                        "region": {
+                                            "type": "string"
+                                        },
+                                        "role_arn": {
+                                            "type": "string"
+                                        },
+                                        "table_name": {
+                                            "type": "string"
+                                        },
+                                        "version_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "database_name",
+                                        "role_arn",
+                                        "table_name"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "input_format_configuration",
+                                "output_format_configuration",
+                                "schema_configuration"
+                            ],
+                            "type": "object"
+                        },
+                        "dynamic_partitioning_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "retry_duration": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "error_output_prefix": {
+                            "type": "string"
+                        },
+                        "file_extension": {
+                            "type": "string"
+                        },
+                        "kms_key_arn": {
+                            "type": "string"
+                        },
+                        "prefix": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bucket_arn",
+                        "role_arn"
+                    ],
+                    "type": "object"
+                },
+                "http_endpoint_configuration": {
+                    "properties": {
+                        "access_key": {
+                            "type": "string"
+                        },
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "request_configuration": {
+                            "properties": {
+                                "common_attributes": {
+                                    "items": {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "content_encoding": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "secrets_manager_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "secret_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "s3_configuration",
+                        "url"
+                    ],
+                    "type": "object"
+                },
+                "iceberg_configuration": {
+                    "properties": {
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "catalog_arn": {
+                            "type": "string"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "destination_table_configuration": {
+                            "items": {
+                                "properties": {
+                                    "database_name": {
+                                        "type": "string"
+                                    },
+                                    "s3_error_output_prefix": {
+                                        "type": "string"
+                                    },
+                                    "table_name": {
+                                        "type": "string"
+                                    },
+                                    "unique_keys": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "database_name",
+                                    "table_name"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "catalog_arn",
+                        "role_arn",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kinesis_source_configuration": {
+                    "properties": {
+                        "kinesis_stream_arn": {
+                            "type": "string"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "kinesis_stream_arn",
+                        "role_arn"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "msk_source_configuration": {
+                    "properties": {
+                        "authentication_configuration": {
+                            "properties": {
+                                "connectivity": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "connectivity",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "msk_cluster_arn": {
+                            "type": "string"
+                        },
+                        "topic_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "authentication_configuration",
+                        "msk_cluster_arn",
+                        "topic_name"
+                    ],
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "opensearch_configuration": {
+                    "properties": {
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "cluster_endpoint": {
+                            "type": "string"
+                        },
+                        "document_id_options": {
+                            "properties": {
+                                "default_document_id_format": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "default_document_id_format"
+                            ],
+                            "type": "object"
+                        },
+                        "domain_arn": {
+                            "type": "string"
+                        },
+                        "index_name": {
+                            "type": "string"
+                        },
+                        "index_rotation_period": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "type_name": {
+                            "type": "string"
+                        },
+                        "vpc_config": {
+                            "properties": {
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "security_group_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "subnet_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "vpc_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "role_arn",
+                                "security_group_ids",
+                                "subnet_ids"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "index_name",
+                        "role_arn",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "opensearchserverless_configuration": {
+                    "properties": {
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "collection_endpoint": {
+                            "type": "string"
+                        },
+                        "index_name": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "vpc_config": {
+                            "properties": {
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "security_group_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "subnet_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "vpc_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "role_arn",
+                                "security_group_ids",
+                                "subnet_ids"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "collection_endpoint",
+                        "index_name",
+                        "role_arn",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "redshift_configuration": {
+                    "properties": {
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "cluster_jdbcurl": {
+                            "type": "string"
+                        },
+                        "copy_options": {
+                            "type": "string"
+                        },
+                        "data_table_columns": {
+                            "type": "string"
+                        },
+                        "data_table_name": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "secrets_manager_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "secret_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "username": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "cluster_jdbcurl",
+                        "data_table_name",
+                        "role_arn",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "server_side_encryption": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "key_arn": {
+                            "type": "string"
+                        },
+                        "key_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "snowflake_configuration": {
+                    "properties": {
+                        "account_url": {
+                            "type": "string"
+                        },
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "content_column_name": {
+                            "type": "string"
+                        },
+                        "data_loading_option": {
+                            "type": "string"
+                        },
+                        "database": {
+                            "type": "string"
+                        },
+                        "key_passphrase": {
+                            "type": "string"
+                        },
+                        "metadata_column_name": {
+                            "type": "string"
+                        },
+                        "private_key": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "role_arn": {
+                            "type": "string"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "schema": {
+                            "type": "string"
+                        },
+                        "secrets_manager_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "secret_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "snowflake_role_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "snowflake_role": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "snowflake_vpc_configuration": {
+                            "properties": {
+                                "private_link_vpce_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "private_link_vpce_id"
+                            ],
+                            "type": "object"
+                        },
+                        "table": {
+                            "type": "string"
+                        },
+                        "user": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "account_url",
+                        "database",
+                        "role_arn",
+                        "s3_configuration",
+                        "schema",
+                        "table"
+                    ],
+                    "type": "object"
+                },
+                "splunk_configuration": {
+                    "properties": {
+                        "buffering_interval": {
+                            "type": "number"
+                        },
+                        "buffering_size": {
+                            "type": "number"
+                        },
+                        "cloudwatch_logging_options": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group_name": {
+                                    "type": "string"
+                                },
+                                "log_stream_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "hec_acknowledgment_timeout": {
+                            "type": "number"
+                        },
+                        "hec_endpoint": {
+                            "type": "string"
+                        },
+                        "hec_endpoint_type": {
+                            "type": "string"
+                        },
+                        "hec_token": {
+                            "type": "string"
+                        },
+                        "processing_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "processors": {
+                                    "items": {
+                                        "properties": {
+                                            "parameters": {
+                                                "items": {
+                                                    "properties": {
+                                                        "parameter_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "parameter_value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "parameter_name",
+                                                        "parameter_value"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "retry_duration": {
+                            "type": "number"
+                        },
+                        "s3_backup_mode": {
+                            "type": "string"
+                        },
+                        "s3_configuration": {
+                            "properties": {
+                                "bucket_arn": {
+                                    "type": "string"
+                                },
+                                "buffering_interval": {
+                                    "type": "number"
+                                },
+                                "buffering_size": {
+                                    "type": "number"
+                                },
+                                "cloudwatch_logging_options": {
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "log_group_name": {
+                                            "type": "string"
+                                        },
+                                        "log_stream_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "compression_format": {
+                                    "type": "string"
+                                },
+                                "error_output_prefix": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bucket_arn",
+                                "role_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "secrets_manager_configuration": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "secret_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "hec_endpoint",
+                        "s3_configuration"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "version_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "destination",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_kinesis_resource_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "policy",
+                "resource_arn"
+            ],
+            "type": "object"
+        },
+        "aws_kinesis_stream": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encryption_type": {
+                    "type": "string"
+                },
+                "enforce_consumer_deletion": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "retention_period": {
+                    "type": "number"
+                },
+                "shard_count": {
+                    "type": "number"
+                },
+                "shard_level_metrics": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "stream_mode_details": {
+                    "properties": {
+                        "stream_mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "stream_mode"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_kinesis_stream_consumer": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_timestamp": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "stream_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "stream_arn"
+            ],
+            "type": "object"
+        },
+        "aws_kinesis_video_stream": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "data_retention_in_hours": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "device_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "media_type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_kinesis_analytics_application": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_analytics_application"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kinesis_firehose_delivery_stream": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_firehose_delivery_stream"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kinesis_resource_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_resource_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kinesis_stream": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_stream"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kinesis_stream_consumer": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_stream_consumer"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_kinesis_video_stream": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_kinesis_video_stream"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

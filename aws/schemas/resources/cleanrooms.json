@@ -1,0 +1,557 @@
+{
+    "$defs": {
+        "aws_cleanrooms_collaboration": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "creator_display_name": {
+                    "type": "string"
+                },
+                "creator_member_abilities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "data_encryption_metadata": {
+                    "properties": {
+                        "allow_clear_text": {
+                            "type": "boolean"
+                        },
+                        "allow_duplicates": {
+                            "type": "boolean"
+                        },
+                        "allow_joins_on_columns_with_different_names": {
+                            "type": "boolean"
+                        },
+                        "preserve_nulls": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "allow_clear_text",
+                        "allow_duplicates",
+                        "allow_joins_on_columns_with_different_names",
+                        "preserve_nulls"
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "member": {
+                    "items": {
+                        "properties": {
+                            "account_id": {
+                                "type": "string"
+                            },
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "member_abilities": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "account_id",
+                            "display_name",
+                            "member_abilities"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "query_log_status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "creator_display_name",
+                "creator_member_abilities",
+                "description",
+                "name",
+                "query_log_status"
+            ],
+            "type": "object"
+        },
+        "aws_cleanrooms_configured_table": {
+            "properties": {
+                "allowed_columns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "analysis_method": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "table_reference": {
+                    "properties": {
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "table_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "database_name",
+                        "table_name"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "allowed_columns",
+                "analysis_method",
+                "name",
+                "table_reference"
+            ],
+            "type": "object"
+        },
+        "aws_cleanrooms_membership": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "collaboration_arn": {
+                    "type": "string"
+                },
+                "collaboration_creator_account_id": {
+                    "type": "string"
+                },
+                "collaboration_creator_display_name": {
+                    "type": "string"
+                },
+                "collaboration_id": {
+                    "type": "string"
+                },
+                "collaboration_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "default_result_configuration": {
+                    "items": {
+                        "properties": {
+                            "output_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "s3": {
+                                            "items": {
+                                                "properties": {
+                                                    "bucket": {
+                                                        "type": "string"
+                                                    },
+                                                    "key_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "result_format": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "bucket",
+                                                    "result_format"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "role_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "member_abilities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "payment_configuration": {
+                    "items": {
+                        "properties": {
+                            "query_compute": {
+                                "items": {
+                                    "properties": {
+                                        "is_responsible": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "is_responsible"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "query_log_status": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "update_time": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "collaboration_id",
+                "query_log_status"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_cleanrooms_collaboration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cleanrooms_collaboration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cleanrooms_configured_table": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cleanrooms_configured_table"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cleanrooms_membership": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cleanrooms_membership"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

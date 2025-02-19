@@ -1,0 +1,726 @@
+{
+    "$defs": {
+        "aws_codedeploy_app": {
+            "properties": {
+                "application_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "compute_platform": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "github_account_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "linked_to_github": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_codedeploy_deployment_config": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "compute_platform": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_config_id": {
+                    "type": "string"
+                },
+                "deployment_config_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "minimum_healthy_hosts": {
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "traffic_routing_config": {
+                    "properties": {
+                        "time_based_canary": {
+                            "properties": {
+                                "interval": {
+                                    "type": "number"
+                                },
+                                "percentage": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "time_based_linear": {
+                            "properties": {
+                                "interval": {
+                                    "type": "number"
+                                },
+                                "percentage": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "zonal_config": {
+                    "properties": {
+                        "first_zone_monitor_duration_in_seconds": {
+                            "type": "number"
+                        },
+                        "minimum_healthy_hosts_per_zone": {
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "monitor_duration_in_seconds": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "deployment_config_name"
+            ],
+            "type": "object"
+        },
+        "aws_codedeploy_deployment_group": {
+            "properties": {
+                "alarm_configuration": {
+                    "properties": {
+                        "alarms": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "ignore_poll_alarm_failure": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "app_name": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "auto_rollback_configuration": {
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "events": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "autoscaling_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "blue_green_deployment_config": {
+                    "properties": {
+                        "deployment_ready_option": {
+                            "properties": {
+                                "action_on_timeout": {
+                                    "type": "string"
+                                },
+                                "wait_time_in_minutes": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "green_fleet_provisioning_option": {
+                            "properties": {
+                                "action": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "terminate_blue_instances_on_deployment_success": {
+                            "properties": {
+                                "action": {
+                                    "type": "string"
+                                },
+                                "termination_wait_time_in_minutes": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "compute_platform": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_config_name": {
+                    "type": "string"
+                },
+                "deployment_group_id": {
+                    "type": "string"
+                },
+                "deployment_group_name": {
+                    "type": "string"
+                },
+                "deployment_style": {
+                    "properties": {
+                        "deployment_option": {
+                            "type": "string"
+                        },
+                        "deployment_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "ec2_tag_filter": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ec2_tag_set": {
+                    "items": {
+                        "properties": {
+                            "ec2_tag_filter": {
+                                "items": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ecs_service": {
+                    "properties": {
+                        "cluster_name": {
+                            "type": "string"
+                        },
+                        "service_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "cluster_name",
+                        "service_name"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "load_balancer_info": {
+                    "properties": {
+                        "elb_info": {
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "target_group_info": {
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "target_group_pair_info": {
+                            "properties": {
+                                "prod_traffic_route": {
+                                    "properties": {
+                                        "listener_arns": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "listener_arns"
+                                    ],
+                                    "type": "object"
+                                },
+                                "target_group": {
+                                    "items": {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "test_traffic_route": {
+                                    "properties": {
+                                        "listener_arns": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "listener_arns"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "prod_traffic_route",
+                                "target_group"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "on_premises_instance_tag_filter": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "outdated_instances_strategy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "service_role_arn": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "termination_hook_enabled": {
+                    "type": "boolean"
+                },
+                "trigger_configuration": {
+                    "items": {
+                        "properties": {
+                            "trigger_events": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "trigger_name": {
+                                "type": "string"
+                            },
+                            "trigger_target_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "trigger_events",
+                            "trigger_name",
+                            "trigger_target_arn"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "app_name",
+                "deployment_group_name",
+                "service_role_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_codedeploy_app": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codedeploy_app"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codedeploy_deployment_config": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codedeploy_deployment_config"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codedeploy_deployment_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codedeploy_deployment_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

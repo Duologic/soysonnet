@@ -1,0 +1,1379 @@
+{
+    "$defs": {
+        "aws_finspace_kx_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_scaling_configuration": {
+                    "properties": {
+                        "auto_scaling_metric": {
+                            "type": "string"
+                        },
+                        "max_node_count": {
+                            "type": "number"
+                        },
+                        "metric_target": {
+                            "type": "number"
+                        },
+                        "min_node_count": {
+                            "type": "number"
+                        },
+                        "scale_in_cooldown_seconds": {
+                            "type": "number"
+                        },
+                        "scale_out_cooldown_seconds": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "auto_scaling_metric",
+                        "max_node_count",
+                        "metric_target",
+                        "min_node_count",
+                        "scale_in_cooldown_seconds",
+                        "scale_out_cooldown_seconds"
+                    ],
+                    "type": "object"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "az_mode": {
+                    "type": "string"
+                },
+                "cache_storage_configurations": {
+                    "items": {
+                        "properties": {
+                            "size": {
+                                "type": "number"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "size",
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "capacity_configuration": {
+                    "properties": {
+                        "node_count": {
+                            "type": "number"
+                        },
+                        "node_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "node_count",
+                        "node_type"
+                    ],
+                    "type": "object"
+                },
+                "code": {
+                    "properties": {
+                        "s3_bucket": {
+                            "type": "string"
+                        },
+                        "s3_key": {
+                            "type": "string"
+                        },
+                        "s3_object_version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "s3_bucket",
+                        "s3_key"
+                    ],
+                    "type": "object"
+                },
+                "command_line_arguments": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "database": {
+                    "items": {
+                        "properties": {
+                            "cache_configurations": {
+                                "items": {
+                                    "properties": {
+                                        "cache_type": {
+                                            "type": "string"
+                                        },
+                                        "db_paths": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+                                        "cache_type"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "changeset_id": {
+                                "type": "string"
+                            },
+                            "database_name": {
+                                "type": "string"
+                            },
+                            "dataview_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "database_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "execution_role": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "initialization_script": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "release_label": {
+                    "type": "string"
+                },
+                "savedown_storage_configuration": {
+                    "properties": {
+                        "size": {
+                            "type": "number"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "volume_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "scaling_group_configuration": {
+                    "properties": {
+                        "cpu": {
+                            "type": "number"
+                        },
+                        "memory_limit": {
+                            "type": "number"
+                        },
+                        "memory_reservation": {
+                            "type": "number"
+                        },
+                        "node_count": {
+                            "type": "number"
+                        },
+                        "scaling_group_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "memory_reservation",
+                        "node_count",
+                        "scaling_group_name"
+                    ],
+                    "type": "object"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_reason": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tickerplant_log_configuration": {
+                    "items": {
+                        "properties": {
+                            "tickerplant_log_volumes": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "tickerplant_log_volumes"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "vpc_configuration": {
+                    "properties": {
+                        "ip_address_type": {
+                            "type": "string"
+                        },
+                        "security_group_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnet_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "vpc_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "ip_address_type",
+                        "security_group_ids",
+                        "subnet_ids",
+                        "vpc_id"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "az_mode",
+                "environment_id",
+                "name",
+                "release_label",
+                "type",
+                "vpc_configuration"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_database": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "environment_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_dataview": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_update": {
+                    "type": "boolean"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "az_mode": {
+                    "type": "string"
+                },
+                "changeset_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "read_write": {
+                    "type": "boolean"
+                },
+                "segment_configurations": {
+                    "items": {
+                        "properties": {
+                            "db_paths": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "on_demand": {
+                                "type": "boolean"
+                            },
+                            "volume_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "db_paths",
+                            "volume_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "auto_update",
+                "az_mode",
+                "database_name",
+                "environment_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_environment": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zones": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "custom_dns_configuration": {
+                    "items": {
+                        "properties": {
+                            "custom_dns_server_ip": {
+                                "type": "string"
+                            },
+                            "custom_dns_server_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "custom_dns_server_ip",
+                            "custom_dns_server_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "infrastructure_account_id": {
+                    "type": "string"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "transit_gateway_configuration": {
+                    "properties": {
+                        "attachment_network_acl_configuration": {
+                            "items": {
+                                "properties": {
+                                    "cidr_block": {
+                                        "type": "string"
+                                    },
+                                    "icmp_type_code": {
+                                        "properties": {
+                                            "code": {
+                                                "type": "number"
+                                            },
+                                            "type": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "code",
+                                            "type"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "port_range": {
+                                        "properties": {
+                                            "from": {
+                                                "type": "number"
+                                            },
+                                            "to": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "from",
+                                            "to"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "protocol": {
+                                        "type": "string"
+                                    },
+                                    "rule_action": {
+                                        "type": "string"
+                                    },
+                                    "rule_number": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "cidr_block",
+                                    "protocol",
+                                    "rule_action",
+                                    "rule_number"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "routable_cidr_space": {
+                            "type": "string"
+                        },
+                        "transit_gateway_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "routable_cidr_space",
+                        "transit_gateway_id"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "kms_key_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_scaling_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "clusters": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "host_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_reason": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "availability_zone_id",
+                "environment_id",
+                "host_type",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_user": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "iam_role": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "environment_id",
+                "iam_role",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_finspace_kx_volume": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "attached_clusters": {
+                    "items": {
+                        "properties": {
+                            "cluster_name": {
+                                "type": "string"
+                            },
+                            "cluster_status": {
+                                "type": "string"
+                            },
+                            "cluster_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "availability_zones": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "az_mode": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_timestamp": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "environment_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_timestamp": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nas1_configuration": {
+                    "items": {
+                        "properties": {
+                            "size": {
+                                "type": "number"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "size",
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "status_reason": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "availability_zones",
+                "az_mode",
+                "environment_id",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_finspace_kx_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_database": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_database"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_dataview": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_dataview"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_environment": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_environment"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_scaling_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_scaling_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_finspace_kx_volume": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_finspace_kx_volume"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,352 @@
+{
+    "$defs": {
+        "aws_opensearchserverless_access_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "policy_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_opensearchserverless_collection": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "collection_endpoint": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "dashboard_endpoint": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "failure_code": {
+                    "type": "string"
+                },
+                "failure_message": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_key_arn": {
+                    "type": "string"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "standby_replicas": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_opensearchserverless_lifecycle_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "policy_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_opensearchserverless_security_config": {
+            "properties": {
+                "config_version": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "saml_options": {
+                    "properties": {
+                        "group_attribute": {
+                            "type": "string"
+                        },
+                        "metadata": {
+                            "type": "string"
+                        },
+                        "session_timeout": {
+                            "type": "number"
+                        },
+                        "user_attribute": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "aws_opensearchserverless_security_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "policy_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_opensearchserverless_vpc_endpoint": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "vpc_endpoint_id": {
+                    "type": "string"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "vpc_endpoint_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_opensearchserverless_access_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_access_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearchserverless_collection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_collection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearchserverless_lifecycle_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_lifecycle_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearchserverless_security_config": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_security_config"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearchserverless_security_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_security_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_opensearchserverless_vpc_endpoint": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_opensearchserverless_vpc_endpoint"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

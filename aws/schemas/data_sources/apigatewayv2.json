@@ -1,0 +1,283 @@
+{
+    "$defs": {
+        "aws_apigatewayv2_api": {
+            "properties": {
+                "api_endpoint": {
+                    "type": "string"
+                },
+                "api_id": {
+                    "type": "string"
+                },
+                "api_key_selection_expression": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "cors_configuration": {
+                    "items": {
+                        "properties": {
+                            "allow_credentials": {
+                                "type": "boolean"
+                            },
+                            "allow_headers": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "allow_methods": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "allow_origins": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "expose_headers": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "max_age": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "disable_execute_api_endpoint": {
+                    "type": "boolean"
+                },
+                "execution_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "protocol_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "route_selection_expression": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_apis": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "protocol_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_export": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "export_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "include_extensions": {
+                    "type": "boolean"
+                },
+                "output_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "specification": {
+                    "type": "string"
+                },
+                "stage_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "output_type",
+                "specification"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_vpc_link": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_link_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "vpc_link_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_apigatewayv2_api": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_api"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_apis": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_apis"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_export": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_export"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_vpc_link": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_vpc_link"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

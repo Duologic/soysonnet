@@ -1,0 +1,291 @@
+{
+    "$defs": {
+        "aws_autoscalingplans_scaling_plan": {
+            "properties": {
+                "application_source": {
+                    "properties": {
+                        "cloudformation_stack_arn": {
+                            "type": "string"
+                        },
+                        "tag_filter": {
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "values": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array",
+                                        "uniqueItems": true
+                                    }
+                                },
+                                "required": [
+                                    "key"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "scaling_instruction": {
+                    "items": {
+                        "properties": {
+                            "customized_load_metric_specification": {
+                                "properties": {
+                                    "dimensions": {
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        },
+                                        "type": "object"
+                                    },
+                                    "metric_name": {
+                                        "type": "string"
+                                    },
+                                    "namespace": {
+                                        "type": "string"
+                                    },
+                                    "statistic": {
+                                        "type": "string"
+                                    },
+                                    "unit": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "metric_name",
+                                    "namespace",
+                                    "statistic"
+                                ],
+                                "type": "object"
+                            },
+                            "disable_dynamic_scaling": {
+                                "type": "boolean"
+                            },
+                            "max_capacity": {
+                                "type": "number"
+                            },
+                            "min_capacity": {
+                                "type": "number"
+                            },
+                            "predefined_load_metric_specification": {
+                                "properties": {
+                                    "predefined_load_metric_type": {
+                                        "type": "string"
+                                    },
+                                    "resource_label": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "predefined_load_metric_type"
+                                ],
+                                "type": "object"
+                            },
+                            "predictive_scaling_max_capacity_behavior": {
+                                "type": "string"
+                            },
+                            "predictive_scaling_max_capacity_buffer": {
+                                "type": "number"
+                            },
+                            "predictive_scaling_mode": {
+                                "type": "string"
+                            },
+                            "resource_id": {
+                                "type": "string"
+                            },
+                            "scalable_dimension": {
+                                "type": "string"
+                            },
+                            "scaling_policy_update_behavior": {
+                                "type": "string"
+                            },
+                            "scheduled_action_buffer_time": {
+                                "type": "number"
+                            },
+                            "service_namespace": {
+                                "type": "string"
+                            },
+                            "target_tracking_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "customized_scaling_metric_specification": {
+                                            "properties": {
+                                                "dimensions": {
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "metric_name": {
+                                                    "type": "string"
+                                                },
+                                                "namespace": {
+                                                    "type": "string"
+                                                },
+                                                "statistic": {
+                                                    "type": "string"
+                                                },
+                                                "unit": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "metric_name",
+                                                "namespace",
+                                                "statistic"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "disable_scale_in": {
+                                            "type": "boolean"
+                                        },
+                                        "estimated_instance_warmup": {
+                                            "type": "number"
+                                        },
+                                        "predefined_scaling_metric_specification": {
+                                            "properties": {
+                                                "predefined_scaling_metric_type": {
+                                                    "type": "string"
+                                                },
+                                                "resource_label": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "predefined_scaling_metric_type"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "scale_in_cooldown": {
+                                            "type": "number"
+                                        },
+                                        "scale_out_cooldown": {
+                                            "type": "number"
+                                        },
+                                        "target_value": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "target_value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "max_capacity",
+                            "min_capacity",
+                            "resource_id",
+                            "scalable_dimension",
+                            "service_namespace",
+                            "target_tracking_configuration"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "scaling_plan_version": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "application_source",
+                "name",
+                "scaling_instruction"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_autoscalingplans_scaling_plan": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_autoscalingplans_scaling_plan"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

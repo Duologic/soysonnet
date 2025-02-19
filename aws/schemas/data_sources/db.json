@@ -1,0 +1,708 @@
+{
+    "$defs": {
+        "aws_db_cluster_snapshot": {
+            "properties": {
+                "allocated_storage": {
+                    "type": "number"
+                },
+                "availability_zones": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "db_cluster_identifier": {
+                    "type": "string"
+                },
+                "db_cluster_snapshot_arn": {
+                    "type": "string"
+                },
+                "db_cluster_snapshot_identifier": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "engine_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "include_public": {
+                    "type": "boolean"
+                },
+                "include_shared": {
+                    "type": "boolean"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "license_model": {
+                    "type": "string"
+                },
+                "most_recent": {
+                    "type": "boolean"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "snapshot_create_time": {
+                    "type": "string"
+                },
+                "snapshot_type": {
+                    "type": "string"
+                },
+                "source_db_cluster_snapshot_arn": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "storage_encrypted": {
+                    "type": "boolean"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_db_event_categories": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "event_categories": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "source_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_db_instance": {
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "allocated_storage": {
+                    "type": "number"
+                },
+                "auto_minor_version_upgrade": {
+                    "type": "boolean"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "backup_retention_period": {
+                    "type": "number"
+                },
+                "ca_cert_identifier": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "db_cluster_identifier": {
+                    "type": "string"
+                },
+                "db_instance_arn": {
+                    "type": "string"
+                },
+                "db_instance_class": {
+                    "type": "string"
+                },
+                "db_instance_identifier": {
+                    "type": "string"
+                },
+                "db_instance_port": {
+                    "type": "number"
+                },
+                "db_name": {
+                    "type": "string"
+                },
+                "db_parameter_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "db_subnet_group": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enabled_cloudwatch_logs_exports": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "engine_version": {
+                    "type": "string"
+                },
+                "hosted_zone_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "iops": {
+                    "type": "number"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "license_model": {
+                    "type": "string"
+                },
+                "master_user_secret": {
+                    "items": {
+                        "properties": {
+                            "kms_key_id": {
+                                "type": "string"
+                            },
+                            "secret_arn": {
+                                "type": "string"
+                            },
+                            "secret_status": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "master_username": {
+                    "type": "string"
+                },
+                "max_allocated_storage": {
+                    "type": "number"
+                },
+                "monitoring_interval": {
+                    "type": "number"
+                },
+                "monitoring_role_arn": {
+                    "type": "string"
+                },
+                "multi_az": {
+                    "type": "boolean"
+                },
+                "network_type": {
+                    "type": "string"
+                },
+                "option_group_memberships": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "preferred_backup_window": {
+                    "type": "string"
+                },
+                "preferred_maintenance_window": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "publicly_accessible": {
+                    "type": "boolean"
+                },
+                "replicate_source_db": {
+                    "type": "string"
+                },
+                "resource_id": {
+                    "type": "string"
+                },
+                "storage_encrypted": {
+                    "type": "boolean"
+                },
+                "storage_throughput": {
+                    "type": "number"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timezone": {
+                    "type": "string"
+                },
+                "vpc_security_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_db_instances": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instance_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "instance_identifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_db_parameter_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "family": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_db_proxy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auth": {
+                    "items": {
+                        "properties": {
+                            "auth_scheme": {
+                                "type": "string"
+                            },
+                            "client_password_auth_type": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "iam_auth": {
+                                "type": "string"
+                            },
+                            "secret_arn": {
+                                "type": "string"
+                            },
+                            "username": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "debug_logging": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "engine_family": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "idle_client_timeout": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "require_tls": {
+                    "type": "boolean"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "vpc_security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "vpc_subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_db_snapshot": {
+            "properties": {
+                "allocated_storage": {
+                    "type": "number"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "db_instance_identifier": {
+                    "type": "string"
+                },
+                "db_snapshot_arn": {
+                    "type": "string"
+                },
+                "db_snapshot_identifier": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encrypted": {
+                    "type": "boolean"
+                },
+                "engine": {
+                    "type": "string"
+                },
+                "engine_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "include_public": {
+                    "type": "boolean"
+                },
+                "include_shared": {
+                    "type": "boolean"
+                },
+                "iops": {
+                    "type": "number"
+                },
+                "kms_key_id": {
+                    "type": "string"
+                },
+                "license_model": {
+                    "type": "string"
+                },
+                "most_recent": {
+                    "type": "boolean"
+                },
+                "option_group_name": {
+                    "type": "string"
+                },
+                "original_snapshot_create_time": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "snapshot_create_time": {
+                    "type": "string"
+                },
+                "snapshot_type": {
+                    "type": "string"
+                },
+                "source_db_snapshot_identifier": {
+                    "type": "string"
+                },
+                "source_region": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "storage_type": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_db_subnet_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "supported_network_types": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_db_cluster_snapshot": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_cluster_snapshot"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_event_categories": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_event_categories"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_instance": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_instance"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_instances": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_instances"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_parameter_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_parameter_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_proxy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_proxy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_snapshot": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_snapshot"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_db_subnet_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_db_subnet_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

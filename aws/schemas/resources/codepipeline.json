@@ -1,0 +1,754 @@
+{
+    "$defs": {
+        "aws_codepipeline": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "artifact_store": {
+                    "items": {
+                        "properties": {
+                            "encryption_key": {
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "type"
+                                ],
+                                "type": "object"
+                            },
+                            "location": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "location",
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "execution_mode": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pipeline_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "stage": {
+                    "items": {
+                        "properties": {
+                            "action": {
+                                "items": {
+                                    "properties": {
+                                        "category": {
+                                            "type": "string"
+                                        },
+                                        "configuration": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "input_artifacts": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "namespace": {
+                                            "type": "string"
+                                        },
+                                        "output_artifacts": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "owner": {
+                                            "type": "string"
+                                        },
+                                        "provider": {
+                                            "type": "string"
+                                        },
+                                        "region": {
+                                            "type": "string"
+                                        },
+                                        "role_arn": {
+                                            "type": "string"
+                                        },
+                                        "run_order": {
+                                            "type": "number"
+                                        },
+                                        "timeout_in_minutes": {
+                                            "type": "number"
+                                        },
+                                        "version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "category",
+                                        "name",
+                                        "owner",
+                                        "provider",
+                                        "version"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "trigger": {
+                    "items": {
+                        "properties": {
+                            "git_configuration": {
+                                "properties": {
+                                    "pull_request": {
+                                        "items": {
+                                            "properties": {
+                                                "branches": {
+                                                    "properties": {
+                                                        "excludes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "includes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "events": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "file_paths": {
+                                                    "properties": {
+                                                        "excludes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "includes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "push": {
+                                        "items": {
+                                            "properties": {
+                                                "branches": {
+                                                    "properties": {
+                                                        "excludes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "includes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "file_paths": {
+                                                    "properties": {
+                                                        "excludes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "includes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "tags": {
+                                                    "properties": {
+                                                        "excludes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "includes": {
+                                                            "items": {
+                                                                "type": "string"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "source_action_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "source_action_name"
+                                ],
+                                "type": "object"
+                            },
+                            "provider_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "git_configuration",
+                            "provider_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "variable": {
+                    "items": {
+                        "properties": {
+                            "default_value": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "artifact_store",
+                "name",
+                "role_arn",
+                "stage"
+            ],
+            "type": "object"
+        },
+        "aws_codepipeline_custom_action_type": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "configuration_property": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "key": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "queryable": {
+                                "type": "boolean"
+                            },
+                            "required": {
+                                "type": "boolean"
+                            },
+                            "secret": {
+                                "type": "boolean"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "name",
+                            "required",
+                            "secret"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "input_artifact_details": {
+                    "properties": {
+                        "maximum_count": {
+                            "type": "number"
+                        },
+                        "minimum_count": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "maximum_count",
+                        "minimum_count"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "output_artifact_details": {
+                    "properties": {
+                        "maximum_count": {
+                            "type": "number"
+                        },
+                        "minimum_count": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "maximum_count",
+                        "minimum_count"
+                    ],
+                    "type": "object"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "settings": {
+                    "properties": {
+                        "entity_url_template": {
+                            "type": "string"
+                        },
+                        "execution_url_template": {
+                            "type": "string"
+                        },
+                        "revision_url_template": {
+                            "type": "string"
+                        },
+                        "third_party_configuration_url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "category",
+                "input_artifact_details",
+                "output_artifact_details",
+                "provider_name",
+                "version"
+            ],
+            "type": "object"
+        },
+        "aws_codepipeline_webhook": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "authentication": {
+                    "type": "string"
+                },
+                "authentication_configuration": {
+                    "properties": {
+                        "allowed_ip_range": {
+                            "type": "string"
+                        },
+                        "secret_token": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "json_path": {
+                                "type": "string"
+                            },
+                            "match_equals": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "json_path",
+                            "match_equals"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_action": {
+                    "type": "string"
+                },
+                "target_pipeline": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "authentication",
+                "filter",
+                "name",
+                "target_action",
+                "target_pipeline"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_codepipeline": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codepipeline"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codepipeline_custom_action_type": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codepipeline_custom_action_type"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_codepipeline_webhook": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_codepipeline_webhook"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

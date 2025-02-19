@@ -1,0 +1,1974 @@
+{
+    "$defs": {
+        "aws_appflow_connector_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "connection_mode": {
+                    "type": "string"
+                },
+                "connector_label": {
+                    "type": "string"
+                },
+                "connector_profile_config": {
+                    "properties": {
+                        "connector_profile_credentials": {
+                            "properties": {
+                                "amplitude": {
+                                    "properties": {
+                                        "api_key": {
+                                            "type": "string"
+                                        },
+                                        "secret_key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "api_key",
+                                        "secret_key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "custom_connector": {
+                                    "properties": {
+                                        "api_key": {
+                                            "properties": {
+                                                "api_key": {
+                                                    "type": "string"
+                                                },
+                                                "api_secret_key": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "api_key"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "authentication_type": {
+                                            "type": "string"
+                                        },
+                                        "basic": {
+                                            "properties": {
+                                                "password": {
+                                                    "type": "string"
+                                                },
+                                                "username": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "password",
+                                                "username"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "custom": {
+                                            "properties": {
+                                                "credentials_map": {
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "custom_authentication_type": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "custom_authentication_type"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "oauth2": {
+                                            "properties": {
+                                                "access_token": {
+                                                    "type": "string"
+                                                },
+                                                "client_id": {
+                                                    "type": "string"
+                                                },
+                                                "client_secret": {
+                                                    "type": "string"
+                                                },
+                                                "oauth_request": {
+                                                    "properties": {
+                                                        "auth_code": {
+                                                            "type": "string"
+                                                        },
+                                                        "redirect_uri": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "refresh_token": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "authentication_type"
+                                    ],
+                                    "type": "object"
+                                },
+                                "datadog": {
+                                    "properties": {
+                                        "api_key": {
+                                            "type": "string"
+                                        },
+                                        "application_key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "api_key",
+                                        "application_key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "dynatrace": {
+                                    "properties": {
+                                        "api_token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "api_token"
+                                    ],
+                                    "type": "object"
+                                },
+                                "google_analytics": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "client_id": {
+                                            "type": "string"
+                                        },
+                                        "client_secret": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "refresh_token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "client_id",
+                                        "client_secret"
+                                    ],
+                                    "type": "object"
+                                },
+                                "honeycode": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "refresh_token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "infor_nexus": {
+                                    "properties": {
+                                        "access_key_id": {
+                                            "type": "string"
+                                        },
+                                        "datakey": {
+                                            "type": "string"
+                                        },
+                                        "secret_access_key": {
+                                            "type": "string"
+                                        },
+                                        "user_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "access_key_id",
+                                        "datakey",
+                                        "secret_access_key",
+                                        "user_id"
+                                    ],
+                                    "type": "object"
+                                },
+                                "marketo": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "client_id": {
+                                            "type": "string"
+                                        },
+                                        "client_secret": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "client_id",
+                                        "client_secret"
+                                    ],
+                                    "type": "object"
+                                },
+                                "redshift": {
+                                    "properties": {
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "username": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "password",
+                                        "username"
+                                    ],
+                                    "type": "object"
+                                },
+                                "salesforce": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "client_credentials_arn": {
+                                            "type": "string"
+                                        },
+                                        "jwt_token": {
+                                            "type": "string"
+                                        },
+                                        "oauth2_grant_type": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "refresh_token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "sapo_data": {
+                                    "properties": {
+                                        "basic_auth_credentials": {
+                                            "properties": {
+                                                "password": {
+                                                    "type": "string"
+                                                },
+                                                "username": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "password",
+                                                "username"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "oauth_credentials": {
+                                            "properties": {
+                                                "access_token": {
+                                                    "type": "string"
+                                                },
+                                                "client_id": {
+                                                    "type": "string"
+                                                },
+                                                "client_secret": {
+                                                    "type": "string"
+                                                },
+                                                "oauth_request": {
+                                                    "properties": {
+                                                        "auth_code": {
+                                                            "type": "string"
+                                                        },
+                                                        "redirect_uri": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "refresh_token": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "client_id",
+                                                "client_secret"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "service_now": {
+                                    "properties": {
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "username": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "password",
+                                        "username"
+                                    ],
+                                    "type": "object"
+                                },
+                                "singular": {
+                                    "properties": {
+                                        "api_key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "api_key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "slack": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "client_id": {
+                                            "type": "string"
+                                        },
+                                        "client_secret": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "client_id",
+                                        "client_secret"
+                                    ],
+                                    "type": "object"
+                                },
+                                "snowflake": {
+                                    "properties": {
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "username": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "password",
+                                        "username"
+                                    ],
+                                    "type": "object"
+                                },
+                                "trendmicro": {
+                                    "properties": {
+                                        "api_secret_key": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "api_secret_key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "veeva": {
+                                    "properties": {
+                                        "password": {
+                                            "type": "string"
+                                        },
+                                        "username": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "password",
+                                        "username"
+                                    ],
+                                    "type": "object"
+                                },
+                                "zendesk": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "client_id": {
+                                            "type": "string"
+                                        },
+                                        "client_secret": {
+                                            "type": "string"
+                                        },
+                                        "oauth_request": {
+                                            "properties": {
+                                                "auth_code": {
+                                                    "type": "string"
+                                                },
+                                                "redirect_uri": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "client_id",
+                                        "client_secret"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "connector_profile_properties": {
+                            "properties": {
+                                "amplitude": {
+                                    "properties": {
+
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "custom_connector": {
+                                    "properties": {
+                                        "oauth2_properties": {
+                                            "properties": {
+                                                "oauth2_grant_type": {
+                                                    "type": "string"
+                                                },
+                                                "token_url": {
+                                                    "type": "string"
+                                                },
+                                                "token_url_custom_properties": {
+                                                    "additionalProperties": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+                                                "oauth2_grant_type",
+                                                "token_url"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "profile_properties": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "datadog": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "dynatrace": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "google_analytics": {
+                                    "properties": {
+
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "honeycode": {
+                                    "properties": {
+
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "infor_nexus": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "marketo": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "redshift": {
+                                    "properties": {
+                                        "bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "bucket_prefix": {
+                                            "type": "string"
+                                        },
+                                        "cluster_identifier": {
+                                            "type": "string"
+                                        },
+                                        "data_api_role_arn": {
+                                            "type": "string"
+                                        },
+                                        "database_name": {
+                                            "type": "string"
+                                        },
+                                        "database_url": {
+                                            "type": "string"
+                                        },
+                                        "role_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucket_name",
+                                        "role_arn"
+                                    ],
+                                    "type": "object"
+                                },
+                                "salesforce": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        },
+                                        "is_sandbox_environment": {
+                                            "type": "boolean"
+                                        },
+                                        "use_privatelink_for_metadata_and_authorization": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "sapo_data": {
+                                    "properties": {
+                                        "application_host_url": {
+                                            "type": "string"
+                                        },
+                                        "application_service_path": {
+                                            "type": "string"
+                                        },
+                                        "client_number": {
+                                            "type": "string"
+                                        },
+                                        "logon_language": {
+                                            "type": "string"
+                                        },
+                                        "oauth_properties": {
+                                            "properties": {
+                                                "auth_code_url": {
+                                                    "type": "string"
+                                                },
+                                                "oauth_scopes": {
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "token_url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "auth_code_url",
+                                                "oauth_scopes",
+                                                "token_url"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "port_number": {
+                                            "type": "number"
+                                        },
+                                        "private_link_service_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "application_host_url",
+                                        "application_service_path",
+                                        "client_number",
+                                        "port_number"
+                                    ],
+                                    "type": "object"
+                                },
+                                "service_now": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "singular": {
+                                    "properties": {
+
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "slack": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "snowflake": {
+                                    "properties": {
+                                        "account_name": {
+                                            "type": "string"
+                                        },
+                                        "bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "bucket_prefix": {
+                                            "type": "string"
+                                        },
+                                        "private_link_service_name": {
+                                            "type": "string"
+                                        },
+                                        "region": {
+                                            "type": "string"
+                                        },
+                                        "stage": {
+                                            "type": "string"
+                                        },
+                                        "warehouse": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucket_name",
+                                        "stage",
+                                        "warehouse"
+                                    ],
+                                    "type": "object"
+                                },
+                                "trendmicro": {
+                                    "properties": {
+
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "veeva": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                },
+                                "zendesk": {
+                                    "properties": {
+                                        "instance_url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "instance_url"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "connector_profile_credentials",
+                        "connector_profile_properties"
+                    ],
+                    "type": "object"
+                },
+                "connector_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "credentials_arn": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "connection_mode",
+                "connector_profile_config",
+                "connector_type",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_appflow_flow": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_flow_config": {
+                    "items": {
+                        "properties": {
+                            "api_version": {
+                                "type": "string"
+                            },
+                            "connector_profile_name": {
+                                "type": "string"
+                            },
+                            "connector_type": {
+                                "type": "string"
+                            },
+                            "destination_connector_properties": {
+                                "properties": {
+                                    "custom_connector": {
+                                        "properties": {
+                                            "custom_properties": {
+                                                "additionalProperties": {
+                                                    "type": "string"
+                                                },
+                                                "type": "object"
+                                            },
+                                            "entity_name": {
+                                                "type": "string"
+                                            },
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "id_field_names": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "write_operation_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "entity_name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "customer_profiles": {
+                                        "properties": {
+                                            "domain_name": {
+                                                "type": "string"
+                                            },
+                                            "object_type_name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "domain_name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "event_bridge": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "honeycode": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "lookout_metrics": {
+                                        "properties": {
+
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "marketo": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "redshift": {
+                                        "properties": {
+                                            "bucket_prefix": {
+                                                "type": "string"
+                                            },
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "intermediate_bucket_name": {
+                                                "type": "string"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "intermediate_bucket_name",
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "s3": {
+                                        "properties": {
+                                            "bucket_name": {
+                                                "type": "string"
+                                            },
+                                            "bucket_prefix": {
+                                                "type": "string"
+                                            },
+                                            "s3_output_format_config": {
+                                                "properties": {
+                                                    "aggregation_config": {
+                                                        "properties": {
+                                                            "aggregation_type": {
+                                                                "type": "string"
+                                                            },
+                                                            "target_file_size": {
+                                                                "type": "number"
+                                                            }
+                                                        },
+                                                        "required": [
+
+                                                        ],
+                                                        "type": "object"
+                                                    },
+                                                    "file_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "prefix_config": {
+                                                        "properties": {
+                                                            "prefix_format": {
+                                                                "type": "string"
+                                                            },
+                                                            "prefix_hierarchy": {
+                                                                "items": {
+                                                                    "type": "string"
+                                                                },
+                                                                "type": "array"
+                                                            },
+                                                            "prefix_type": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+
+                                                        ],
+                                                        "type": "object"
+                                                    },
+                                                    "preserve_source_data_typing": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+                                            "bucket_name"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "salesforce": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "id_field_names": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            },
+                                            "write_operation_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "sapo_data": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "id_field_names": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "object_path": {
+                                                "type": "string"
+                                            },
+                                            "success_response_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "write_operation_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object_path"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "snowflake": {
+                                        "properties": {
+                                            "bucket_prefix": {
+                                                "type": "string"
+                                            },
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "intermediate_bucket_name": {
+                                                "type": "string"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "intermediate_bucket_name",
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "upsolver": {
+                                        "properties": {
+                                            "bucket_name": {
+                                                "type": "string"
+                                            },
+                                            "bucket_prefix": {
+                                                "type": "string"
+                                            },
+                                            "s3_output_format_config": {
+                                                "properties": {
+                                                    "aggregation_config": {
+                                                        "properties": {
+                                                            "aggregation_type": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+
+                                                        ],
+                                                        "type": "object"
+                                                    },
+                                                    "file_type": {
+                                                        "type": "string"
+                                                    },
+                                                    "prefix_config": {
+                                                        "properties": {
+                                                            "prefix_format": {
+                                                                "type": "string"
+                                                            },
+                                                            "prefix_hierarchy": {
+                                                                "items": {
+                                                                    "type": "string"
+                                                                },
+                                                                "type": "array"
+                                                            },
+                                                            "prefix_type": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "prefix_type"
+                                                        ],
+                                                        "type": "object"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "prefix_config"
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+                                            "bucket_name",
+                                            "s3_output_format_config"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "zendesk": {
+                                        "properties": {
+                                            "error_handling_config": {
+                                                "properties": {
+                                                    "bucket_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "bucket_prefix": {
+                                                        "type": "string"
+                                                    },
+                                                    "fail_on_first_destination_error": {
+                                                        "type": "boolean"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "id_field_names": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "object": {
+                                                "type": "string"
+                                            },
+                                            "write_operation_type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "object"
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "connector_type",
+                            "destination_connector_properties"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "flow_status": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kms_arn": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "metadata_catalog_config": {
+                    "properties": {
+                        "glue_data_catalog": {
+                            "properties": {
+                                "database_name": {
+                                    "type": "string"
+                                },
+                                "role_arn": {
+                                    "type": "string"
+                                },
+                                "table_prefix": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "database_name",
+                                "role_arn",
+                                "table_prefix"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "source_flow_config": {
+                    "properties": {
+                        "api_version": {
+                            "type": "string"
+                        },
+                        "connector_profile_name": {
+                            "type": "string"
+                        },
+                        "connector_type": {
+                            "type": "string"
+                        },
+                        "incremental_pull_config": {
+                            "properties": {
+                                "datetime_type_field_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "source_connector_properties": {
+                            "properties": {
+                                "amplitude": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "custom_connector": {
+                                    "properties": {
+                                        "custom_properties": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "entity_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "entity_name"
+                                    ],
+                                    "type": "object"
+                                },
+                                "datadog": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "dynatrace": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "google_analytics": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "infor_nexus": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "marketo": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "s3": {
+                                    "properties": {
+                                        "bucket_name": {
+                                            "type": "string"
+                                        },
+                                        "bucket_prefix": {
+                                            "type": "string"
+                                        },
+                                        "s3_input_format_config": {
+                                            "properties": {
+                                                "s3_input_file_type": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "bucket_name",
+                                        "bucket_prefix"
+                                    ],
+                                    "type": "object"
+                                },
+                                "salesforce": {
+                                    "properties": {
+                                        "data_transfer_api": {
+                                            "type": "string"
+                                        },
+                                        "enable_dynamic_field_update": {
+                                            "type": "boolean"
+                                        },
+                                        "include_deleted_records": {
+                                            "type": "boolean"
+                                        },
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "sapo_data": {
+                                    "properties": {
+                                        "object_path": {
+                                            "type": "string"
+                                        },
+                                        "pagination_config": {
+                                            "properties": {
+                                                "max_page_size": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "required": [
+                                                "max_page_size"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "parallelism_config": {
+                                            "properties": {
+                                                "max_page_size": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "required": [
+                                                "max_page_size"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": [
+                                        "object_path"
+                                    ],
+                                    "type": "object"
+                                },
+                                "service_now": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "singular": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "slack": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "trendmicro": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "veeva": {
+                                    "properties": {
+                                        "document_type": {
+                                            "type": "string"
+                                        },
+                                        "include_all_versions": {
+                                            "type": "boolean"
+                                        },
+                                        "include_renditions": {
+                                            "type": "boolean"
+                                        },
+                                        "include_source_files": {
+                                            "type": "boolean"
+                                        },
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                },
+                                "zendesk": {
+                                    "properties": {
+                                        "object": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "object"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "connector_type",
+                        "source_connector_properties"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "task": {
+                    "items": {
+                        "properties": {
+                            "connector_operator": {
+                                "items": {
+                                    "properties": {
+                                        "amplitude": {
+                                            "type": "string"
+                                        },
+                                        "custom_connector": {
+                                            "type": "string"
+                                        },
+                                        "datadog": {
+                                            "type": "string"
+                                        },
+                                        "dynatrace": {
+                                            "type": "string"
+                                        },
+                                        "google_analytics": {
+                                            "type": "string"
+                                        },
+                                        "infor_nexus": {
+                                            "type": "string"
+                                        },
+                                        "marketo": {
+                                            "type": "string"
+                                        },
+                                        "s3": {
+                                            "type": "string"
+                                        },
+                                        "salesforce": {
+                                            "type": "string"
+                                        },
+                                        "sapo_data": {
+                                            "type": "string"
+                                        },
+                                        "service_now": {
+                                            "type": "string"
+                                        },
+                                        "singular": {
+                                            "type": "string"
+                                        },
+                                        "slack": {
+                                            "type": "string"
+                                        },
+                                        "trendmicro": {
+                                            "type": "string"
+                                        },
+                                        "veeva": {
+                                            "type": "string"
+                                        },
+                                        "zendesk": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "destination_field": {
+                                "type": "string"
+                            },
+                            "source_fields": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "task_properties": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "task_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "task_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "trigger_config": {
+                    "properties": {
+                        "trigger_properties": {
+                            "properties": {
+                                "scheduled": {
+                                    "properties": {
+                                        "data_pull_mode": {
+                                            "type": "string"
+                                        },
+                                        "first_execution_from": {
+                                            "type": "string"
+                                        },
+                                        "schedule_end_time": {
+                                            "type": "string"
+                                        },
+                                        "schedule_expression": {
+                                            "type": "string"
+                                        },
+                                        "schedule_offset": {
+                                            "type": "number"
+                                        },
+                                        "schedule_start_time": {
+                                            "type": "string"
+                                        },
+                                        "timezone": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "schedule_expression"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "trigger_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "trigger_type"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "destination_flow_config",
+                "name",
+                "source_flow_config",
+                "task",
+                "trigger_config"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_appflow_connector_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appflow_connector_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_appflow_flow": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_appflow_flow"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

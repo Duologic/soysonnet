@@ -1,0 +1,1150 @@
+{
+    "$defs": {
+        "aws_iam_access_keys": {
+            "properties": {
+                "access_keys": {
+                    "items": {
+                        "properties": {
+                            "access_key_id": {
+                                "type": "string"
+                            },
+                            "create_date": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "user": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user"
+            ],
+            "type": "object"
+        },
+        "aws_iam_account_alias": {
+            "properties": {
+                "account_alias": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "group_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "users": {
+                    "items": {
+                        "properties": {
+                            "arn": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "group_name"
+            ],
+            "type": "object"
+        },
+        "aws_iam_instance_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "role_id": {
+                    "type": "string"
+                },
+                "role_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_iam_instance_profiles": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "paths": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "role_name"
+            ],
+            "type": "object"
+        },
+        "aws_iam_openid_connect_provider": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "client_id_list": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "thumbprint_list": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "attachment_count": {
+                    "type": "number"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "path_prefix": {
+                    "type": "string"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "policy_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_policy_document": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "json": {
+                    "type": "string"
+                },
+                "minified_json": {
+                    "type": "string"
+                },
+                "override_json": {
+                    "type": "string"
+                },
+                "override_policy_documents": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "policy_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "source_json": {
+                    "type": "string"
+                },
+                "source_policy_documents": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "statement": {
+                    "items": {
+                        "properties": {
+                            "actions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "condition": {
+                                "items": {
+                                    "properties": {
+                                        "test": {
+                                            "type": "string"
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "variable": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "test",
+                                        "values",
+                                        "variable"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "effect": {
+                                "type": "string"
+                            },
+                            "not_actions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "not_principals": {
+                                "items": {
+                                    "properties": {
+                                        "identifiers": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "identifiers",
+                                        "type"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "not_resources": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "principals": {
+                                "items": {
+                                    "properties": {
+                                        "identifiers": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "identifiers",
+                                        "type"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resources": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "sid": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_principal_policy_simulation": {
+            "properties": {
+                "action_names": {
+                    "description": "One or more names of actions, like \"iam:CreateUser\", that should be included in the simulation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "additional_policies_json": {
+                    "description": "Additional principal-based policies to use in the simulation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "all_allowed": {
+                    "description": "A summary of the results attribute which is true if all of the results have decision \"allowed\", and false otherwise.",
+                    "type": "boolean"
+                },
+                "caller_arn": {
+                    "description": "ARN of a user to use as the caller of the simulated requests. If not specified, defaults to the principal specified in policy_source_arn, if it is a user ARN.",
+                    "type": "string"
+                },
+                "context": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "description": "The key name of the context entry, such as \"aws:CurrentTime\".",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "The type that the simulator should use to interpret the strings given in argument \"values\".",
+                                "type": "string"
+                            },
+                            "values": {
+                                "description": "One or more values to assign to the context key, given as a string in a syntax appropriate for the selected value type.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "type",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "Do not use",
+                    "type": "string"
+                },
+                "permissions_boundary_policies_json": {
+                    "description": "Additional permission boundary policies to use in the simulation.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "policy_source_arn": {
+                    "description": "ARN of the principal (e.g. user, role) whose existing configured access policies will be used as the basis for the simulation. If you specify a role ARN here, you can also set caller_arn to simulate a particular user acting with the given role.",
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource_arns": {
+                    "description": "ARNs of specific resources to use as the targets of the specified actions during simulation. If not specified, the simulator assumes \"*\" which represents general access across all resources.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "resource_handling_option": {
+                    "description": "Specifies the type of simulation to run. Some API operations need a particular resource handling option in order to produce a correct reesult.",
+                    "type": "string"
+                },
+                "resource_owner_account_id": {
+                    "description": "An AWS account ID to use as the simulated owner for any resource whose ARN does not include a specific owner account ID. Defaults to the account given as part of caller_arn.",
+                    "type": "string"
+                },
+                "resource_policy_json": {
+                    "description": "A resource policy to associate with all of the target resources for simulation purposes. The policy simulator does not automatically retrieve resource-level policies, so if a resource policy is crucial to your test then you must specify here the same policy document associated with your target resource(s).",
+                    "type": "string"
+                },
+                "results": {
+                    "items": {
+                        "properties": {
+                            "action_name": {
+                                "type": "string"
+                            },
+                            "allowed": {
+                                "type": "boolean"
+                            },
+                            "decision": {
+                                "type": "string"
+                            },
+                            "decision_details": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "matched_statements": {
+                                "items": {
+                                    "properties": {
+                                        "source_policy_id": {
+                                            "type": "string"
+                                        },
+                                        "source_policy_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "missing_context_keys": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "resource_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "action_names",
+                "policy_source_arn"
+            ],
+            "type": "object"
+        },
+        "aws_iam_role": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "assume_role_policy": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "max_session_duration": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "permissions_boundary": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_last_used": {
+                    "items": {
+                        "properties": {
+                            "last_used_date": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "unique_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_iam_roles": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name_regex": {
+                    "type": "string"
+                },
+                "names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "path_prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_saml_provider": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "saml_metadata_document": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "valid_until": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        },
+        "aws_iam_server_certificate": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "certificate_body": {
+                    "type": "string"
+                },
+                "certificate_chain": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "expiration_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "latest": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "path_prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "upload_date": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_iam_session_context": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "issuer_arn": {
+                    "type": "string"
+                },
+                "issuer_id": {
+                    "type": "string"
+                },
+                "issuer_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "session_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        },
+        "aws_iam_user": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "permissions_boundary": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "user_id": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_name"
+            ],
+            "type": "object"
+        },
+        "aws_iam_user_ssh_key": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encoding": {
+                    "type": "string"
+                },
+                "fingerprint": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "public_key": {
+                    "type": "string"
+                },
+                "ssh_public_key_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "encoding",
+                "ssh_public_key_id",
+                "username"
+            ],
+            "type": "object"
+        },
+        "aws_iam_users": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name_regex": {
+                    "type": "string"
+                },
+                "names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "path_prefix": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_iam_access_keys": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_access_keys"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_account_alias": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_account_alias"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_instance_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_instance_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_instance_profiles": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_instance_profiles"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_openid_connect_provider": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_openid_connect_provider"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_policy_document": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_policy_document"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_principal_policy_simulation": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_principal_policy_simulation"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_role": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_role"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_roles": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_roles"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_saml_provider": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_saml_provider"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_server_certificate": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_server_certificate"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_session_context": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_session_context"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_user_ssh_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_user_ssh_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_iam_users": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_iam_users"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

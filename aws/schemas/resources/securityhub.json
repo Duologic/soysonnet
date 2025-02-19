@@ -1,0 +1,4294 @@
+{
+    "$defs": {
+        "aws_securityhub_account": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "auto_enable_controls": {
+                    "type": "boolean"
+                },
+                "control_finding_generator": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_default_standards": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_action_target": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identifier": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "description",
+                "identifier",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_automation_rule": {
+            "properties": {
+                "actions": {
+                    "items": {
+                        "properties": {
+                            "finding_fields_update": {
+                                "items": {
+                                    "properties": {
+                                        "confidence": {
+                                            "type": "number"
+                                        },
+                                        "criticality": {
+                                            "type": "number"
+                                        },
+                                        "note": {
+                                            "items": {
+                                                "properties": {
+                                                    "text": {
+                                                        "type": "string"
+                                                    },
+                                                    "updated_by": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "text",
+                                                    "updated_by"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "related_findings": {
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "product_arn": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "id",
+                                                    "product_arn"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "severity": {
+                                            "items": {
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "product": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "types": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "user_defined_fields": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "verification_state": {
+                                            "type": "string"
+                                        },
+                                        "workflow": {
+                                            "items": {
+                                                "properties": {
+                                                    "status": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "criteria": {
+                    "items": {
+                        "properties": {
+                            "aws_account_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "aws_account_name": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "company_name": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "compliance_associated_standards_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "compliance_security_control_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "compliance_status": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "confidence": {
+                                "items": {
+                                    "properties": {
+                                        "eq": {
+                                            "type": "number"
+                                        },
+                                        "gt": {
+                                            "type": "number"
+                                        },
+                                        "gte": {
+                                            "type": "number"
+                                        },
+                                        "lt": {
+                                            "type": "number"
+                                        },
+                                        "lte": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "created_at": {
+                                "items": {
+                                    "properties": {
+                                        "date_range": {
+                                            "items": {
+                                                "properties": {
+                                                    "unit": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "unit",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "end": {
+                                            "type": "string"
+                                        },
+                                        "start": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "criticality": {
+                                "items": {
+                                    "properties": {
+                                        "eq": {
+                                            "type": "number"
+                                        },
+                                        "gt": {
+                                            "type": "number"
+                                        },
+                                        "gte": {
+                                            "type": "number"
+                                        },
+                                        "lt": {
+                                            "type": "number"
+                                        },
+                                        "lte": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "description": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "first_observed_at": {
+                                "items": {
+                                    "properties": {
+                                        "date_range": {
+                                            "items": {
+                                                "properties": {
+                                                    "unit": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "unit",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "end": {
+                                            "type": "string"
+                                        },
+                                        "start": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "generator_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "last_observed_at": {
+                                "items": {
+                                    "properties": {
+                                        "date_range": {
+                                            "items": {
+                                                "properties": {
+                                                    "unit": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "unit",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "end": {
+                                            "type": "string"
+                                        },
+                                        "start": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "note_text": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "note_updated_at": {
+                                "items": {
+                                    "properties": {
+                                        "date_range": {
+                                            "items": {
+                                                "properties": {
+                                                    "unit": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "unit",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "end": {
+                                            "type": "string"
+                                        },
+                                        "start": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "note_updated_by": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "product_arn": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "product_name": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "record_state": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "related_findings_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "related_findings_product_arn": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_application_arn": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_application_name": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_details_other": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "key",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_id": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_partition": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_region": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_tags": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "key",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "resource_type": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "severity_label": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "source_url": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "title": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "updated_at": {
+                                "items": {
+                                    "properties": {
+                                        "date_range": {
+                                            "items": {
+                                                "properties": {
+                                                    "unit": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "unit",
+                                                    "value"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "end": {
+                                            "type": "string"
+                                        },
+                                        "start": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "user_defined_fields": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "key",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "verification_state": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "workflow_status": {
+                                "items": {
+                                    "properties": {
+                                        "comparison": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "comparison",
+                                        "value"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "is_terminal": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rule_name": {
+                    "type": "string"
+                },
+                "rule_order": {
+                    "type": "number"
+                },
+                "rule_status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "description",
+                "rule_name",
+                "rule_order"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_configuration_policy": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "configuration_policy": {
+                    "properties": {
+                        "enabled_standard_arns": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "security_controls_configuration": {
+                            "properties": {
+                                "disabled_control_identifiers": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "enabled_control_identifiers": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "security_control_custom_parameter": {
+                                    "items": {
+                                        "properties": {
+                                            "parameter": {
+                                                "items": {
+                                                    "properties": {
+                                                        "bool": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "double": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "enum": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "enum_list": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "int": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "int_list": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "items": {
+                                                                        "type": "number"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "string": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "string_list": {
+                                                            "properties": {
+                                                                "value": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "value"
+                                                            ],
+                                                            "type": "object"
+                                                        },
+                                                        "value_type": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "name",
+                                                        "value_type"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "security_control_id": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "parameter",
+                                            "security_control_id"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "service_enabled": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "service_enabled"
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "configuration_policy",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_configuration_policy_association": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy_id": {
+                    "description": "The universally unique identifier (UUID) of the configuration policy.",
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "target_id": {
+                    "description": "The identifier of the target account, organizational unit, or the root to associate with the specified configuration.",
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "policy_id",
+                "target_id"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_finding_aggregator": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "linking_mode": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "specified_regions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "linking_mode"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_insight": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filters": {
+                    "properties": {
+                        "aws_account_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "company_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "compliance_status": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "confidence": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "created_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "criticality": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "description": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_confidence": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_criticality": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_related_findings_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_related_findings_product_arn": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_severity_label": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_severity_original": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "finding_provider_fields_types": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "first_observed_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "generator_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "keyword": {
+                            "items": {
+                                "properties": {
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "last_observed_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "malware_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "malware_path": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "malware_state": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "malware_type": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_destination_domain": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_destination_ipv4": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_destination_ipv6": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_destination_port": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_direction": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_protocol": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_source_domain": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_source_ipv4": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_source_ipv6": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_source_mac": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "network_source_port": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "note_text": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "note_updated_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "note_updated_by": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_launched_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_parent_pid": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_path": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_pid": {
+                            "items": {
+                                "properties": {
+                                    "eq": {
+                                        "type": "string"
+                                    },
+                                    "gte": {
+                                        "type": "string"
+                                    },
+                                    "lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "process_terminated_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "product_arn": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "product_fields": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "key",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "product_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "recommendation_text": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "record_state": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "related_findings_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "related_findings_product_arn": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_iam_instance_profile_arn": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_image_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_ipv4_addresses": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_ipv6_addresses": {
+                            "items": {
+                                "properties": {
+                                    "cidr": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "cidr"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_key_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_launched_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_subnet_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_type": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_ec2_instance_vpc_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_iam_access_key_created_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_iam_access_key_status": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_iam_access_key_user_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_s3_bucket_owner_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_aws_s3_bucket_owner_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_container_image_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_container_image_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_container_launched_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_container_name": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_details_other": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "key",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_id": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_partition": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_region": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_tags": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "key",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "resource_type": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "severity_label": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "source_url": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_category": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_last_observed_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_source": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_source_url": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_type": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "threat_intel_indicator_value": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "title": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "type": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "updated_at": {
+                            "items": {
+                                "properties": {
+                                    "date_range": {
+                                        "properties": {
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "value"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "end": {
+                                        "type": "string"
+                                    },
+                                    "start": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "user_defined_values": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "key",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "verification_state": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "workflow_status": {
+                            "items": {
+                                "properties": {
+                                    "comparison": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "comparison",
+                                    "value"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "group_by_attribute": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "filters",
+                "group_by_attribute",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_invite_accepter": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "master_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "master_id"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_member": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "invite": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "master_id": {
+                    "type": "string"
+                },
+                "member_status": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "account_id"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_organization_admin_account": {
+            "properties": {
+                "admin_account_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "admin_account_id"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_organization_configuration": {
+            "properties": {
+                "auto_enable": {
+                    "type": "boolean"
+                },
+                "auto_enable_standards": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "organization_configuration": {
+                    "properties": {
+                        "configuration_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "configuration_type"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "auto_enable"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_product_subscription": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "product_arn": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "product_arn"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_standards_control": {
+            "properties": {
+                "control_id": {
+                    "type": "string"
+                },
+                "control_status": {
+                    "type": "string"
+                },
+                "control_status_updated_at": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "disabled_reason": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "related_requirements": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "remediation_url": {
+                    "type": "string"
+                },
+                "severity_rating": {
+                    "type": "string"
+                },
+                "standards_control_arn": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "control_status",
+                "standards_control_arn"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_standards_control_association": {
+            "properties": {
+                "association_status": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_control_id": {
+                    "type": "string"
+                },
+                "standards_arn": {
+                    "type": "string"
+                },
+                "updated_reason": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "association_status",
+                "security_control_id",
+                "standards_arn"
+            ],
+            "type": "object"
+        },
+        "aws_securityhub_standards_subscription": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "standards_arn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "standards_arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_securityhub_account": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_account"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_action_target": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_action_target"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_automation_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_automation_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_configuration_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_configuration_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_configuration_policy_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_configuration_policy_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_finding_aggregator": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_finding_aggregator"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_insight": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_insight"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_invite_accepter": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_invite_accepter"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_member": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_member"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_organization_admin_account": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_organization_admin_account"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_organization_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_organization_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_product_subscription": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_product_subscription"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_standards_control": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_standards_control"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_standards_control_association": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_standards_control_association"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_securityhub_standards_subscription": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_securityhub_standards_subscription"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

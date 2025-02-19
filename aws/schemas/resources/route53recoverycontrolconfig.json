@@ -1,0 +1,448 @@
+{
+    "$defs": {
+        "aws_route53recoverycontrolconfig_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cluster_endpoints": {
+                    "items": {
+                        "properties": {
+                            "endpoint": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_route53recoverycontrolconfig_control_panel": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cluster_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_control_panel": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "routing_control_count": {
+                    "type": "number"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_arn",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_route53recoverycontrolconfig_routing_control": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cluster_arn": {
+                    "type": "string"
+                },
+                "control_panel_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_arn",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_route53recoverycontrolconfig_safety_rule": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "asserted_controls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "control_panel_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "gating_controls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "rule_config": {
+                    "properties": {
+                        "inverted": {
+                            "type": "boolean"
+                        },
+                        "threshold": {
+                            "type": "number"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "inverted",
+                        "threshold",
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "target_controls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "wait_period_ms": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "control_panel_arn",
+                "name",
+                "rule_config",
+                "wait_period_ms"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_route53recoverycontrolconfig_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_route53recoverycontrolconfig_control_panel": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_control_panel"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_route53recoverycontrolconfig_routing_control": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_routing_control"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_route53recoverycontrolconfig_safety_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_safety_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

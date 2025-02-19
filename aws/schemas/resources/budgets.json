@@ -1,0 +1,546 @@
+{
+    "$defs": {
+        "aws_budgets_budget": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "auto_adjust_data": {
+                    "properties": {
+                        "auto_adjust_type": {
+                            "type": "string"
+                        },
+                        "historical_options": {
+                            "properties": {
+                                "budget_adjustment_period": {
+                                    "type": "number"
+                                },
+                                "lookback_available_periods": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "budget_adjustment_period"
+                            ],
+                            "type": "object"
+                        },
+                        "last_auto_adjust_time": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "auto_adjust_type"
+                    ],
+                    "type": "object"
+                },
+                "budget_type": {
+                    "type": "string"
+                },
+                "cost_filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "cost_types": {
+                    "properties": {
+                        "include_credit": {
+                            "type": "boolean"
+                        },
+                        "include_discount": {
+                            "type": "boolean"
+                        },
+                        "include_other_subscription": {
+                            "type": "boolean"
+                        },
+                        "include_recurring": {
+                            "type": "boolean"
+                        },
+                        "include_refund": {
+                            "type": "boolean"
+                        },
+                        "include_subscription": {
+                            "type": "boolean"
+                        },
+                        "include_support": {
+                            "type": "boolean"
+                        },
+                        "include_tax": {
+                            "type": "boolean"
+                        },
+                        "include_upfront": {
+                            "type": "boolean"
+                        },
+                        "use_amortized": {
+                            "type": "boolean"
+                        },
+                        "use_blended": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "limit_amount": {
+                    "type": "string"
+                },
+                "limit_unit": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_prefix": {
+                    "type": "string"
+                },
+                "notification": {
+                    "items": {
+                        "properties": {
+                            "comparison_operator": {
+                                "type": "string"
+                            },
+                            "notification_type": {
+                                "type": "string"
+                            },
+                            "subscriber_email_addresses": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "subscriber_sns_topic_arns": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "threshold": {
+                                "type": "number"
+                            },
+                            "threshold_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "comparison_operator",
+                            "notification_type",
+                            "threshold",
+                            "threshold_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "planned_limit": {
+                    "items": {
+                        "properties": {
+                            "amount": {
+                                "type": "string"
+                            },
+                            "start_time": {
+                                "type": "string"
+                            },
+                            "unit": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "amount",
+                            "start_time",
+                            "unit"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "time_period_end": {
+                    "type": "string"
+                },
+                "time_period_start": {
+                    "type": "string"
+                },
+                "time_unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "budget_type",
+                "time_unit"
+            ],
+            "type": "object"
+        },
+        "aws_budgets_budget_action": {
+            "properties": {
+                "account_id": {
+                    "type": "string"
+                },
+                "action_id": {
+                    "type": "string"
+                },
+                "action_threshold": {
+                    "properties": {
+                        "action_threshold_type": {
+                            "type": "string"
+                        },
+                        "action_threshold_value": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "action_threshold_type",
+                        "action_threshold_value"
+                    ],
+                    "type": "object"
+                },
+                "action_type": {
+                    "type": "string"
+                },
+                "approval_model": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "budget_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "definition": {
+                    "properties": {
+                        "iam_action_definition": {
+                            "properties": {
+                                "groups": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "policy_arn": {
+                                    "type": "string"
+                                },
+                                "roles": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "users": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+                                "policy_arn"
+                            ],
+                            "type": "object"
+                        },
+                        "scp_action_definition": {
+                            "properties": {
+                                "policy_id": {
+                                    "type": "string"
+                                },
+                                "target_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+                                "policy_id",
+                                "target_ids"
+                            ],
+                            "type": "object"
+                        },
+                        "ssm_action_definition": {
+                            "properties": {
+                                "action_sub_type": {
+                                    "type": "string"
+                                },
+                                "instance_ids": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "region": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "action_sub_type",
+                                "instance_ids",
+                                "region"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "execution_role_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "notification_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subscriber": {
+                    "items": {
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "subscription_type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "address",
+                            "subscription_type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "action_threshold",
+                "action_type",
+                "approval_model",
+                "budget_name",
+                "definition",
+                "execution_role_arn",
+                "notification_type",
+                "subscriber"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_budgets_budget": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_budgets_budget"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_budgets_budget_action": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_budgets_budget_action"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,3552 @@
+{
+    "$defs": {
+        "aws_glue_catalog_database": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_table_default_permission": {
+                    "items": {
+                        "properties": {
+                            "permissions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "principal": {
+                                "properties": {
+                                    "data_lake_principal_identifier": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "federated_database": {
+                    "properties": {
+                        "connection_name": {
+                            "type": "string"
+                        },
+                        "identifier": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "location_uri": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_database": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "catalog_id",
+                        "database_name"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_catalog_table": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "open_table_format_input": {
+                    "properties": {
+                        "iceberg_input": {
+                            "properties": {
+                                "metadata_operation": {
+                                    "type": "string"
+                                },
+                                "version": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "metadata_operation"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "iceberg_input"
+                    ],
+                    "type": "object"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "partition_index": {
+                    "items": {
+                        "properties": {
+                            "index_name": {
+                                "type": "string"
+                            },
+                            "index_status": {
+                                "type": "string"
+                            },
+                            "keys": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "index_name",
+                            "keys"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "partition_keys": {
+                    "items": {
+                        "properties": {
+                            "comment": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "retention": {
+                    "type": "number"
+                },
+                "storage_descriptor": {
+                    "properties": {
+                        "additional_locations": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "bucket_columns": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "columns": {
+                            "items": {
+                                "properties": {
+                                    "comment": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "compressed": {
+                            "type": "boolean"
+                        },
+                        "input_format": {
+                            "type": "string"
+                        },
+                        "location": {
+                            "type": "string"
+                        },
+                        "number_of_buckets": {
+                            "type": "number"
+                        },
+                        "output_format": {
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "schema_reference": {
+                            "properties": {
+                                "schema_id": {
+                                    "properties": {
+                                        "registry_name": {
+                                            "type": "string"
+                                        },
+                                        "schema_arn": {
+                                            "type": "string"
+                                        },
+                                        "schema_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "schema_version_id": {
+                                    "type": "string"
+                                },
+                                "schema_version_number": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "schema_version_number"
+                            ],
+                            "type": "object"
+                        },
+                        "ser_de_info": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "parameters": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "serialization_library": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "skewed_info": {
+                            "properties": {
+                                "skewed_column_names": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "skewed_column_value_location_maps": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "skewed_column_values": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "sort_columns": {
+                            "items": {
+                                "properties": {
+                                    "column": {
+                                        "type": "string"
+                                    },
+                                    "sort_order": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "column",
+                                    "sort_order"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "stored_as_sub_directories": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "table_type": {
+                    "type": "string"
+                },
+                "target_table": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "region": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "catalog_id",
+                        "database_name",
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                "view_expanded_text": {
+                    "type": "string"
+                },
+                "view_original_text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "database_name",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_catalog_table_optimizer": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "configuration": {
+                    "items": {
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "orphan_file_deletion_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "iceberg_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "location": {
+                                                        "type": "string"
+                                                    },
+                                                    "orphan_file_retention_period_in_days": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "retention_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "iceberg_configuration": {
+                                            "items": {
+                                                "properties": {
+                                                    "clean_expired_files": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "number_of_snapshots_to_retain": {
+                                                        "type": "number"
+                                                    },
+                                                    "snapshot_retention_period_in_days": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "role_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "enabled",
+                            "role_arn"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "table_name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "catalog_id",
+                "database_name",
+                "table_name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_glue_classifier": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "csv_classifier": {
+                    "properties": {
+                        "allow_single_column": {
+                            "type": "boolean"
+                        },
+                        "contains_header": {
+                            "type": "string"
+                        },
+                        "custom_datatype_configured": {
+                            "type": "boolean"
+                        },
+                        "custom_datatypes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "delimiter": {
+                            "type": "string"
+                        },
+                        "disable_value_trimming": {
+                            "type": "boolean"
+                        },
+                        "header": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "quote_symbol": {
+                            "type": "string"
+                        },
+                        "serde": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "grok_classifier": {
+                    "properties": {
+                        "classification": {
+                            "type": "string"
+                        },
+                        "custom_patterns": {
+                            "type": "string"
+                        },
+                        "grok_pattern": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "classification",
+                        "grok_pattern"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "json_classifier": {
+                    "properties": {
+                        "json_path": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "json_path"
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "xml_classifier": {
+                    "properties": {
+                        "classification": {
+                            "type": "string"
+                        },
+                        "row_tag": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "classification",
+                        "row_tag"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_connection": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "connection_properties": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "connection_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "match_criteria": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "physical_connection_requirements": {
+                    "properties": {
+                        "availability_zone": {
+                            "type": "string"
+                        },
+                        "security_group_id_list": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnet_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_crawler": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "database_name": {
+                                "type": "string"
+                            },
+                            "dlq_event_queue_arn": {
+                                "type": "string"
+                            },
+                            "event_queue_arn": {
+                                "type": "string"
+                            },
+                            "tables": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "database_name",
+                            "tables"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "classifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "configuration": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "delta_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "create_native_delta_table": {
+                                "type": "boolean"
+                            },
+                            "delta_tables": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "write_manifest": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "delta_tables",
+                            "write_manifest"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "dynamodb_target": {
+                    "items": {
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "scan_all": {
+                                "type": "boolean"
+                            },
+                            "scan_rate": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "hudi_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "exclusions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "maximum_traversal_depth": {
+                                "type": "number"
+                            },
+                            "paths": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "maximum_traversal_depth",
+                            "paths"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "iceberg_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "exclusions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "maximum_traversal_depth": {
+                                "type": "number"
+                            },
+                            "paths": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "maximum_traversal_depth",
+                            "paths"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "jdbc_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "enable_additional_metadata": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "exclusions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "connection_name",
+                            "path"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lake_formation_configuration": {
+                    "properties": {
+                        "account_id": {
+                            "type": "string"
+                        },
+                        "use_lake_formation_credentials": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lineage_configuration": {
+                    "properties": {
+                        "crawler_lineage_settings": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "mongodb_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "scan_all": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "connection_name",
+                            "path"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "recrawl_policy": {
+                    "properties": {
+                        "recrawl_behavior": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "s3_target": {
+                    "items": {
+                        "properties": {
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "dlq_event_queue_arn": {
+                                "type": "string"
+                            },
+                            "event_queue_arn": {
+                                "type": "string"
+                            },
+                            "exclusions": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "sample_size": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "path"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "schedule": {
+                    "type": "string"
+                },
+                "schema_change_policy": {
+                    "properties": {
+                        "delete_behavior": {
+                            "type": "string"
+                        },
+                        "update_behavior": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "security_configuration": {
+                    "type": "string"
+                },
+                "table_prefix": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "database_name",
+                "name",
+                "role"
+            ],
+            "type": "object"
+        },
+        "aws_glue_data_catalog_encryption_settings": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_catalog_encryption_settings": {
+                    "properties": {
+                        "connection_password_encryption": {
+                            "properties": {
+                                "aws_kms_key_id": {
+                                    "type": "string"
+                                },
+                                "return_connection_password_encrypted": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "return_connection_password_encrypted"
+                            ],
+                            "type": "object"
+                        },
+                        "encryption_at_rest": {
+                            "properties": {
+                                "catalog_encryption_mode": {
+                                    "type": "string"
+                                },
+                                "catalog_encryption_service_role": {
+                                    "type": "string"
+                                },
+                                "sse_aws_kms_key_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "catalog_encryption_mode"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "connection_password_encryption",
+                        "encryption_at_rest"
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "data_catalog_encryption_settings"
+            ],
+            "type": "object"
+        },
+        "aws_glue_data_quality_ruleset": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_on": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_on": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "recommendation_run_id": {
+                    "type": "string"
+                },
+                "ruleset": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_table": {
+                    "properties": {
+                        "catalog_id": {
+                            "type": "string"
+                        },
+                        "database_name": {
+                            "type": "string"
+                        },
+                        "table_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "database_name",
+                        "table_name"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "ruleset"
+            ],
+            "type": "object"
+        },
+        "aws_glue_dev_endpoint": {
+            "properties": {
+                "arguments": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "extra_jars_s3_path": {
+                    "type": "string"
+                },
+                "extra_python_libs_s3_path": {
+                    "type": "string"
+                },
+                "failure_reason": {
+                    "type": "string"
+                },
+                "glue_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "number_of_nodes": {
+                    "type": "number"
+                },
+                "number_of_workers": {
+                    "type": "number"
+                },
+                "private_address": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "public_address": {
+                    "type": "string"
+                },
+                "public_key": {
+                    "type": "string"
+                },
+                "public_keys": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "security_configuration": {
+                    "type": "string"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subnet_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                },
+                "worker_type": {
+                    "type": "string"
+                },
+                "yarn_endpoint_address": {
+                    "type": "string"
+                },
+                "zeppelin_remote_spark_interpreter_port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name",
+                "role_arn"
+            ],
+            "type": "object"
+        },
+        "aws_glue_job": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "command": {
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "python_version": {
+                            "type": "string"
+                        },
+                        "runtime": {
+                            "type": "string"
+                        },
+                        "script_location": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "script_location"
+                    ],
+                    "type": "object"
+                },
+                "connections": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_arguments": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "execution_class": {
+                    "type": "string"
+                },
+                "execution_property": {
+                    "properties": {
+                        "max_concurrent_runs": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "glue_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "job_run_queuing_enabled": {
+                    "type": "boolean"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "maintenance_window": {
+                    "type": "string"
+                },
+                "max_capacity": {
+                    "type": "number"
+                },
+                "max_retries": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "non_overridable_arguments": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "notification_property": {
+                    "properties": {
+                        "notify_delay_after": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "number_of_workers": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "security_configuration": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeout": {
+                    "type": "number"
+                },
+                "worker_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "command",
+                "name",
+                "role_arn"
+            ],
+            "type": "object"
+        },
+        "aws_glue_ml_transform": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "glue_version": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "input_record_tables": {
+                    "items": {
+                        "properties": {
+                            "catalog_id": {
+                                "type": "string"
+                            },
+                            "connection_name": {
+                                "type": "string"
+                            },
+                            "database_name": {
+                                "type": "string"
+                            },
+                            "table_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "database_name",
+                            "table_name"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "label_count": {
+                    "type": "number"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_capacity": {
+                    "type": "number"
+                },
+                "max_retries": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "number_of_workers": {
+                    "type": "number"
+                },
+                "parameters": {
+                    "properties": {
+                        "find_matches_parameters": {
+                            "properties": {
+                                "accuracy_cost_trade_off": {
+                                    "type": "number"
+                                },
+                                "enforce_provided_labels": {
+                                    "type": "boolean"
+                                },
+                                "precision_recall_trade_off": {
+                                    "type": "number"
+                                },
+                                "primary_key_column_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "transform_type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "find_matches_parameters",
+                        "transform_type"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "schema": {
+                    "items": {
+                        "properties": {
+                            "data_type": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeout": {
+                    "type": "number"
+                },
+                "worker_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "input_record_tables",
+                "name",
+                "parameters",
+                "role_arn"
+            ],
+            "type": "object"
+        },
+        "aws_glue_partition": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_accessed_time": {
+                    "type": "string"
+                },
+                "last_analyzed_time": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "partition_values": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "storage_descriptor": {
+                    "properties": {
+                        "bucket_columns": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "columns": {
+                            "items": {
+                                "properties": {
+                                    "comment": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "compressed": {
+                            "type": "boolean"
+                        },
+                        "input_format": {
+                            "type": "string"
+                        },
+                        "location": {
+                            "type": "string"
+                        },
+                        "number_of_buckets": {
+                            "type": "number"
+                        },
+                        "output_format": {
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "ser_de_info": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "parameters": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "serialization_library": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "skewed_info": {
+                            "properties": {
+                                "skewed_column_names": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "skewed_column_value_location_maps": {
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "type": "object"
+                                },
+                                "skewed_column_values": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "sort_columns": {
+                            "items": {
+                                "properties": {
+                                    "column": {
+                                        "type": "string"
+                                    },
+                                    "sort_order": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "column",
+                                    "sort_order"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "stored_as_sub_directories": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "table_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "database_name",
+                "partition_values",
+                "table_name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_partition_index": {
+            "properties": {
+                "catalog_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "partition_index": {
+                    "properties": {
+                        "index_name": {
+                            "type": "string"
+                        },
+                        "index_status": {
+                            "type": "string"
+                        },
+                        "keys": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "table_name": {
+                    "type": "string"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "database_name",
+                "partition_index",
+                "table_name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_registry": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "registry_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "registry_name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_resource_policy": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_hybrid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "policy"
+            ],
+            "type": "object"
+        },
+        "aws_glue_schema": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "compatibility": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "data_format": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "latest_schema_version": {
+                    "type": "number"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "next_schema_version": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "registry_arn": {
+                    "type": "string"
+                },
+                "registry_name": {
+                    "type": "string"
+                },
+                "schema_checkpoint": {
+                    "type": "number"
+                },
+                "schema_definition": {
+                    "type": "string"
+                },
+                "schema_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "compatibility",
+                "data_format",
+                "schema_definition",
+                "schema_name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_security_configuration": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "encryption_configuration": {
+                    "properties": {
+                        "cloudwatch_encryption": {
+                            "properties": {
+                                "cloudwatch_encryption_mode": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "job_bookmarks_encryption": {
+                            "properties": {
+                                "job_bookmarks_encryption_mode": {
+                                    "type": "string"
+                                },
+                                "kms_key_arn": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "s3_encryption": {
+                            "properties": {
+                                "kms_key_arn": {
+                                    "type": "string"
+                                },
+                                "s3_encryption_mode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "cloudwatch_encryption",
+                        "job_bookmarks_encryption",
+                        "s3_encryption"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "encryption_configuration",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_glue_trigger": {
+            "properties": {
+                "actions": {
+                    "items": {
+                        "properties": {
+                            "arguments": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "crawler_name": {
+                                "type": "string"
+                            },
+                            "job_name": {
+                                "type": "string"
+                            },
+                            "notification_property": {
+                                "properties": {
+                                    "notify_delay_after": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "security_configuration": {
+                                "type": "string"
+                            },
+                            "timeout": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "event_batching_condition": {
+                    "items": {
+                        "properties": {
+                            "batch_size": {
+                                "type": "number"
+                            },
+                            "batch_window": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "batch_size"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "predicate": {
+                    "properties": {
+                        "conditions": {
+                            "items": {
+                                "properties": {
+                                    "crawl_state": {
+                                        "type": "string"
+                                    },
+                                    "crawler_name": {
+                                        "type": "string"
+                                    },
+                                    "job_name": {
+                                        "type": "string"
+                                    },
+                                    "logical_operator": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "logical": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "conditions"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "schedule": {
+                    "type": "string"
+                },
+                "start_on_creation": {
+                    "type": "boolean"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "workflow_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "actions",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "aws_glue_user_defined_function": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "catalog_id": {
+                    "type": "string"
+                },
+                "class_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "create_time": {
+                    "type": "string"
+                },
+                "database_name": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "owner_name": {
+                    "type": "string"
+                },
+                "owner_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_uris": {
+                    "items": {
+                        "properties": {
+                            "resource_type": {
+                                "type": "string"
+                            },
+                            "uri": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "resource_type",
+                            "uri"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "class_name",
+                "database_name",
+                "name",
+                "owner_name",
+                "owner_type"
+            ],
+            "type": "object"
+        },
+        "aws_glue_workflow": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_run_properties": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max_concurrent_runs": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_glue_catalog_database": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_catalog_database"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_catalog_table": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_catalog_table"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_catalog_table_optimizer": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_catalog_table_optimizer"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_classifier": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_classifier"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_connection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_connection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_crawler": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_crawler"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_data_catalog_encryption_settings": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_data_catalog_encryption_settings"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_data_quality_ruleset": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_data_quality_ruleset"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_dev_endpoint": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_dev_endpoint"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_job": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_job"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_ml_transform": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_ml_transform"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_partition": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_partition"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_partition_index": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_partition_index"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_registry": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_registry"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_resource_policy": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_resource_policy"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_schema": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_schema"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_security_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_security_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_trigger": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_trigger"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_user_defined_function": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_user_defined_function"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_glue_workflow": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_glue_workflow"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

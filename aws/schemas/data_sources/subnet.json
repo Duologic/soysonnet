@@ -1,0 +1,146 @@
+{
+    "$defs": {
+        "aws_subnet": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "assign_ipv6_address_on_creation": {
+                    "type": "boolean"
+                },
+                "availability_zone": {
+                    "type": "string"
+                },
+                "availability_zone_id": {
+                    "type": "string"
+                },
+                "available_ip_address_count": {
+                    "type": "number"
+                },
+                "cidr_block": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "customer_owned_ipv4_pool": {
+                    "type": "string"
+                },
+                "default_for_az": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_dns64": {
+                    "type": "boolean"
+                },
+                "enable_lni_at_device_index": {
+                    "type": "number"
+                },
+                "enable_resource_name_dns_a_record_on_launch": {
+                    "type": "boolean"
+                },
+                "enable_resource_name_dns_aaaa_record_on_launch": {
+                    "type": "boolean"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block": {
+                    "type": "string"
+                },
+                "ipv6_cidr_block_association_id": {
+                    "type": "string"
+                },
+                "ipv6_native": {
+                    "type": "boolean"
+                },
+                "map_customer_owned_ip_on_launch": {
+                    "type": "boolean"
+                },
+                "map_public_ip_on_launch": {
+                    "type": "boolean"
+                },
+                "outpost_arn": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "private_dns_hostname_type_on_launch": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "read": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_subnet": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_subnet"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

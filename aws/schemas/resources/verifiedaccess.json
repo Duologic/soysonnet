@@ -1,0 +1,884 @@
+{
+    "$defs": {
+        "aws_verifiedaccess_endpoint": {
+            "properties": {
+                "application_domain": {
+                    "type": "string"
+                },
+                "attachment_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "device_validation_domain": {
+                    "type": "string"
+                },
+                "domain_certificate_arn": {
+                    "type": "string"
+                },
+                "endpoint_domain": {
+                    "type": "string"
+                },
+                "endpoint_domain_prefix": {
+                    "type": "string"
+                },
+                "endpoint_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "load_balancer_options": {
+                    "properties": {
+                        "load_balancer_arn": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "number"
+                        },
+                        "protocol": {
+                            "type": "string"
+                        },
+                        "subnet_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "network_interface_options": {
+                    "properties": {
+                        "network_interface_id": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "type": "number"
+                        },
+                        "protocol": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "policy_document": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "sse_specification": {
+                    "properties": {
+                        "customer_managed_key_enabled": {
+                            "type": "boolean"
+                        },
+                        "kms_key_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "verified_access_group_id": {
+                    "type": "string"
+                },
+                "verified_access_instance_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "application_domain",
+                "attachment_type",
+                "domain_certificate_arn",
+                "endpoint_domain_prefix",
+                "endpoint_type",
+                "verified_access_group_id"
+            ],
+            "type": "object"
+        },
+        "aws_verifiedaccess_group": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "deletion_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_time": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "policy_document": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "sse_configuration": {
+                    "properties": {
+                        "customer_managed_key_enabled": {
+                            "type": "boolean"
+                        },
+                        "kms_key_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "verifiedaccess_group_arn": {
+                    "type": "string"
+                },
+                "verifiedaccess_group_id": {
+                    "type": "string"
+                },
+                "verifiedaccess_instance_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "verifiedaccess_instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_verifiedaccess_instance": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "fips_enabled": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_time": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "verified_access_trust_providers": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "device_trust_provider_type": {
+                                "type": "string"
+                            },
+                            "trust_provider_type": {
+                                "type": "string"
+                            },
+                            "user_trust_provider_type": {
+                                "type": "string"
+                            },
+                            "verified_access_trust_provider_id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_verifiedaccess_instance_logging_configuration": {
+            "properties": {
+                "access_logs": {
+                    "properties": {
+                        "cloudwatch_logs": {
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "log_group": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ],
+                            "type": "object"
+                        },
+                        "include_trust_context": {
+                            "type": "boolean"
+                        },
+                        "kinesis_data_firehose": {
+                            "properties": {
+                                "delivery_stream": {
+                                    "type": "string"
+                                },
+                                "enabled": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ],
+                            "type": "object"
+                        },
+                        "log_version": {
+                            "type": "string"
+                        },
+                        "s3": {
+                            "properties": {
+                                "bucket_name": {
+                                    "type": "string"
+                                },
+                                "bucket_owner": {
+                                    "type": "string"
+                                },
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "prefix": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "verifiedaccess_instance_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "access_logs",
+                "verifiedaccess_instance_id"
+            ],
+            "type": "object"
+        },
+        "aws_verifiedaccess_instance_trust_provider_attachment": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "verifiedaccess_instance_id": {
+                    "type": "string"
+                },
+                "verifiedaccess_trust_provider_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "verifiedaccess_instance_id",
+                "verifiedaccess_trust_provider_id"
+            ],
+            "type": "object"
+        },
+        "aws_verifiedaccess_trust_provider": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "device_options": {
+                    "properties": {
+                        "tenant_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "device_trust_provider_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "oidc_options": {
+                    "properties": {
+                        "authorization_endpoint": {
+                            "type": "string"
+                        },
+                        "client_id": {
+                            "type": "string"
+                        },
+                        "client_secret": {
+                            "type": "string"
+                        },
+                        "issuer": {
+                            "type": "string"
+                        },
+                        "scope": {
+                            "type": "string"
+                        },
+                        "token_endpoint": {
+                            "type": "string"
+                        },
+                        "user_info_endpoint": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "client_secret"
+                    ],
+                    "type": "object"
+                },
+                "policy_reference_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "trust_provider_type": {
+                    "type": "string"
+                },
+                "user_trust_provider_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "policy_reference_name",
+                "trust_provider_type"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_verifiedaccess_endpoint": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_endpoint"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_verifiedaccess_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_verifiedaccess_instance": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_instance"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_verifiedaccess_instance_logging_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_instance_logging_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_verifiedaccess_instance_trust_provider_attachment": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_instance_trust_provider_attachment"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_verifiedaccess_trust_provider": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedaccess_trust_provider"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

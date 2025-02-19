@@ -1,0 +1,807 @@
+{
+    "$defs": {
+        "aws_cognito_identity_pool": {
+            "properties": {
+                "allow_classic_flow": {
+                    "type": "boolean"
+                },
+                "allow_unauthenticated_identities": {
+                    "type": "boolean"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "cognito_identity_providers": {
+                    "items": {
+                        "properties": {
+                            "client_id": {
+                                "type": "string"
+                            },
+                            "provider_name": {
+                                "type": "string"
+                            },
+                            "server_side_token_check": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "developer_provider_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_pool_name": {
+                    "type": "string"
+                },
+                "openid_connect_provider_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "saml_provider_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "supported_login_providers": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "identity_pool_name"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_group": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "precedence": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "role_arn": {
+                    "type": "string"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_groups": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "groups": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "group_name": {
+                                "type": "string"
+                            },
+                            "precedence": {
+                                "type": "number"
+                            },
+                            "role_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_pool": {
+            "properties": {
+                "account_recovery_setting": {
+                    "items": {
+                        "properties": {
+                            "recovery_mechanism": {
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "priority": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "admin_create_user_config": {
+                    "items": {
+                        "properties": {
+                            "allow_admin_create_user_only": {
+                                "type": "boolean"
+                            },
+                            "invite_message_template": {
+                                "items": {
+                                    "properties": {
+                                        "email_message": {
+                                            "type": "string"
+                                        },
+                                        "email_subject": {
+                                            "type": "string"
+                                        },
+                                        "sms_message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "unused_account_validity_days": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "auto_verified_attributes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "custom_domain": {
+                    "type": "string"
+                },
+                "deletion_protection": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "device_configuration": {
+                    "items": {
+                        "properties": {
+                            "challenge_required_on_new_device": {
+                                "type": "boolean"
+                            },
+                            "device_only_remembered_on_user_prompt": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "email_configuration": {
+                    "items": {
+                        "properties": {
+                            "configuration_set": {
+                                "type": "string"
+                            },
+                            "email_sending_account": {
+                                "type": "string"
+                            },
+                            "from": {
+                                "type": "string"
+                            },
+                            "reply_to_email_address": {
+                                "type": "string"
+                            },
+                            "source_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "estimated_number_of_users": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lambda_config": {
+                    "items": {
+                        "properties": {
+                            "create_auth_challenge": {
+                                "type": "string"
+                            },
+                            "custom_email_sender": {
+                                "items": {
+                                    "properties": {
+                                        "lambda_arn": {
+                                            "type": "string"
+                                        },
+                                        "lambda_version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "custom_message": {
+                                "type": "string"
+                            },
+                            "custom_sms_sender": {
+                                "items": {
+                                    "properties": {
+                                        "lambda_arn": {
+                                            "type": "string"
+                                        },
+                                        "lambda_version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "define_auth_challenge": {
+                                "type": "string"
+                            },
+                            "kms_key_id": {
+                                "type": "string"
+                            },
+                            "post_authentication": {
+                                "type": "string"
+                            },
+                            "post_confirmation": {
+                                "type": "string"
+                            },
+                            "pre_authentication": {
+                                "type": "string"
+                            },
+                            "pre_sign_up": {
+                                "type": "string"
+                            },
+                            "pre_token_generation": {
+                                "type": "string"
+                            },
+                            "pre_token_generation_config": {
+                                "items": {
+                                    "properties": {
+                                        "lambda_arn": {
+                                            "type": "string"
+                                        },
+                                        "lambda_version": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "user_migration": {
+                                "type": "string"
+                            },
+                            "verify_auth_challenge_response": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "last_modified_date": {
+                    "type": "string"
+                },
+                "mfa_configuration": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "schema_attributes": {
+                    "items": {
+                        "properties": {
+                            "attribute_data_type": {
+                                "type": "string"
+                            },
+                            "developer_only_attribute": {
+                                "type": "boolean"
+                            },
+                            "mutable": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "number_attribute_constraints": {
+                                "items": {
+                                    "properties": {
+                                        "max_value": {
+                                            "type": "string"
+                                        },
+                                        "min_value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "required": {
+                                "type": "boolean"
+                            },
+                            "string_attribute_constraints": {
+                                "items": {
+                                    "properties": {
+                                        "max_length": {
+                                            "type": "string"
+                                        },
+                                        "min_length": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "sms_authentication_message": {
+                    "type": "string"
+                },
+                "sms_configuration_failure": {
+                    "type": "string"
+                },
+                "sms_verification_message": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                },
+                "user_pool_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "username_attributes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_pool_client": {
+            "properties": {
+                "access_token_validity": {
+                    "type": "number"
+                },
+                "allowed_oauth_flows": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "allowed_oauth_flows_user_pool_client": {
+                    "type": "boolean"
+                },
+                "allowed_oauth_scopes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "analytics_configuration": {
+                    "items": {
+                        "properties": {
+                            "application_arn": {
+                                "type": "string"
+                            },
+                            "application_id": {
+                                "type": "string"
+                            },
+                            "external_id": {
+                                "type": "string"
+                            },
+                            "role_arn": {
+                                "type": "string"
+                            },
+                            "user_data_shared": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "callback_urls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "client_id": {
+                    "type": "string"
+                },
+                "client_secret": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_redirect_uri": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_propagate_additional_user_context_data": {
+                    "type": "boolean"
+                },
+                "enable_token_revocation": {
+                    "type": "boolean"
+                },
+                "explicit_auth_flows": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "generate_secret": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "id_token_validity": {
+                    "type": "number"
+                },
+                "logout_urls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "prevent_user_existence_errors": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "read_attributes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "refresh_token_validity": {
+                    "type": "number"
+                },
+                "supported_identity_providers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "token_validity_units": {
+                    "items": {
+                        "properties": {
+                            "access_token": {
+                                "type": "string"
+                            },
+                            "id_token": {
+                                "type": "string"
+                            },
+                            "refresh_token": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                },
+                "write_attributes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "client_id",
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_pool_clients": {
+            "properties": {
+                "client_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "client_names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_pool_signing_certificate": {
+            "properties": {
+                "certificate": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "user_pool_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_pool_id"
+            ],
+            "type": "object"
+        },
+        "aws_cognito_user_pools": {
+            "properties": {
+                "arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_cognito_identity_pool": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_identity_pool"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_groups": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_groups"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_pool": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_pool"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_pool_client": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_pool_client"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_pool_clients": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_pool_clients"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_pool_signing_certificate": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_pool_signing_certificate"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_cognito_user_pools": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_cognito_user_pools"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

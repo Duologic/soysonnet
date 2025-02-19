@@ -1,0 +1,1635 @@
+{
+    "$defs": {
+        "aws_ce_cost_category": {
+            "properties": {
+                "cost_category_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_value": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "effective_end": {
+                    "type": "string"
+                },
+                "effective_start": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "rule": {
+                    "items": {
+                        "properties": {
+                            "inherited_value": {
+                                "items": {
+                                    "properties": {
+                                        "dimension_key": {
+                                            "type": "string"
+                                        },
+                                        "dimension_name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "rule": {
+                                "items": {
+                                    "properties": {
+                                        "and": {
+                                            "items": {
+                                                "properties": {
+                                                    "and": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "cost_category": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "dimension": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "not": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "or": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "tags": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "cost_category": {
+                                            "items": {
+                                                "properties": {
+                                                    "key": {
+                                                        "type": "string"
+                                                    },
+                                                    "match_options": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "values": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "dimension": {
+                                            "items": {
+                                                "properties": {
+                                                    "key": {
+                                                        "type": "string"
+                                                    },
+                                                    "match_options": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "values": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "not": {
+                                            "items": {
+                                                "properties": {
+                                                    "and": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "cost_category": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "dimension": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "not": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "or": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "tags": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "or": {
+                                            "items": {
+                                                "properties": {
+                                                    "and": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "cost_category": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "dimension": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "not": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "or": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "cost_category": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "dimension": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tags": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "match_options": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            },
+                                                                            "values": {
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "type": "array",
+                                                                                "uniqueItems": true
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "tags": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "key": {
+                                                                    "type": "string"
+                                                                },
+                                                                "match_options": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                },
+                                                                "values": {
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": "array",
+                                                                    "uniqueItems": true
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "tags": {
+                                            "items": {
+                                                "properties": {
+                                                    "key": {
+                                                        "type": "string"
+                                                    },
+                                                    "match_options": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    },
+                                                    "values": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "rule_version": {
+                    "type": "string"
+                },
+                "split_charge_rule": {
+                    "items": {
+                        "properties": {
+                            "method": {
+                                "type": "string"
+                            },
+                            "parameter": {
+                                "items": {
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "targets": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "cost_category_arn"
+            ],
+            "type": "object"
+        },
+        "aws_ce_tags": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "properties": {
+                        "and": {
+                            "items": {
+                                "properties": {
+                                    "cost_category": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "dimension": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "tags": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "cost_category": {
+                            "properties": {
+                                "key": {
+                                    "type": "string"
+                                },
+                                "match_options": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "values": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "dimension": {
+                            "properties": {
+                                "key": {
+                                    "type": "string"
+                                },
+                                "match_options": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "values": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "not": {
+                            "properties": {
+                                "cost_category": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "match_options": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "dimension": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "match_options": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                },
+                                "tags": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "match_options": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "values": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        }
+                                    },
+                                    "required": [
+
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        },
+                        "or": {
+                            "items": {
+                                "properties": {
+                                    "cost_category": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "dimension": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "tags": {
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "match_options": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            },
+                                            "values": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array",
+                                                "uniqueItems": true
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "tags": {
+                            "properties": {
+                                "key": {
+                                    "type": "string"
+                                },
+                                "match_options": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                },
+                                "values": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "uniqueItems": true
+                                }
+                            },
+                            "required": [
+
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "search_string": {
+                    "type": "string"
+                },
+                "sort_by": {
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "sort_order": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tag_key": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "time_period": {
+                    "properties": {
+                        "end": {
+                            "type": "string"
+                        },
+                        "start": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "end",
+                        "start"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "time_period"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ce_cost_category": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ce_cost_category"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ce_tags": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ce_tags"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

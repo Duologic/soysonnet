@@ -1,0 +1,258 @@
+{
+    "$defs": {
+        "aws_ssmincidents_replication_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_by": {
+                    "type": "string"
+                },
+                "deletion_protected": {
+                    "type": "boolean"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_modified_by": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "region": {
+                    "items": {
+                        "properties": {
+                            "kms_key_arn": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "status_message": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ssmincidents_response_plan": {
+            "properties": {
+                "action": {
+                    "items": {
+                        "properties": {
+                            "ssm_automation": {
+                                "items": {
+                                    "properties": {
+                                        "document_name": {
+                                            "type": "string"
+                                        },
+                                        "document_version": {
+                                            "type": "string"
+                                        },
+                                        "dynamic_parameters": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "parameter": {
+                                            "items": {
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "values": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array",
+                                                        "uniqueItems": true
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array",
+                                            "uniqueItems": true
+                                        },
+                                        "role_arn": {
+                                            "type": "string"
+                                        },
+                                        "target_account": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "chat_channel": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "display_name": {
+                    "type": "string"
+                },
+                "engagements": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "id": {
+                    "type": "string"
+                },
+                "incident_template": {
+                    "items": {
+                        "properties": {
+                            "dedupe_string": {
+                                "type": "string"
+                            },
+                            "impact": {
+                                "type": "number"
+                            },
+                            "incident_tags": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "notification_target": {
+                                "items": {
+                                    "properties": {
+                                        "sns_topic_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "summary": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "integration": {
+                    "items": {
+                        "properties": {
+                            "pagerduty": {
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "secret_id": {
+                                            "type": "string"
+                                        },
+                                        "service_id": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ssmincidents_replication_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssmincidents_replication_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ssmincidents_response_plan": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ssmincidents_response_plan"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

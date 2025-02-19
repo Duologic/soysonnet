@@ -1,0 +1,195 @@
+{
+    "$defs": {
+        "aws_rbin_rule": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lock_configuration": {
+                    "properties": {
+                        "unlock_delay": {
+                            "properties": {
+                                "unlock_delay_unit": {
+                                    "type": "string"
+                                },
+                                "unlock_delay_value": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "unlock_delay_unit",
+                                "unlock_delay_value"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "unlock_delay"
+                    ],
+                    "type": "object"
+                },
+                "lock_end_time": {
+                    "type": "string"
+                },
+                "lock_state": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_tags": {
+                    "items": {
+                        "properties": {
+                            "resource_tag_key": {
+                                "type": "string"
+                            },
+                            "resource_tag_value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "resource_tag_key"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_type": {
+                    "type": "string"
+                },
+                "retention_period": {
+                    "properties": {
+                        "retention_period_unit": {
+                            "type": "string"
+                        },
+                        "retention_period_value": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "retention_period_unit",
+                        "retention_period_value"
+                    ],
+                    "type": "object"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "delete": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "resource_type",
+                "retention_period"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_rbin_rule": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_rbin_rule"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

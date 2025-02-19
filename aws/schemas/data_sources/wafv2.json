@@ -1,0 +1,205 @@
+{
+    "$defs": {
+        "aws_wafv2_ip_set": {
+            "properties": {
+                "addresses": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ip_address_version": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "scope": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "scope"
+            ],
+            "type": "object"
+        },
+        "aws_wafv2_regex_pattern_set": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "regular_expression": {
+                    "items": {
+                        "properties": {
+                            "regex_string": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "scope": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "scope"
+            ],
+            "type": "object"
+        },
+        "aws_wafv2_rule_group": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "scope": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "scope"
+            ],
+            "type": "object"
+        },
+        "aws_wafv2_web_acl": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "scope": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "scope"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_wafv2_ip_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_wafv2_ip_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_wafv2_regex_pattern_set": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_wafv2_regex_pattern_set"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_wafv2_rule_group": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_wafv2_rule_group"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_wafv2_web_acl": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_wafv2_web_acl"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

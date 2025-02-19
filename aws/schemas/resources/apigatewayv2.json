@@ -1,0 +1,1609 @@
+{
+    "$defs": {
+        "aws_apigatewayv2_api": {
+            "properties": {
+                "api_endpoint": {
+                    "type": "string"
+                },
+                "api_key_selection_expression": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "cors_configuration": {
+                    "properties": {
+                        "allow_credentials": {
+                            "type": "boolean"
+                        },
+                        "allow_headers": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "allow_methods": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "allow_origins": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "expose_headers": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "max_age": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "credentials_arn": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "disable_execute_api_endpoint": {
+                    "type": "boolean"
+                },
+                "execution_arn": {
+                    "type": "string"
+                },
+                "fail_on_warnings": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "protocol_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route_key": {
+                    "type": "string"
+                },
+                "route_selection_expression": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "protocol_type"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_api_mapping": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "api_mapping_key": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "stage": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "domain_name",
+                "stage"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_authorizer": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "authorizer_credentials_arn": {
+                    "type": "string"
+                },
+                "authorizer_payload_format_version": {
+                    "type": "string"
+                },
+                "authorizer_result_ttl_in_seconds": {
+                    "type": "number"
+                },
+                "authorizer_type": {
+                    "type": "string"
+                },
+                "authorizer_uri": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_simple_responses": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_sources": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "jwt_configuration": {
+                    "properties": {
+                        "audience": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "issuer": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "timeouts": {
+                    "properties": {
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "api_id",
+                "authorizer_type",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_deployment": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "auto_deployed": {
+                    "type": "boolean"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "triggers": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "api_id"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_domain_name": {
+            "properties": {
+                "api_mapping_selection_expression": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "domain_name": {
+                    "type": "string"
+                },
+                "domain_name_configuration": {
+                    "properties": {
+                        "certificate_arn": {
+                            "type": "string"
+                        },
+                        "endpoint_type": {
+                            "type": "string"
+                        },
+                        "hosted_zone_id": {
+                            "type": "string"
+                        },
+                        "ownership_verification_certificate_arn": {
+                            "type": "string"
+                        },
+                        "security_policy": {
+                            "type": "string"
+                        },
+                        "target_domain_name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "certificate_arn",
+                        "endpoint_type",
+                        "security_policy"
+                    ],
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "mutual_tls_authentication": {
+                    "properties": {
+                        "truststore_uri": {
+                            "type": "string"
+                        },
+                        "truststore_version": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "truststore_uri"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "create": {
+                            "type": "string"
+                        },
+                        "update": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "domain_name",
+                "domain_name_configuration"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_integration": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "connection_id": {
+                    "type": "string"
+                },
+                "connection_type": {
+                    "type": "string"
+                },
+                "content_handling_strategy": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "credentials_arn": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "integration_method": {
+                    "type": "string"
+                },
+                "integration_response_selection_expression": {
+                    "type": "string"
+                },
+                "integration_subtype": {
+                    "type": "string"
+                },
+                "integration_type": {
+                    "type": "string"
+                },
+                "integration_uri": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "passthrough_behavior": {
+                    "type": "string"
+                },
+                "payload_format_version": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "request_parameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "request_templates": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "response_parameters": {
+                    "items": {
+                        "properties": {
+                            "mappings": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "status_code": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "mappings",
+                            "status_code"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "template_selection_expression": {
+                    "type": "string"
+                },
+                "timeout_milliseconds": {
+                    "type": "number"
+                },
+                "tls_config": {
+                    "properties": {
+                        "server_name_to_verify": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "api_id",
+                "integration_type"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_integration_response": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "content_handling_strategy": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "integration_id": {
+                    "type": "string"
+                },
+                "integration_response_key": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "response_templates": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "template_selection_expression": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "integration_id",
+                "integration_response_key"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_model": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "content_type": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "content_type",
+                "name",
+                "schema"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_route": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "api_key_required": {
+                    "type": "boolean"
+                },
+                "authorization_scopes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "authorization_type": {
+                    "type": "string"
+                },
+                "authorizer_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "model_selection_expression": {
+                    "type": "string"
+                },
+                "operation_name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "request_models": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "request_parameter": {
+                    "items": {
+                        "properties": {
+                            "request_parameter_key": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "request_parameter_key",
+                            "required"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route_key": {
+                    "type": "string"
+                },
+                "route_response_selection_expression": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "route_key"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_route_response": {
+            "properties": {
+                "api_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "model_selection_expression": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "response_models": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "route_id": {
+                    "type": "string"
+                },
+                "route_response_key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "api_id",
+                "route_id",
+                "route_response_key"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_stage": {
+            "properties": {
+                "access_log_settings": {
+                    "properties": {
+                        "destination_arn": {
+                            "type": "string"
+                        },
+                        "format": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "destination_arn",
+                        "format"
+                    ],
+                    "type": "object"
+                },
+                "api_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "auto_deploy": {
+                    "type": "boolean"
+                },
+                "client_certificate_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "default_route_settings": {
+                    "properties": {
+                        "data_trace_enabled": {
+                            "type": "boolean"
+                        },
+                        "detailed_metrics_enabled": {
+                            "type": "boolean"
+                        },
+                        "logging_level": {
+                            "type": "string"
+                        },
+                        "throttling_burst_limit": {
+                            "type": "number"
+                        },
+                        "throttling_rate_limit": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deployment_id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "execution_arn": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "invoke_url": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "route_settings": {
+                    "items": {
+                        "properties": {
+                            "data_trace_enabled": {
+                                "type": "boolean"
+                            },
+                            "detailed_metrics_enabled": {
+                                "type": "boolean"
+                            },
+                            "logging_level": {
+                                "type": "string"
+                            },
+                            "route_key": {
+                                "type": "string"
+                            },
+                            "throttling_burst_limit": {
+                                "type": "number"
+                            },
+                            "throttling_rate_limit": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "route_key"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "stage_variables": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "api_id",
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_apigatewayv2_vpc_link": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_group_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "subnet_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "security_group_ids",
+                "subnet_ids"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_apigatewayv2_api": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_api"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_api_mapping": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_api_mapping"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_authorizer": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_authorizer"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_deployment": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_deployment"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_domain_name": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_domain_name"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_integration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_integration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_integration_response": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_integration_response"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_model": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_model"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_route": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_route"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_route_response": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_route_response"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_stage": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_stage"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_apigatewayv2_vpc_link": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_apigatewayv2_vpc_link"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

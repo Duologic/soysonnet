@@ -1,0 +1,64 @@
+{
+    "$defs": {
+        "aws_verifiedpermissions_policy_store": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "validation_settings": {
+                    "items": {
+                        "properties": {
+                            "mode": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_verifiedpermissions_policy_store": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_verifiedpermissions_policy_store"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

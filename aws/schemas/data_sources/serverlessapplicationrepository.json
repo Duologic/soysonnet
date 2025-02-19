@@ -1,0 +1,63 @@
+{
+    "$defs": {
+        "aws_serverlessapplicationrepository_application": {
+            "properties": {
+                "application_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "required_capabilities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "semantic_version": {
+                    "type": "string"
+                },
+                "source_code_url": {
+                    "type": "string"
+                },
+                "template_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "application_id"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_serverlessapplicationrepository_application": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_serverlessapplicationrepository_application"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

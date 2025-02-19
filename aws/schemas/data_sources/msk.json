@@ -1,0 +1,484 @@
+{
+    "$defs": {
+        "aws_msk_bootstrap_brokers": {
+            "properties": {
+                "bootstrap_brokers": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_sasl_iam": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_sasl_scram": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_tls": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_sasl_iam": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_sasl_scram": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_tls": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_vpc_connectivity_sasl_iam": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_vpc_connectivity_sasl_scram": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_vpc_connectivity_tls": {
+                    "type": "string"
+                },
+                "cluster_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_arn"
+            ],
+            "type": "object"
+        },
+        "aws_msk_broker_nodes": {
+            "properties": {
+                "cluster_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "node_info_list": {
+                    "items": {
+                        "properties": {
+                            "attached_eni_id": {
+                                "type": "string"
+                            },
+                            "broker_id": {
+                                "type": "number"
+                            },
+                            "client_subnet": {
+                                "type": "string"
+                            },
+                            "client_vpc_ip_address": {
+                                "type": "string"
+                            },
+                            "endpoints": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "node_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_arn"
+            ],
+            "type": "object"
+        },
+        "aws_msk_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "bootstrap_brokers": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_sasl_iam": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_sasl_scram": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_public_tls": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_sasl_iam": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_sasl_scram": {
+                    "type": "string"
+                },
+                "bootstrap_brokers_tls": {
+                    "type": "string"
+                },
+                "broker_node_group_info": {
+                    "items": {
+                        "properties": {
+                            "az_distribution": {
+                                "type": "string"
+                            },
+                            "client_subnets": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "connectivity_info": {
+                                "items": {
+                                    "properties": {
+                                        "public_access": {
+                                            "items": {
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "vpc_connectivity": {
+                                            "items": {
+                                                "properties": {
+                                                    "client_authentication": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "sasl": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "iam": {
+                                                                                "type": "boolean"
+                                                                            },
+                                                                            "scram": {
+                                                                                "type": "boolean"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "tls": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "instance_type": {
+                                "type": "string"
+                            },
+                            "security_groups": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "storage_info": {
+                                "items": {
+                                    "properties": {
+                                        "ebs_storage_info": {
+                                            "items": {
+                                                "properties": {
+                                                    "provisioned_throughput": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "enabled": {
+                                                                    "type": "boolean"
+                                                                },
+                                                                "volume_throughput": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "volume_size": {
+                                                        "type": "number"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "cluster_name": {
+                    "type": "string"
+                },
+                "cluster_uuid": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kafka_version": {
+                    "type": "string"
+                },
+                "number_of_broker_nodes": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "zookeeper_connect_string": {
+                    "type": "string"
+                },
+                "zookeeper_connect_string_tls": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_name"
+            ],
+            "type": "object"
+        },
+        "aws_msk_configuration": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "kafka_versions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "latest_revision": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "server_properties": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "aws_msk_kafka_version": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "preferred_versions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_msk_vpc_connection": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "authentication": {
+                    "type": "string"
+                },
+                "client_subnets": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "security_groups": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "target_cluster_arn": {
+                    "type": "string"
+                },
+                "vpc_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "arn"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_msk_bootstrap_brokers": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_bootstrap_brokers"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_msk_broker_nodes": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_broker_nodes"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_msk_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_msk_configuration": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_configuration"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_msk_kafka_version": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_kafka_version"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_msk_vpc_connection": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_msk_vpc_connection"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

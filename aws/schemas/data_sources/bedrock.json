@@ -1,0 +1,491 @@
+{
+    "$defs": {
+        "aws_bedrock_custom_model": {
+            "properties": {
+                "base_model_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_time": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "hyperparameters": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "job_arn": {
+                    "type": "string"
+                },
+                "job_name": {
+                    "type": "string"
+                },
+                "job_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "model_arn": {
+                    "type": "string"
+                },
+                "model_id": {
+                    "type": "string"
+                },
+                "model_kms_key_arn": {
+                    "type": "string"
+                },
+                "model_name": {
+                    "type": "string"
+                },
+                "model_tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "output_data_config": {
+                    "items": {
+                        "properties": {
+                            "s3_uri": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "training_data_config": {
+                    "items": {
+                        "properties": {
+                            "s3_uri": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "training_metrics": {
+                    "items": {
+                        "properties": {
+                            "training_loss": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "validation_data_config": {
+                    "items": {
+                        "properties": {
+                            "validator": {
+                                "items": {
+                                    "properties": {
+                                        "s3_uri": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "validation_metrics": {
+                    "items": {
+                        "properties": {
+                            "validation_loss": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "model_id"
+            ],
+            "type": "object"
+        },
+        "aws_bedrock_custom_models": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "model_summaries": {
+                    "items": {
+                        "properties": {
+                            "creation_time": {
+                                "type": "string"
+                            },
+                            "model_arn": {
+                                "type": "string"
+                            },
+                            "model_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_bedrock_foundation_model": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "customizations_supported": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "inference_types_supported": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "input_modalities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "model_arn": {
+                    "type": "string"
+                },
+                "model_id": {
+                    "type": "string"
+                },
+                "model_name": {
+                    "type": "string"
+                },
+                "output_modalities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "response_streaming_supported": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "model_id"
+            ],
+            "type": "object"
+        },
+        "aws_bedrock_foundation_models": {
+            "properties": {
+                "by_customization_type": {
+                    "type": "string"
+                },
+                "by_inference_type": {
+                    "type": "string"
+                },
+                "by_output_modality": {
+                    "type": "string"
+                },
+                "by_provider": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "model_summaries": {
+                    "items": {
+                        "properties": {
+                            "customizations_supported": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "inference_types_supported": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "input_modalities": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "model_arn": {
+                                "type": "string"
+                            },
+                            "model_id": {
+                                "type": "string"
+                            },
+                            "model_name": {
+                                "type": "string"
+                            },
+                            "output_modalities": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            },
+                            "provider_name": {
+                                "type": "string"
+                            },
+                            "response_streaming_supported": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_bedrock_inference_profile": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "inference_profile_arn": {
+                    "type": "string"
+                },
+                "inference_profile_id": {
+                    "type": "string"
+                },
+                "inference_profile_name": {
+                    "type": "string"
+                },
+                "models": {
+                    "items": {
+                        "properties": {
+                            "model_arn": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "inference_profile_id"
+            ],
+            "type": "object"
+        },
+        "aws_bedrock_inference_profiles": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "inference_profile_summaries": {
+                    "items": {
+                        "properties": {
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "inference_profile_arn": {
+                                "type": "string"
+                            },
+                            "inference_profile_id": {
+                                "type": "string"
+                            },
+                            "inference_profile_name": {
+                                "type": "string"
+                            },
+                            "models": {
+                                "items": {
+                                    "properties": {
+                                        "model_arn": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_bedrock_custom_model": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_custom_model"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrock_custom_models": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_custom_models"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrock_foundation_model": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_foundation_model"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrock_foundation_models": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_foundation_models"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrock_inference_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_inference_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_bedrock_inference_profiles": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_bedrock_inference_profiles"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

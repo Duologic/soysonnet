@@ -1,0 +1,1777 @@
+{
+    "$defs": {
+        "aws_transfer_access": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "external_id": {
+                    "type": "string"
+                },
+                "home_directory": {
+                    "type": "string"
+                },
+                "home_directory_mappings": {
+                    "items": {
+                        "properties": {
+                            "entry": {
+                                "type": "string"
+                            },
+                            "target": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "entry",
+                            "target"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "home_directory_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "posix_profile": {
+                    "properties": {
+                        "gid": {
+                            "type": "number"
+                        },
+                        "secondary_gids": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "uid": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "gid",
+                        "uid"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "server_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "external_id",
+                "server_id"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_agreement": {
+            "properties": {
+                "access_role": {
+                    "type": "string"
+                },
+                "agreement_id": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "base_directory": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "local_profile_id": {
+                    "type": "string"
+                },
+                "partner_profile_id": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "server_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "access_role",
+                "base_directory",
+                "local_profile_id",
+                "partner_profile_id",
+                "server_id"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_certificate": {
+            "properties": {
+                "active_date": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "certificate": {
+                    "type": "string"
+                },
+                "certificate_chain": {
+                    "type": "string"
+                },
+                "certificate_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "inactive_date": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "private_key": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "usage": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "certificate",
+                "usage"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_connector": {
+            "properties": {
+                "access_role": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "as2_config": {
+                    "properties": {
+                        "compression": {
+                            "type": "string"
+                        },
+                        "encryption_algorithm": {
+                            "type": "string"
+                        },
+                        "local_profile_id": {
+                            "type": "string"
+                        },
+                        "mdn_response": {
+                            "type": "string"
+                        },
+                        "mdn_signing_algorithm": {
+                            "type": "string"
+                        },
+                        "message_subject": {
+                            "type": "string"
+                        },
+                        "partner_profile_id": {
+                            "type": "string"
+                        },
+                        "signing_algorithm": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "compression",
+                        "encryption_algorithm",
+                        "local_profile_id",
+                        "mdn_response",
+                        "partner_profile_id",
+                        "signing_algorithm"
+                    ],
+                    "type": "object"
+                },
+                "connector_id": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "logging_role": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "security_policy_name": {
+                    "type": "string"
+                },
+                "sftp_config": {
+                    "properties": {
+                        "trusted_host_keys": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "user_secret_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "access_role",
+                "url"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_profile": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "as2_id": {
+                    "type": "string"
+                },
+                "certificate_ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "profile_id": {
+                    "type": "string"
+                },
+                "profile_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "as2_id",
+                "profile_type"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_server": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "certificate": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "directory_id": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "endpoint": {
+                    "type": "string"
+                },
+                "endpoint_details": {
+                    "properties": {
+                        "address_allocation_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "security_group_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnet_ids": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "vpc_endpoint_id": {
+                            "type": "string"
+                        },
+                        "vpc_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "endpoint_type": {
+                    "type": "string"
+                },
+                "force_destroy": {
+                    "type": "boolean"
+                },
+                "function": {
+                    "type": "string"
+                },
+                "host_key": {
+                    "type": "string"
+                },
+                "host_key_fingerprint": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "identity_provider_type": {
+                    "type": "string"
+                },
+                "invocation_role": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "logging_role": {
+                    "type": "string"
+                },
+                "post_authentication_login_banner": {
+                    "type": "string"
+                },
+                "pre_authentication_login_banner": {
+                    "type": "string"
+                },
+                "protocol_details": {
+                    "properties": {
+                        "as2_transports": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "passive_ip": {
+                            "type": "string"
+                        },
+                        "set_stat_option": {
+                            "type": "string"
+                        },
+                        "tls_session_resumption_mode": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "protocols": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "s3_storage_options": {
+                    "properties": {
+                        "directory_listing_optimization": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "security_policy_name": {
+                    "type": "string"
+                },
+                "sftp_authentication_methods": {
+                    "type": "string"
+                },
+                "structured_log_destinations": {
+                    "description": "This is a set of arns of destinations that will receive structured logs from the transfer server",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "workflow_details": {
+                    "properties": {
+                        "on_partial_upload": {
+                            "properties": {
+                                "execution_role": {
+                                    "type": "string"
+                                },
+                                "workflow_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "execution_role",
+                                "workflow_id"
+                            ],
+                            "type": "object"
+                        },
+                        "on_upload": {
+                            "properties": {
+                                "execution_role": {
+                                    "type": "string"
+                                },
+                                "workflow_id": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "execution_role",
+                                "workflow_id"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_transfer_ssh_key": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "server_id": {
+                    "type": "string"
+                },
+                "ssh_key_id": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "body",
+                "server_id",
+                "user_name"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_tag": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "resource_arn": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key",
+                "resource_arn",
+                "value"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_user": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "home_directory": {
+                    "type": "string"
+                },
+                "home_directory_mappings": {
+                    "items": {
+                        "properties": {
+                            "entry": {
+                                "type": "string"
+                            },
+                            "target": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "entry",
+                            "target"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "home_directory_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "string"
+                },
+                "posix_profile": {
+                    "properties": {
+                        "gid": {
+                            "type": "number"
+                        },
+                        "secondary_gids": {
+                            "items": {
+                                "type": "number"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "uid": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "gid",
+                        "uid"
+                    ],
+                    "type": "object"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "server_id": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "delete": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "role",
+                "server_id",
+                "user_name"
+            ],
+            "type": "object"
+        },
+        "aws_transfer_workflow": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "lifecycle": {
+                    "properties": {
+                        "create_before_destroy": {
+                            "type": "boolean"
+                        },
+                        "ignore_changes": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "postcondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "precondition": {
+                            "properties": {
+                                "condition": {
+                                    "type": "boolean"
+                                },
+                                "error_message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "prevent_destroy": {
+                            "type": "boolean"
+                        },
+                        "replace_triggered_by": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "on_exception_steps": {
+                    "items": {
+                        "properties": {
+                            "copy_step_details": {
+                                "properties": {
+                                    "destination_file_location": {
+                                        "properties": {
+                                            "efs_file_location": {
+                                                "properties": {
+                                                    "file_system_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "s3_file_location": {
+                                                "properties": {
+                                                    "bucket": {
+                                                        "type": "string"
+                                                    },
+                                                    "key": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "overwrite_existing": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "custom_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "target": {
+                                        "type": "string"
+                                    },
+                                    "timeout_seconds": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "decrypt_step_details": {
+                                "properties": {
+                                    "destination_file_location": {
+                                        "properties": {
+                                            "efs_file_location": {
+                                                "properties": {
+                                                    "file_system_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "s3_file_location": {
+                                                "properties": {
+                                                    "bucket": {
+                                                        "type": "string"
+                                                    },
+                                                    "key": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "overwrite_existing": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object"
+                            },
+                            "delete_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "tag_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "tags": {
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "key",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "provisioner": {
+                    "items": {
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "steps": {
+                    "items": {
+                        "properties": {
+                            "copy_step_details": {
+                                "properties": {
+                                    "destination_file_location": {
+                                        "properties": {
+                                            "efs_file_location": {
+                                                "properties": {
+                                                    "file_system_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "s3_file_location": {
+                                                "properties": {
+                                                    "bucket": {
+                                                        "type": "string"
+                                                    },
+                                                    "key": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "overwrite_existing": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "custom_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "target": {
+                                        "type": "string"
+                                    },
+                                    "timeout_seconds": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "decrypt_step_details": {
+                                "properties": {
+                                    "destination_file_location": {
+                                        "properties": {
+                                            "efs_file_location": {
+                                                "properties": {
+                                                    "file_system_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "path": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "s3_file_location": {
+                                                "properties": {
+                                                    "bucket": {
+                                                        "type": "string"
+                                                    },
+                                                    "key": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+
+                                                ],
+                                                "type": "object"
+                                            }
+                                        },
+                                        "required": [
+
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "overwrite_existing": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object"
+                            },
+                            "delete_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "tag_step_details": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "source_file_location": {
+                                        "type": "string"
+                                    },
+                                    "tags": {
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "key",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags_all": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "steps"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "resource": {
+            "properties": {
+                "aws_transfer_access": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_access"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_agreement": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_agreement"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_certificate": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_certificate"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_connector": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_connector"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_profile": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_profile"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_server": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_server"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_ssh_key": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_ssh_key"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_tag": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_tag"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_user": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_user"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_transfer_workflow": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_transfer_workflow"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,777 @@
+{
+    "$defs": {
+        "aws_ecs_cluster": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "cluster_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "pending_tasks_count": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "registered_container_instances_count": {
+                    "type": "number"
+                },
+                "running_tasks_count": {
+                    "type": "number"
+                },
+                "service_connect_defaults": {
+                    "items": {
+                        "properties": {
+                            "namespace": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "setting": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "status": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "cluster_name"
+            ],
+            "type": "object"
+        },
+        "aws_ecs_clusters": {
+            "properties": {
+                "cluster_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ecs_container_definition": {
+            "properties": {
+                "container_name": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "cpu": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "disable_networking": {
+                    "type": "boolean"
+                },
+                "docker_labels": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "environment": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "image_digest": {
+                    "type": "string"
+                },
+                "memory": {
+                    "type": "number"
+                },
+                "memory_reservation": {
+                    "type": "number"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "task_definition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "container_name",
+                "task_definition"
+            ],
+            "type": "object"
+        },
+        "aws_ecs_service": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "availability_zone_rebalancing": {
+                    "type": "string"
+                },
+                "cluster_arn": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "desired_count": {
+                    "type": "number"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "launch_type": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "scheduling_strategy": {
+                    "type": "string"
+                },
+                "service_name": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "task_definition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster_arn",
+                "service_name"
+            ],
+            "type": "object"
+        },
+        "aws_ecs_task_definition": {
+            "properties": {
+                "arn": {
+                    "type": "string"
+                },
+                "arn_without_revision": {
+                    "type": "string"
+                },
+                "container_definitions": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "cpu": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "enable_fault_injection": {
+                    "type": "boolean"
+                },
+                "ephemeral_storage": {
+                    "items": {
+                        "properties": {
+                            "size_in_gib": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "execution_role_arn": {
+                    "type": "string"
+                },
+                "family": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "inference_accelerator": {
+                    "items": {
+                        "properties": {
+                            "device_name": {
+                                "type": "string"
+                            },
+                            "device_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ipc_mode": {
+                    "type": "string"
+                },
+                "memory": {
+                    "type": "string"
+                },
+                "network_mode": {
+                    "type": "string"
+                },
+                "pid_mode": {
+                    "type": "string"
+                },
+                "placement_constraints": {
+                    "items": {
+                        "properties": {
+                            "expression": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "proxy_configuration": {
+                    "items": {
+                        "properties": {
+                            "container_name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "requires_compatibilities": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "revision": {
+                    "type": "number"
+                },
+                "runtime_platform": {
+                    "items": {
+                        "properties": {
+                            "cpu_architecture": {
+                                "type": "string"
+                            },
+                            "operating_system_family": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "task_definition": {
+                    "type": "string"
+                },
+                "task_role_arn": {
+                    "type": "string"
+                },
+                "volume": {
+                    "items": {
+                        "properties": {
+                            "configure_at_launch": {
+                                "type": "boolean"
+                            },
+                            "docker_volume_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "autoprovision": {
+                                            "type": "boolean"
+                                        },
+                                        "driver": {
+                                            "type": "string"
+                                        },
+                                        "driver_opts": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "labels": {
+                                            "additionalProperties": {
+                                                "type": "string"
+                                            },
+                                            "type": "object"
+                                        },
+                                        "scope": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "efs_volume_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "authorization_config": {
+                                            "items": {
+                                                "properties": {
+                                                    "access_point_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "iam": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "file_system_id": {
+                                            "type": "string"
+                                        },
+                                        "root_directory": {
+                                            "type": "string"
+                                        },
+                                        "transit_encryption": {
+                                            "type": "string"
+                                        },
+                                        "transit_encryption_port": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "fsx_windows_file_server_volume_configuration": {
+                                "items": {
+                                    "properties": {
+                                        "authorization_config": {
+                                            "items": {
+                                                "properties": {
+                                                    "credentials_parameter": {
+                                                        "type": "string"
+                                                    },
+                                                    "domain": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "file_system_id": {
+                                            "type": "string"
+                                        },
+                                        "root_directory": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "host_path": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "required": [
+                "task_definition"
+            ],
+            "type": "object"
+        },
+        "aws_ecs_task_execution": {
+            "properties": {
+                "capacity_provider_strategy": {
+                    "items": {
+                        "properties": {
+                            "base": {
+                                "type": "number"
+                            },
+                            "capacity_provider": {
+                                "type": "string"
+                            },
+                            "weight": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "capacity_provider"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "client_token": {
+                    "type": "string"
+                },
+                "cluster": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "desired_count": {
+                    "type": "number"
+                },
+                "enable_ecs_managed_tags": {
+                    "type": "boolean"
+                },
+                "enable_execute_command": {
+                    "type": "boolean"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "launch_type": {
+                    "type": "string"
+                },
+                "network_configuration": {
+                    "properties": {
+                        "assign_public_ip": {
+                            "type": "boolean"
+                        },
+                        "security_groups": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        },
+                        "subnets": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "uniqueItems": true
+                        }
+                    },
+                    "required": [
+                        "subnets"
+                    ],
+                    "type": "object"
+                },
+                "overrides": {
+                    "properties": {
+                        "container_overrides": {
+                            "items": {
+                                "properties": {
+                                    "command": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "cpu": {
+                                        "type": "number"
+                                    },
+                                    "environment": {
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "key",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "memory": {
+                                        "type": "number"
+                                    },
+                                    "memory_reservation": {
+                                        "type": "number"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "resource_requirements": {
+                                        "items": {
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "execution_role_arn": {
+                            "type": "string"
+                        },
+                        "inference_accelerator_overrides": {
+                            "items": {
+                                "properties": {
+                                    "device_name": {
+                                        "type": "string"
+                                    },
+                                    "device_type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "memory": {
+                            "type": "string"
+                        },
+                        "task_role_arn": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "placement_constraints": {
+                    "items": {
+                        "properties": {
+                            "expression": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "placement_strategy": {
+                    "items": {
+                        "properties": {
+                            "field": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "platform_version": {
+                    "type": "string"
+                },
+                "propagate_tags": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "reference_id": {
+                    "type": "string"
+                },
+                "started_by": {
+                    "type": "string"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "task_arns": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "task_definition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cluster",
+                "task_definition"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ecs_cluster": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_cluster"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ecs_clusters": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_clusters"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ecs_container_definition": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_container_definition"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ecs_service": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_service"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ecs_task_definition": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_task_definition"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ecs_task_execution": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ecs_task_execution"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

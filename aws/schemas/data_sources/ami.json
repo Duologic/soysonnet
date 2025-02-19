@@ -1,0 +1,323 @@
+{
+    "$defs": {
+        "aws_ami": {
+            "properties": {
+                "architecture": {
+                    "type": "string"
+                },
+                "arn": {
+                    "type": "string"
+                },
+                "block_device_mappings": {
+                    "items": {
+                        "properties": {
+                            "device_name": {
+                                "type": "string"
+                            },
+                            "ebs": {
+                                "additionalProperties": {
+                                    "type": "string"
+                                },
+                                "type": "object"
+                            },
+                            "no_device": {
+                                "type": "string"
+                            },
+                            "virtual_name": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "boot_mode": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "number"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "deprecation_time": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "ena_support": {
+                    "type": "boolean"
+                },
+                "executable_users": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "hypervisor": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image_id": {
+                    "type": "string"
+                },
+                "image_location": {
+                    "type": "string"
+                },
+                "image_owner_alias": {
+                    "type": "string"
+                },
+                "image_type": {
+                    "type": "string"
+                },
+                "imds_support": {
+                    "type": "string"
+                },
+                "include_deprecated": {
+                    "type": "boolean"
+                },
+                "kernel_id": {
+                    "type": "string"
+                },
+                "most_recent": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "name_regex": {
+                    "type": "string"
+                },
+                "owner_id": {
+                    "type": "string"
+                },
+                "owners": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "platform": {
+                    "type": "string"
+                },
+                "platform_details": {
+                    "type": "string"
+                },
+                "product_codes": {
+                    "items": {
+                        "properties": {
+                            "product_code_id": {
+                                "type": "string"
+                            },
+                            "product_code_type": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "public": {
+                    "type": "boolean"
+                },
+                "ramdisk_id": {
+                    "type": "string"
+                },
+                "root_device_name": {
+                    "type": "string"
+                },
+                "root_device_type": {
+                    "type": "string"
+                },
+                "root_snapshot_id": {
+                    "type": "string"
+                },
+                "sriov_net_support": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "state_reason": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "timeouts": {
+                    "properties": {
+                        "read": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                },
+                "tpm_support": {
+                    "type": "string"
+                },
+                "uefi_data": {
+                    "type": "string"
+                },
+                "usage_operation": {
+                    "type": "string"
+                },
+                "virtualization_type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+
+            ],
+            "type": "object"
+        },
+        "aws_ami_ids": {
+            "properties": {
+                "count": {
+                    "type": "number"
+                },
+                "depends_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "executable_users": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filter": {
+                    "items": {
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "values": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "values"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "ids": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "include_deprecated": {
+                    "type": "boolean"
+                },
+                "name_regex": {
+                    "type": "string"
+                },
+                "owners": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "sort_ascending": {
+                    "type": "boolean"
+                },
+                "timeouts": {
+                    "properties": {
+                        "read": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "owners"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "data": {
+            "properties": {
+                "aws_ami": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ami"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                },
+                "aws_ami_ids": {
+                    "additionalProperties": {
+                        "$refs": "#/$defs/aws_ami_ids"
+                    },
+                    "minProperties": 1,
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
