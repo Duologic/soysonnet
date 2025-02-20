@@ -11,6 +11,7 @@
   // This example gets the schemas for the AWS provider and route53 resources:
   //
   // ```jsonnet
+  // local soy = import 'github.com/Duologic/soysonnet/main.libsonnet';
   // local aws =
   //   soy.new(
   //     name='aws',
