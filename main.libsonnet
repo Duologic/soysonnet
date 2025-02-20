@@ -20,9 +20,9 @@
     // get JSON schema for resource blocks
     //
     // PARAMETERS:
-    //   - *filterFn* (`function`): fn(resourceType (`string`)) `bool`
+    //   - **filterFn** (`function`): fn(<resourceType>(`string`)) `bool`
     //     Filter out to include/exclude specific resources.
-    //   - *groupFn* (`function`): fn(resourceType (`string`)) `string`
+    //   - **groupFn** (`function`): fn(<resourceType>(`string`)) `string`
     //     Returns a key under which the resources will be grouped. By default it'll split the resource type by `_` and return the second word, for example: `aws_route53_record` will be grouped under `route53`.
     getResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn):
       self.getSchemas(
@@ -34,7 +34,7 @@
 
     // get JSON schema for ephemeral resource blocks
     //
-    // PARAMETERS: see `getResourceSchemas()`
+    // PARAMETERS: *see `getResourceSchemas()`*
     getEphemeralResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn):
       self.getSchemas(
         'ephemeral_resource_schemas',
@@ -45,7 +45,7 @@
 
     // get JSON schema for datasource blocks
     //
-    // PARAMETERS: see `getResourceSchemas()`
+    // PARAMETERS: *see `getResourceSchemas()`*
     getDataSourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn):
       self.getSchemas(
         'data_schemas',
