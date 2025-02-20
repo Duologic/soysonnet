@@ -6,7 +6,28 @@
   local root = self,
   local convert = self.convert,
 
-  // returns functions that convert resource schemas into JSON schemas
+  // Returns functions that convert resource schemas into JSON schemas
+  //
+  // This example gets the schemas for the AWS provider and route53 resources:
+  //
+  // ```jsonnet
+  // local aws =
+  //   soy.new(
+  //     name='aws',
+  //     source='registry.terraform.io/hashicorp/aws',
+  //     version='5.87.0',
+  //     schema=import 'tfschema.json'
+  //   );
+  // {
+  //   provider:
+  //     aws.getProviderSchema(),
+  //   resource:
+  //     aws.getResourceSchemas(
+  //       function(key)
+  //         std.startsWith(key, 'aws_route53')
+  //     ),
+  // }
+  // ```
   new(name, source, version, schema): {
     local providerSchema = schema.provider_schemas[source],
 
