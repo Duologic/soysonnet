@@ -1,5 +1,10 @@
 # soysonnet
 
+This library provides functions to convert Terraform provider schemas into JSON schemas. The Terraform provider schemas can be generated with `terraform providers schema -json`.
+
+> [!CAUTION]
+> This is an experimental library.
+
 ## Functions
 
 ### func new
@@ -8,44 +13,32 @@
 new(name, source, version, schema)
 ```
 
-Instantiate a new converter
-
-#### obj new()
-
-Instantiate a new converter
-
-##### func new().getDataSourceSchemas
+returns functions that convert resource schemas into JSON schemas
 
 ```jsonnet
-new().getDataSourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+getDataSourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
 ```
 
 get JSON schema for datasource blocks
 
 PARAMETERS: see `getResourceSchemas()`
 
-##### func new().getEphemeralResourceSchemas
-
 ```jsonnet
-new().getEphemeralResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+getEphemeralResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
 ```
 
 get JSON schema for ephemeral resource blocks
 
 PARAMETERS: see `getResourceSchemas()`
 
-##### func new().getProviderSchema
-
 ```jsonnet
-new().getProviderSchema()
+getProviderSchema()
 ```
 
 get JSON schema for the provider block
 
-##### func new().getResourceSchemas
-
 ```jsonnet
-new().getResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+getResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
 ```
 
 get JSON schema for resource blocks

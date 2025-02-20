@@ -1,8 +1,12 @@
+// This library provides functions to convert Terraform provider schemas into JSON schemas. The Terraform provider schemas can be generated with `terraform providers schema -json`.
+//
+// > [!CAUTION]
+// > This is an experimental library.
 {
   local root = self,
   local convert = self.convert,
 
-  // Instantiate a new converter
+  // returns functions that convert resource schemas into JSON schemas
   new(name, source, version, schema): {
     local providerSchema = schema.provider_schemas[source],
 
