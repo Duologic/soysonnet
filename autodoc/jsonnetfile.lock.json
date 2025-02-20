@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/Duologic/autodoc.git",
+          "subdir": ""
+        }
+      },
+      "version": "ad3b0936242a626ad542f187a2e5e20215d21857",
+      "sum": "AAaVuGXQTrzZ9YM7YbSkdP+mYZTQWupvPE1beX607Is="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/Duologic/jsonnet-parser.git",
+          "subdir": ""
+        }
+      },
+      "version": "349569e180192547cb37cb94b3caea05384a81ff",
+      "sum": "0N0SeOSZeD1DaVp7Avj9WpTRVt3tdPrAjxZ0qWr/xrU="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/crdsonnet/astsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "3d6c89b30321ff4f5f55158bd48a91d745a3dfe6",
+      "sum": "NTet3g9kU+/zU5N1f/vvR1WwivDz+tAC5pznx95Y9Mk="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/xtd.git",
+          "subdir": ""
+        }
+      },
+      "version": "1199b50e9d2ff53d4bb5fb2304ad1fb69d38e609",
+      "sum": "LfbgcJbilu4uBdKYZSvmkoOTPwEAzg10L3/VqKAIWtA="
+    }
+  ],
+  "legacyImports": false
+}
