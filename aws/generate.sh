@@ -13,11 +13,12 @@ jrsonnet -S -m . \
     -A name=${NAME} \
     -A source=${SOURCE} \
     -A version=${VERSION} \
-    ../../terraform.tf.jsonnet
+    -e "(import '../../main.libsonnet').requiredProvider"
 
 terraform init
 terraform providers schema -json | jsonnet - > schema.json
 
+rm -rf ../schemas/*
 jrsonnet -S -c -m ../schemas \
     -A name=${NAME} \
     -A source=${SOURCE} \
