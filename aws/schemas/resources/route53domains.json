@@ -954,21 +954,21 @@
             "properties": {
                 "aws_route53domains_delegation_signer_record": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53domains_delegation_signer_record"
+                        "$ref": "#/$defs/aws_route53domains_delegation_signer_record"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53domains_domain": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53domains_domain"
+                        "$ref": "#/$defs/aws_route53domains_domain"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53domains_registered_domain": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53domains_registered_domain"
+                        "$ref": "#/$defs/aws_route53domains_registered_domain"
                     },
                     "minProperties": 1,
                     "type": "object"

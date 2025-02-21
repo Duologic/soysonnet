@@ -120,7 +120,7 @@
             [providerName]+: {
               type: 'array',
               items: {
-                '$refs': '#/$defs/provider',
+                '$ref': '#/$defs/provider',
               },
             },
           },
@@ -195,7 +195,7 @@
           properties+: {
             [resourceType]: {
               type: 'object',
-              additionalProperties: { '$refs': '#/$defs/%s' % resourceType },
+              additionalProperties: { '$ref': '#/$defs/%s' % resourceType },
               minProperties: 1,
             },
           },

@@ -2676,175 +2676,175 @@
             "properties": {
                 "aws_route53_cidr_collection": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_cidr_collection"
+                        "$ref": "#/$defs/aws_route53_cidr_collection"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_cidr_location": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_cidr_location"
+                        "$ref": "#/$defs/aws_route53_cidr_location"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_delegation_set": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_delegation_set"
+                        "$ref": "#/$defs/aws_route53_delegation_set"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_health_check": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_health_check"
+                        "$ref": "#/$defs/aws_route53_health_check"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_hosted_zone_dnssec": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_hosted_zone_dnssec"
+                        "$ref": "#/$defs/aws_route53_hosted_zone_dnssec"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_key_signing_key": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_key_signing_key"
+                        "$ref": "#/$defs/aws_route53_key_signing_key"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_query_log": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_query_log"
+                        "$ref": "#/$defs/aws_route53_query_log"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_record": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_record"
+                        "$ref": "#/$defs/aws_route53_record"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_config": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_config"
+                        "$ref": "#/$defs/aws_route53_resolver_config"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_dnssec_config": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_dnssec_config"
+                        "$ref": "#/$defs/aws_route53_resolver_dnssec_config"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_endpoint": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_endpoint"
+                        "$ref": "#/$defs/aws_route53_resolver_endpoint"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_firewall_config": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_firewall_config"
+                        "$ref": "#/$defs/aws_route53_resolver_firewall_config"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_firewall_domain_list": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_firewall_domain_list"
+                        "$ref": "#/$defs/aws_route53_resolver_firewall_domain_list"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_firewall_rule": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_firewall_rule"
+                        "$ref": "#/$defs/aws_route53_resolver_firewall_rule"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_firewall_rule_group": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_firewall_rule_group"
+                        "$ref": "#/$defs/aws_route53_resolver_firewall_rule_group"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_firewall_rule_group_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_firewall_rule_group_association"
+                        "$ref": "#/$defs/aws_route53_resolver_firewall_rule_group_association"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_query_log_config": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_query_log_config"
+                        "$ref": "#/$defs/aws_route53_resolver_query_log_config"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_query_log_config_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_query_log_config_association"
+                        "$ref": "#/$defs/aws_route53_resolver_query_log_config_association"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_rule": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_rule"
+                        "$ref": "#/$defs/aws_route53_resolver_rule"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_resolver_rule_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_resolver_rule_association"
+                        "$ref": "#/$defs/aws_route53_resolver_rule_association"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_traffic_policy": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_traffic_policy"
+                        "$ref": "#/$defs/aws_route53_traffic_policy"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_traffic_policy_instance": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_traffic_policy_instance"
+                        "$ref": "#/$defs/aws_route53_traffic_policy_instance"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_vpc_association_authorization": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_vpc_association_authorization"
+                        "$ref": "#/$defs/aws_route53_vpc_association_authorization"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_zone": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_zone"
+                        "$ref": "#/$defs/aws_route53_zone"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53_zone_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53_zone_association"
+                        "$ref": "#/$defs/aws_route53_zone_association"
                     },
                     "minProperties": 1,
                     "type": "object"

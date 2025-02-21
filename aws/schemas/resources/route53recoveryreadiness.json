@@ -521,28 +521,28 @@
             "properties": {
                 "aws_route53recoveryreadiness_cell": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoveryreadiness_cell"
+                        "$ref": "#/$defs/aws_route53recoveryreadiness_cell"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoveryreadiness_readiness_check": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoveryreadiness_readiness_check"
+                        "$ref": "#/$defs/aws_route53recoveryreadiness_readiness_check"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoveryreadiness_recovery_group": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoveryreadiness_recovery_group"
+                        "$ref": "#/$defs/aws_route53recoveryreadiness_recovery_group"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoveryreadiness_resource_set": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoveryreadiness_resource_set"
+                        "$ref": "#/$defs/aws_route53recoveryreadiness_resource_set"
                     },
                     "minProperties": 1,
                     "type": "object"

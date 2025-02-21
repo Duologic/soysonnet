@@ -415,28 +415,28 @@
             "properties": {
                 "aws_route53recoverycontrolconfig_cluster": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_cluster"
+                        "$ref": "#/$defs/aws_route53recoverycontrolconfig_cluster"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoverycontrolconfig_control_panel": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_control_panel"
+                        "$ref": "#/$defs/aws_route53recoverycontrolconfig_control_panel"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoverycontrolconfig_routing_control": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_routing_control"
+                        "$ref": "#/$defs/aws_route53recoverycontrolconfig_routing_control"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53recoverycontrolconfig_safety_rule": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53recoverycontrolconfig_safety_rule"
+                        "$ref": "#/$defs/aws_route53recoverycontrolconfig_safety_rule"
                     },
                     "minProperties": 1,
                     "type": "object"

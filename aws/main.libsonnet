@@ -55,7 +55,7 @@ local getItem(path, schema) =
         // some schemas have big and/or recursive patterns, this leads to very big schemas, below functions modify the schemas to make them slightly more manageable while functionally still the same
         resource+: {
           [if 'quicksight' in super then 'quicksight']+: (
-            local newref = { '$refs': '#/$defs/visuals' };
+            local newref = { '$ref': '#/$defs/visuals' };
             {
               '$defs'+: {
                 sheets: super.aws_quicksight_dashboard.properties.definition.properties.sheets,
@@ -104,9 +104,9 @@ local getItem(path, schema) =
               local obj = getItem(path, schema);
               local type = obj.type;
               {
-                [if type == 'object' then '$refs']: ref,
+                [if type == 'object' then '$ref']: ref,
                 [if type == 'array' then 'type']: type,
-                [if type == 'array' then 'items']: { '$refs': ref },
+                [if type == 'array' then 'items']: { '$ref': ref },
               };
 
             std.foldl(

@@ -1488,7 +1488,7 @@
             "properties": {
                 "aws": {
                     "items": {
-                        "$refs": "#/$defs/provider"
+                        "$ref": "#/$defs/provider"
                     },
                     "type": "array"
                 }

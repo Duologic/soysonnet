@@ -379,21 +379,21 @@
             "properties": {
                 "aws_route53profiles_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53profiles_association"
+                        "$ref": "#/$defs/aws_route53profiles_association"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53profiles_profile": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53profiles_profile"
+                        "$ref": "#/$defs/aws_route53profiles_profile"
                     },
                     "minProperties": 1,
                     "type": "object"
                 },
                 "aws_route53profiles_resource_association": {
                     "additionalProperties": {
-                        "$refs": "#/$defs/aws_route53profiles_resource_association"
+                        "$ref": "#/$defs/aws_route53profiles_resource_association"
                     },
                     "minProperties": 1,
                     "type": "object"
