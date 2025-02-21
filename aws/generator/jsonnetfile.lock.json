@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/crdsonnet/astsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "3d6c89b30321ff4f5f55158bd48a91d745a3dfe6",
+      "sum": "NTet3g9kU+/zU5N1f/vvR1WwivDz+tAC5pznx95Y9Mk="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/crdsonnet/crdsonnet.git",
+          "subdir": "crdsonnet"
+        }
+      },
+      "version": "f2f3c043f329edd4dd59ba89128258a59ee3363e",
+      "sum": "2nG91akk1UMbxn99gyQ1A29zn/5jiHM+0ovsw+DgCYM="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/crdsonnet/validate-libsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "6892dcbb6440a6882007a2e035a7fa331c71c6f0",
+      "sum": "7CDZQ/l+BF8hhqwwjec75fp/pOKUcjgZdBeh9dd14Nw="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/docsonnet.git",
+          "subdir": "doc-util"
+        }
+      },
+      "version": "6ac6c69685b8c29c54515448eaca583da2d88150",
+      "sum": "BrAL/k23jq+xy9oA7TWIhUx07dsA/QLm3g7ktCwe//U="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/xtd.git",
+          "subdir": ""
+        }
+      },
+      "version": "1199b50e9d2ff53d4bb5fb2304ad1fb69d38e609",
+      "sum": "LfbgcJbilu4uBdKYZSvmkoOTPwEAzg10L3/VqKAIWtA="
+    }
+  ],
+  "legacyImports": false
+}
