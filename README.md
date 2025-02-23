@@ -38,7 +38,7 @@ Then execute it like this:
 jsonnet -S -m output -c -J vendor generator.jsonnet | jsonnetfmt -i
 ```
 
-##### obj new().provider
+#### obj new().provider
 
 ```jsonnet
 getSchema()
@@ -52,7 +52,7 @@ generateLibrary(schema=self.getSchema())
 
 Generate library from `schema`
 
-##### obj new().resource
+#### obj new().resource
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
@@ -72,7 +72,7 @@ generateLibraries(schemas=self.getSchemas())
 
 Generate library from `schemas`
 
-##### obj new().ephemeral
+#### obj new().ephemeral
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
@@ -88,7 +88,7 @@ generateLibraries(schemas=self.getSchemas())
 
 Generate library from `schemas`
 
-##### obj new().data
+#### obj new().data
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
