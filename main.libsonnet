@@ -1,4 +1,5 @@
-// This library provides functions to convert Terraform provider schemas into JSON schemas. The Terraform provider schemas can be generated with `terraform providers schema -json`.
+// This library provides functions to convert Terraform provider schemas into JSON schemas and generate Jsonnet libraries.
+// The Terraform provider schemas can be generated with `terraform providers schema -json`.
 //
 // > [!CAUTION]
 // > This is an experimental library.
@@ -10,7 +11,7 @@
   local defaultFilterFn(_) = true,
   local defaultGroupFn(key) = std.split(key, '_')[1],
 
-  // Returns an object with functions to convert resource schemas into JSON schemas and generate Jsonnet libraries.
+  // Returns functions get the JSON schemas and generate Jsonnet libraries.
   //
   // This example generates resources libraries for the AWS provider:
   //
