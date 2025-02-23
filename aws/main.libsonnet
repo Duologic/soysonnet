@@ -1,4 +1,3 @@
-local gen = import '../generator/generate.jsonnet';
 local soy = import '../main.libsonnet';
 
 local replaceSchemaAtPath(path, schema) =
