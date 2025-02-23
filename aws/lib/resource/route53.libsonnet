@@ -6,26 +6,23 @@
   },
   aws_route53_record:
     {
-      '#new': { 'function': { args: [{ default: null, enums: null, name: 'key', type: 'string' }, { default: null, enums: null, name: 'name', type: 'string' }, { default: null, enums: null, name: 'type', type: 'string' }, { default: null, enums: null, name: 'zone_id', type: 'string' }], help: '' } },
-      new(key, name, type, zone_id):
+      '#new': { 'function': { args: [{ default: null, enums: null, name: 'tf_resource_key', type: 'string' }, { default: null, enums: null, name: 'name', type: 'string' }, { default: null, enums: null, name: 'type', type: 'string' }, { default: null, enums: null, name: 'zone_id', type: 'string' }], help: '' } },
+      new(tf_resource_key, name, type, zone_id):
         {
           local this = self,
           resource: {
             aws_route53_record: {
-              [this.key]: this.spec,
+              [this.tf_resource_key]: this.spec,
             },
           },
-          key:: key,
-          spec:: {
-
-          },
+          spec:: {},
         }
-        + self.withKey(key)
+        + self.withTfResourceKey(tf_resource_key)
         + self.withName(name)
         + self.withType(type)
         + self.withZoneId(zone_id),
-      withKey(key): {
-        key:: key,
+      withTfResourceKey(tf_resource_key): {
+        tf_resource_key:: tf_resource_key,
       },
       '#withAlias': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
       withAlias(value): {

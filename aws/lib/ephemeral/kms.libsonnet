@@ -6,23 +6,20 @@
   },
   aws_kms_secrets:
     {
-      '#new': { 'function': { args: [{ default: null, enums: null, name: 'key', type: 'string' }], help: '' } },
-      new(key):
+      '#new': { 'function': { args: [{ default: null, enums: null, name: 'tf_resource_key', type: 'string' }], help: '' } },
+      new(tf_resource_key):
         {
           local this = self,
           ephemeral: {
             aws_kms_secrets: {
-              [this.key]: this.spec,
+              [this.tf_resource_key]: this.spec,
             },
           },
-          key:: key,
-          spec:: {
-
-          },
+          spec:: {},
         }
-        + self.withKey(key),
-      withKey(key): {
-        key:: key,
+        + self.withTfResourceKey(tf_resource_key),
+      withTfResourceKey(tf_resource_key): {
+        tf_resource_key:: tf_resource_key,
       },
       '#withCount': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '' } },
       withCount(value): {

@@ -26,28 +26,28 @@ local getItem(path, schema) =
     version='5.87.0',
     schema=import '.build/schema.json'
   ):
+    local aws = soy.new(
+      name,
+      source,
+      version,
+      schema,
+    );
     local schemas =
-      local aws = soy.new(
-        name,
-        source,
-        version,
-        schema,
-      );
       {
         provider:
-          aws.getProviderSchema(),
+          aws.provider.getSchema(),
         resource:
-          aws.getResourceSchemas(
+          aws.resource.getSchemas(
             function(key)
               std.startsWith(key, 'aws_route53_record')
           ),
         ephemeral:
-          aws.getEphemeralResourceSchemas(
+          aws.ephemeral.getSchemas(
             function(key)
               std.startsWith(key, 'aws_kms_')
           ),
         data:
-          aws.getDataSourceSchemas(
+          aws.data.getSchemas(
             function(key)
               std.startsWith(key, 'aws_acm_')
           ),
@@ -120,13 +120,8 @@ local getItem(path, schema) =
         },
       };
 
-    {
-      'provider.libsonnet': gen.generateProviderLibrary(schemas.provider),
-    }
-    + {
-      [block.key + '/' + resource.key + '.libsonnet']: gen.generateResourceLibrary(resource.value, resource.key, block.key)
-      for block in std.objectKeysValues(schemas)
-      if block.key != 'provider'
-      for resource in std.objectKeysValues(block.value)
-    },
+    aws.provider.generateLibrary(schemas.provider)
+    + aws.resource.generateLibraries(schemas.resource)
+    + aws.ephemeral.generateLibraries(schemas.ephemeral)
+    + aws.data.generateLibraries(schemas.data),
 }

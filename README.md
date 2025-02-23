@@ -13,12 +13,14 @@ This library provides functions to convert Terraform provider schemas into JSON 
 new(name, source, version, schema)
 ```
 
-Returns functions that convert resource schemas into JSON schemas
+Returns an object with functions to convert resource schemas into JSON schemas and generate Jsonnet libraries.
 
-This example gets the schemas for the AWS provider and route53 resources:
+This example generates resources libraries for the AWS provider:
 
 ```jsonnet
+// generator.jsonnet
 local soy = import 'github.com/Duologic/soysonnet/main.libsonnet';
+
 local aws =
   soy.new(
     name='aws',
@@ -26,28 +28,37 @@ local aws =
     version='5.87.0',
     schema=import 'tfschema.json'
   );
-{
-  provider:
-    aws.getProviderSchema(),
-  resource:
-    aws.getResourceSchemas(
-      function(key)
-        std.startsWith(key, 'aws_route53')
-    ),
-}
+
+aws.provider.generateLibrary()
++ aws.resource.generateLibraries()
 ```
+Then execute it like this:
+
+```console
+jsonnet -S -m output -c -J vendor generator.jsonnet | jsonnetfmt -i
+```
+
+##### obj new().provider
 
 ```jsonnet
-getProviderSchema()
+getSchema()
 ```
 
-get JSON schema for the provider block
+Get JSON schema
 
 ```jsonnet
-getResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+generateLibrary(schema=self.getSchema())
 ```
 
-get JSON schema for resource blocks
+Generate library from `schema`
+
+##### obj new().resource
+
+```jsonnet
+getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+```
+
+Get JSON schema for resource blocks
 
 PARAMETERS:
   - **filterFn** (`function`): fn(<resourceType>(`string`)) `bool`
@@ -56,18 +67,40 @@ PARAMETERS:
     Returns a key under which the resources will be grouped. By default it'll split the resource type by `_` and return the second word, for example: `aws_route53_record` will be grouped under `route53`.
 
 ```jsonnet
-getEphemeralResourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+generateLibraries(schemas=self.getSchemas())
 ```
 
-get JSON schema for ephemeral resource blocks
+Generate library from `schemas`
 
-PARAMETERS: *see `getResourceSchemas()`*
+##### obj new().ephemeral
 
 ```jsonnet
-getDataSourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
 ```
 
-get JSON schema for datasource blocks
+Get JSON schema for ephemeral resource blocks
 
-PARAMETERS: *see `getResourceSchemas()`*
+PARAMETERS: *see `resource.getSchemas()`*
+
+```jsonnet
+generateLibraries(schemas=self.getSchemas())
+```
+
+Generate library from `schemas`
+
+##### obj new().data
+
+```jsonnet
+getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
+```
+
+Get JSON schema for datasource blocks
+
+PARAMETERS: *see `resource.getSchemas()`*
+
+```jsonnet
+generateLibraries(schemas=self.getSchemas())
+```
+
+Generate library from `schemas`
 
