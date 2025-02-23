@@ -1,3 +1,4 @@
+local gen = import '../generator/generate.jsonnet';
 local soy = import '../main.libsonnet';
 
 local replaceSchemaAtPath(path, schema) =
@@ -38,14 +39,14 @@ local getItem(path, schema) =
         resource:
           aws.getResourceSchemas(
             function(key)
-              std.startsWith(key, 'aws_route53_')
+              std.startsWith(key, 'aws_route53_record')
           ),
-        ephemeral::
+        ephemeral:
           aws.getEphemeralResourceSchemas(
             function(key)
-              std.startsWith(key, 'none')
+              std.startsWith(key, 'aws_kms_')
           ),
-        datasource:
+        data:
           aws.getDataSourceSchemas(
             function(key)
               std.startsWith(key, 'aws_acm_')
@@ -119,33 +120,13 @@ local getItem(path, schema) =
         },
       };
 
-    local files =
-      {
-        [item.key + '.json']: std.manifestJson(item.value)
-        for item in std.objectKeysValues(schemas)
-        if item.key == 'provider'
-      }
-      + {
-        [block.key + '/' + resource.key + '.json']: std.manifestJson(resource.value)
-        for block in std.objectKeysValues(schemas)
-        if block.key != 'provider'
-        for resource in std.objectKeysValues(block.value)
-      };
-
-
-    files
+    {
+      'provider.libsonnet': gen.generateProviderLibrary(schemas.provider),
+    }
     + {
-      'schemas.libsonnet':
-        '{\n'
-        + std.join(
-          ',\n',
-          std.map(
-            function(file)
-              "  '%s': import '%s'" % [file, file],
-            std.objectFields(files)
-          )
-        )
-        + '\n}',
+      [block.key + '/' + resource.key + '.libsonnet']: gen.generateResourceLibrary(resource.value, resource.key, block.key)
+      for block in std.objectKeysValues(schemas)
+      if block.key != 'provider'
+      for resource in std.objectKeysValues(block.value)
     },
-
 }

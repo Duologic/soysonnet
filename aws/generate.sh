@@ -19,12 +19,12 @@ terraform init
 terraform providers schema -json | jsonnet - > schema.json
 
 rm -rf ../schemas/*
-jrsonnet -S -c -m ../schemas \
+jrsonnet -S -c -m ../lib \
+    -J ../vendor \
     -A name=${NAME} \
     -A source=${SOURCE} \
     -A version=${VERSION} \
     --tla-code-file schema='./schema.json' \
     -e "(import '../main.libsonnet').new"
 
-jrsonnet -S -m ../generated -c -J ../generator/vendor ../generator/generate.jsonnet
-find ../generated/ -type f | xargs jsonnetfmt -i
+find ../lib/ -type f | xargs jsonnetfmt -i
