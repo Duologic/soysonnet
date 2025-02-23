@@ -47,6 +47,7 @@ local fields = import './fields.libsonnet';
     + {
       local engine = self.renderEngine.engine,
       render(name, schema):
+        assert std.trace('Rendering: ' + nesting[0] + ' ' + name, true);
         local schemaInSpec(schema) = {
           type: 'object',
           properties: { spec: schema },

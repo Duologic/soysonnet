@@ -119,7 +119,7 @@
       function(acc, item)
         if filterFn(item.key)
         then
-          assert std.trace(item.key, true);
+          assert std.trace('Getting schema: ' + key + ' ' + item.key, true);
           acc + { [groupFn(item.key)]+: convertFn(item.key, item.value) }
         else acc,
       std.objectKeysValues(std.get(providerSchema, key, {})),
