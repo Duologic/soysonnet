@@ -4,100 +4,127 @@ local helpers = import 'github.com/crdsonnet/crdsonnet/crdsonnet/helpers.libsonn
 local crdsonnet = import 'github.com/crdsonnet/crdsonnet/crdsonnet/main.libsonnet';
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 
-local processor =
-  crdsonnet.processor.new('ast')
-  + {
-    local engine = self.renderEngine.engine,
-    rendera(name, schema):
-      self.parse(name, schema),
-    render(name, schema):
-      local parsedSchema = self.parse(name, schema);
-      local properties = parsedSchema[name].properties;
-      local required = std.get(parsedSchema[name], 'required', []);
-      autils.deepMergeObjects([
+local gen(astschema, group, block) =
+  local processor =
+    crdsonnet.processor.new('ast')
+    + {
+      local engine = self.renderEngine.engine,
+      render(name, schema):
+        local parsedSchema = self.parse(name, schema);
+        local properties = parsedSchema[name].properties.spec.properties;
+        local required = std.get(parsedSchema[name].properties.spec, 'required', []);
         a.object.new([
           a.field.new(
             a.id.new(name),
-            a.object.new([
-              a.field.new(
-                a.string.new('#new'),
-                a.literal.new(
-                  std.manifestJsonEx(
-                    d.func.new('', [
-                      local p = properties[property];
-                      local propertyType = p.type;
-                      //if 'type' in p
-                      //then p.type
-                      //else
-                      //  local t = helpers.getSchemaTypes(p);
-                      //  if t == ['string'] then ['object'] else t;
-                      d.argument.new(
-                        property,
-                        (propertyType),
-                        std.get(p, 'default'),
-                        std.get(p, 'enum'),
+            a.object.new(
+              [
+                a.field.new(
+                  a.string.new('#new'),
+                  a.literal.new(
+                    std.manifestJsonEx(
+                      d.func.new(
+                        '',
+                        [a.id.new('key')]
+                        + [
+                          local p = properties[property];
+                          local propertyType = p.type;
+                          //if 'type' in p
+                          //then p.type
+                          //else
+                          //  local t = helpers.getSchemaTypes(p);
+                          //  if t == ['string'] then ['object'] else t;
+                          d.argument.new(
+                            property,
+                            (propertyType),
+                            std.get(p, 'default'),
+                            std.get(p, 'enum'),
+                          )
+                          for property in required
+                        ]
                       )
-                      for property in required
-                    ])
-                    , '', ''
+                      , '', ''
+                    ),
                   ),
                 ),
-              ),
-              a.field_function.new(
-                a.id.new('new'),
+                a.field_function.new(
+                  a.id.new('new'),
 
-                local typeDefinitions =
-                  a.object.new([
-                    a.field.new(
-                      a.id.new('_blockType'),
-                      a.string.new('resource'),
-                    )
-                    + a.field.withHidden(),
-                    a.field.new(
-                      a.id.new('_resourceType'),
-                      a.string.new(name),
-                    )
-                    + a.field.withHidden(),
-                  ]);
+                  local typeDefinitions =
+                    a.object.new([
+                      a.object_local.new(
+                        a.bind.new(
+                          a.id.new('this'),
+                          a.literal.new('self')
+                        ),
+                      ),
+                      a.field.new(
+                        a.id.new(block),
+                        a.object.new(
+                          a.field.new(
+                            a.id.new(name),
+                            a.object.new([
+                              a.field.new(
+                                a.fieldname_expr.new(a.id.new('key')),
+                                a.fieldaccess.new([a.id.new('this')], a.id.new('spec'))
+                              ),
+                            ])
+                          )
+                        )
+                      ),
+                      a.field.new(
+                        a.id.new('spec'),
+                        a.object.new([]),
+                      )
+                      + a.field.withHidden(),
+                    ]);
 
-                (if std.length(required) > 0
-                 then
-                   a.binary_sum.new(
-                     [typeDefinitions]
-                     + [
-                       a.functioncall.new(
-                         a.fieldaccess.new(
-                           [a.id.new('self')],
-                           a.id.new(engine.functionName(property)),
+                  (if std.length(required) > 0
+                   then
+                     a.binary_sum.new(
+                       [typeDefinitions]
+                       + [
+                         a.functioncall.new(
+                           a.fieldaccess.new(
+                             [a.id.new('self')],
+                             a.id.new(engine.functionName(property)),
+                           )
                          )
-                       )
-                       + a.functioncall.withArgs(
-                         a.arg.new(a.id.new(property))
-                       )
-                       for property in required
-                     ]
-                   )
-                 else typeDefinitions)
-              )
-              + a.field_function.withParams(
-                a.params.new([
-                  a.param.new(a.id.new(property))
-                  for property in required
-                ])
-              ),
-            ])
+                         + a.functioncall.withArgs(
+                           a.arg.new(a.id.new(property))
+                         )
+                         for property in required
+                       ]
+                     )
+                   else typeDefinitions)
+                )
+                + a.field_function.withParams(
+                  a.params.new(
+                    [a.param.new(a.id.new('key'))]
+                    + [
+                      a.param.new(a.id.new(property))
+                      for property in required
+                    ]
+                  )
+                ),
+              ]
+              + autils.get(
+                autils.get(super.render(name, schema), name).expr,
+                'spec'
+              ).expr.members
+            )
           ),
         ]),
-        super.render(name, schema),
-      ]),
-  };
+    };
 
-function(
-  astschema=import '../schemas/resources/route53.json',
-  packagedoc=d.package.newSub('route53', ''),
-)
   local asts = [
-    local schema = astschema['$defs'][field];
+    local schema =
+      {
+        type: 'object',
+        properties:
+          {
+            spec: astschema['$defs'][field],
+          },
+      };
     crdsonnet.schema.render(field, schema, processor)
     for field in std.objectFields(astschema['$defs'])
   ];
@@ -107,10 +134,21 @@ function(
       a.field.new(
         a.string.new('#'),
         a.literal.new(
-          std.manifestJsonEx(packagedoc, '  ', '\n'),
+          std.manifestJsonEx(d.package.newSub(group, ''), '  ', '\n'),
         ),
       ),
     ]);
 
   '// DO NOT EDIT: generated by generator/generate.jsonnet\n'
-  + autils.deepMergeObjects([docstring] + asts).toString()
+  + autils.deepMergeObjects([docstring] + asts).toString();
+
+local schemas = import '../schemas/schemas.libsonnet';
+
+{
+  local s = std.splitLimit(item.key, '/', 1),
+  local block = { datasource: 'data', resource: 'resource' }[s[0]],
+  local group = std.splitLimit(s[1], '.', 1)[0],
+  [std.strReplace(item.key, '.json', '.libsonnet')]: gen(item.value, group, block)
+  for item in std.objectKeysValues(schemas)
+  if std.member(['resource', 'datasource'], std.splitLimit(item.key, '/', 1)[0])
+}

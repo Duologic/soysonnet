@@ -1495,5 +1495,6 @@
             },
             "type": "object"
         }
-    }
+    },
+    "type": "block"
 }

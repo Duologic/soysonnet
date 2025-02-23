@@ -38,17 +38,17 @@ local getItem(path, schema) =
         resource:
           aws.getResourceSchemas(
             function(key)
-              std.startsWith(key, 'aws_route53')
+              std.startsWith(key, 'aws_route53_')
           ),
-        ephemeral:
+        ephemeral::
           aws.getEphemeralResourceSchemas(
             function(key)
-              std.startsWith(key, 'aws_route53')
+              std.startsWith(key, 'none')
           ),
         datasource:
           aws.getDataSourceSchemas(
             function(key)
-              std.startsWith(key, 'aws_route53')
+              std.startsWith(key, 'aws_acm_')
           ),
       }
       + {
@@ -126,25 +126,26 @@ local getItem(path, schema) =
         if item.key == 'provider'
       }
       + {
-        [group.key + 's/' + resource.key + '.json']: std.manifestJson(resource.value)
-        for group in std.objectKeysValues(schemas)
-        if group.key != 'provider'
-        for resource in std.objectKeysValues(group.value)
+        [block.key + '/' + resource.key + '.json']: std.manifestJson(resource.value)
+        for block in std.objectKeysValues(schemas)
+        if block.key != 'provider'
+        for resource in std.objectKeysValues(block.value)
       };
 
-    files +
-    {
+
+    files
+    + {
       'schemas.libsonnet':
-        '[\n'
+        '{\n'
         + std.join(
           ',\n',
           std.map(
             function(file)
-              "  import '%s'" % file,
+              "  '%s': import '%s'" % [file, file],
             std.objectFields(files)
           )
         )
-        + '\n]',
+        + '\n}',
     },
 
 }

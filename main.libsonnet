@@ -70,7 +70,7 @@
     // PARAMETERS: *see `getResourceSchemas()`*
     getDataSourceSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn):
       self.getSchemas(
-        'data_schemas',
+        'data_source_schemas',
         convert.dataSourceSchema,
         filterFn,
         groupFn=defaultGroupFn
@@ -104,6 +104,7 @@
 
   convert:: {
     providerSchema(providerName, providerSchema): {
+      type: 'block',
       '$defs'+: {
         provider:
           convert.block(providerSchema.block)
@@ -178,6 +179,7 @@
       convert.resourceBlock('data', resourceType, resourceSchema),
 
     resourceBlock(blockType, resourceType, resourceSchema): {
+      type: 'object',
       '$defs'+: {
         [resourceType]:
           convert.block(resourceSchema.block)

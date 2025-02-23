@@ -25,3 +25,6 @@ jrsonnet -S -c -m ../schemas \
     -A version=${VERSION} \
     --tla-code-file schema='./schema.json' \
     -e "(import '../main.libsonnet').new"
+
+jrsonnet -S -m ../generated -c -J ../generator/vendor ../generator/generate.jsonnet
+find ../generated/ -type f | xargs jsonnetfmt -i

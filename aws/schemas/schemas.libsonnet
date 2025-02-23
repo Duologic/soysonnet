@@ -1,8 +1,5 @@
-[
-  import 'provider.json',
-  import 'resources/route53.json',
-  import 'resources/route53domains.json',
-  import 'resources/route53profiles.json',
-  import 'resources/route53recoverycontrolconfig.json',
-  import 'resources/route53recoveryreadiness.json'
-]
+{
+  'datasource/acm.json': import 'datasource/acm.json',
+  'provider.json': import 'provider.json',
+  'resource/route53.json': import 'resource/route53.json'
+}
