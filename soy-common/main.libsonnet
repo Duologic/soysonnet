@@ -11,14 +11,20 @@
     },
   },
 
+  getBlockResourceKey(resource):
+    local m = resource._manifest();
+    {
+      block: std.objectFields(m)[0],
+      resource: std.objectFields(m[self.block])[0],
+      key: std.objectFields(m[self.block][self.resource])[0],
+    },
+
   importResource(resource, id):
-    local blockType = std.objectFields(resource)[0];
-    local resourceType = std.objectFields(resource[blockType])[0];
-    local key = resource.tf_resource_key;
+    local brk = self.getBlockResourceKey(resource);
     {
       _manifest():: self,
       'import'+: [{
-        to: std.join('.', [resourceType, key]),
+        to: std.join('.', [brk.resource, brk.key]),
         id: id,
       }],
     },
@@ -33,17 +39,15 @@
   },
 
   ref(resource, field):
-    local blockType = std.objectFields(resource)[0];
-    local resourceType = std.objectFields(resource[blockType])[0];
-    local key = resource.tf_resource_key;
+    local brk = self.getBlockResourceKey(resource);
     '${%s}' % std.join(
       '.',
-      (if blockType == 'resource'
+      (if brk.block == 'resource'
        then []
-       else [blockType])
-      + (if std.member(['resource', 'data', 'ephemeral'], blockType)
-         then [resourceType]
+       else [brk.block])
+      + (if std.member(['resource', 'data', 'ephemeral'], brk.block)
+         then [brk.resource]
          else [])
-      + [key, field]
+      + [brk.key, field]
     ),
 }
