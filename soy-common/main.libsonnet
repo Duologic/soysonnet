@@ -1,3 +1,4 @@
+local xtd = import './vendor/github.com/jsonnet-libs/xtd/main.libsonnet';
 {
   requiredProvider(name, source, version): {
     _manifest():: self,
@@ -10,6 +11,22 @@
       },
     },
   },
+
+  manifestResources(items):
+    local resources =
+      xtd.inspect.filterObjects(
+        function(obj)
+          std.isFunction(
+            std.get(obj, '_manifest')
+          ),
+        items
+      );
+    std.foldl(
+      function(acc, resource)
+        acc + resource._manifest(),
+      resources,
+      {},
+    ),
 
   getBlockResourceKey(resource):
     local m = resource._manifest();
