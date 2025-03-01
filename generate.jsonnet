@@ -81,7 +81,8 @@ local fields = import './fields.libsonnet';
                             a.field.new(
                               a.id.new(value),
                               a.object.new([acc])
-                            ),
+                            )
+                            + a.field.withAdditive(),
                           nesting,
                           a.field.new(
                             a.fieldname_expr.new(
