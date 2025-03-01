@@ -1,7 +1,8 @@
 {
   requiredProvider(name, source, version): {
-    terraform: {
-      required_providers: {
+    _manifest():: self,
+    terraform+: {
+      required_providers+: {
         [name]: {
           source: source,
           version: version,
@@ -15,6 +16,7 @@
     local resourceType = std.objectFields(resource[blockType])[0];
     local key = resource.tf_resource_key;
     {
+      _manifest():: self,
       'import'+: [{
         to: std.join('.', [resourceType, key]),
         id: id,
@@ -22,12 +24,10 @@
     },
 
   withDynamicBlock(key, foreach, content): {
-    spec+: {
-      dynamic+: {
-        [key]: {
-          for_each: foreach,
-          content: content,
-        },
+    dynamic+: {
+      [key]: {
+        for_each: foreach,
+        content: content,
       },
     },
   },

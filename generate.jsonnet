@@ -48,16 +48,12 @@ local fields = import './fields.libsonnet';
       local engine = self.renderEngine.engine,
       render(name, schema):
         assert std.trace('Rendering: ' + nesting[0] + ' ' + name, true);
-        local schemaInSpec(schema) = {
-          type: 'object',
-          properties: { spec: schema },
-        };
         local keyname = 'tf_resource_key';
-        local parsedSchema = self.parse(name, schemaInSpec(schema));
+        local parsedSchema = self.parse(name, schema);
         local properties =
-          parsedSchema[name].properties.spec.properties
+          parsedSchema[name].properties
           + { [keyname]: { type: 'string' } };
-        local required = [keyname] + std.get(parsedSchema[name].properties.spec, 'required', []);
+        local required = [keyname] + std.get(parsedSchema[name], 'required', []);
         a.object.new([
           a.field.new(
             a.id.new(name),
@@ -66,43 +62,37 @@ local fields = import './fields.libsonnet';
                 engine,
                 properties,
                 required,
-                init=a.object.new([
-                  a.object_local.new(
-                    a.bind.new(
-                      a.id.new('this'),
-                      a.literal.new('self')
-                    ),
-                  ),
-                  std.foldr(
-                    function(value, acc)
-                      a.field.new(
-                        a.id.new(value),
-                        a.object.new([acc])
-                      ),
-                    nesting,
-                    a.field.new(
-                      a.fieldname_expr.new(
-                        a.fieldaccess.new([a.id.new('this')], a.id.new(keyname))
-                      ),
-                      a.fieldaccess.new([a.id.new('this')], a.id.new('spec'))
-                    ),
-                  ),
-                  a.field.new(
-                    a.id.new('spec'),
-                    a.literal.new('{}')
-                  )
-                  + a.field.withHidden(),
-                ])
               )
               + [
                 a.field_function.new(
                   a.id.new(engine.functionName(keyname)),
                   a.object.new([
-                    a.field.new(
-                      a.id.new(keyname),
-                      a.id.new(keyname)
+                    a.object_local.new(
+                      a.bind.new(
+                        a.id.new('this'),
+                        a.literal.new('self')
+                      ),
+                    ),
+                    a.field_function.new(
+                      a.id.new('_manifest'),
+                      a.object.new([
+                        std.foldr(
+                          function(value, acc)
+                            a.field.new(
+                              a.id.new(value),
+                              a.object.new([acc])
+                            ),
+                          nesting,
+                          a.field.new(
+                            a.fieldname_expr.new(
+                              a.id.new(keyname)
+                            ),
+                            a.id.new('this'),
+                          ),
+                        ),
+                      ])
                     )
-                    + a.field.withHidden(),
+                    + a.field_function.withHidden(),
                   ])
                 )
                 + a.field_function.withParams(
@@ -111,10 +101,7 @@ local fields = import './fields.libsonnet';
                   ])
                 ),
               ]
-              + autils.get(
-                autils.get(super.render(name, schemaInSpec(schema)), name).expr,
-                'spec'
-              ).expr.members
+              + autils.get(super.render(name, schema), name).expr.members,
             )
           ),
         ]),
