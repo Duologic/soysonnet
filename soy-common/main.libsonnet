@@ -1,4 +1,4 @@
-local xtd = import './vendor/github.com/jsonnet-libs/xtd/main.libsonnet';
+local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 {
   requiredProvider(name, source, version): {
     _manifest():: self,
