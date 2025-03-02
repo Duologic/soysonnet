@@ -1,3 +1,5 @@
+// # soy-gen
+//
 // This library provides functions to convert Terraform provider schemas into JSON schemas and generate Jsonnet libraries.
 // The Terraform provider schemas can be generated with `terraform providers schema -json`.
 //
