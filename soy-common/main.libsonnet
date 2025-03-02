@@ -23,17 +23,33 @@ local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
       );
     std.foldl(
       function(acc, resource)
-        acc + resource._manifest(),
+        local brk = self.getBlockResourceKey(resource);
+        assert brk == '' || !std.member(acc.brks, brk)
+               : 'Duplicate resource: \n' + std.manifestJson(brk);
+        acc + {
+          brks+: (
+            if brk.key != ''
+            then [brk]
+            else []
+          ),
+          resources+: resource._manifest(),
+        },
       resources,
-      {},
-    ),
+      { resources: {}, brks: [] },
+    ).resources,
 
   getBlockResourceKey(resource):
     local m = resource._manifest();
+    local block = std.objectFields(m)[0];
     {
-      block: std.objectFields(m)[0],
-      resource: std.objectFields(m[self.block])[0],
-      key: std.objectFields(m[self.block][self.resource])[0],
+      block: block,
+      [if std.member(['resource', 'data', 'ephemeral'], block) then 'resource']: std.objectFields(m[block])[0],
+      key:
+        if std.member(['resource', 'data', 'ephemeral'], block)
+        then std.objectFields(m[block][self.resource])[0]
+        else if std.isObject(m[block])
+        then std.objectFields(m[block])[0]
+        else '',
     },
 
   importResource(resource, id):
