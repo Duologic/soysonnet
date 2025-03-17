@@ -8,7 +8,7 @@ Utility functions to work with generated soysonnet libraries.
 * [func getBlockResourceKey](#func-getblockresourcekey)
 * [func requiredProvider](#func-requiredprovider)
   * [obj requiredProvider().terraform](#obj-requiredproviderterraform)
-    * [obj requiredProvider().terraform.required_providers](#obj-requiredproviderterraformrequiredproviders)
+    * [obj requiredProvider().terraform.required_providers](#obj-requiredproviderterraformrequired_providers)
 * [func importResource](#func-importresource)
 * [func withDynamicBlock](#func-withdynamicblock)
   * [obj withDynamicBlock().dynamic](#obj-withdynamicblockdynamic)
