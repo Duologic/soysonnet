@@ -4,15 +4,15 @@ Utility functions to work with generated soysonnet libraries.
 
 ## Index
 
-* [func manifestResources](func-manifestresources)
-* [func getBlockResourceKey](func-getblockresourcekey)
-* [func requiredProvider](func-requiredprovider)
-  * [obj requiredProvider().terraform](obj-requiredproviderterraform)
-    * [obj requiredProvider().terraform.required_providers](obj-requiredproviderterraformrequiredproviders)
-* [func importResource](func-importresource)
-* [func withDynamicBlock](func-withdynamicblock)
-  * [obj withDynamicBlock().dynamic](obj-withdynamicblockdynamic)
-* [func ref](func-ref)
+* [func manifestResources](#func-manifestresources)
+* [func getBlockResourceKey](#func-getblockresourcekey)
+* [func requiredProvider](#func-requiredprovider)
+  * [obj requiredProvider().terraform](#obj-requiredproviderterraform)
+    * [obj requiredProvider().terraform.required_providers](#obj-requiredproviderterraformrequiredproviders)
+* [func importResource](#func-importresource)
+* [func withDynamicBlock](#func-withdynamicblock)
+  * [obj withDynamicBlock().dynamic](#obj-withdynamicblockdynamic)
+* [func ref](#func-ref)
 
 ## Fields
 

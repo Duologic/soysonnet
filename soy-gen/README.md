@@ -8,19 +8,19 @@ The Terraform provider schemas can be generated with `terraform providers schema
 
 ## Index
 
-* [func new](func-new)
-  * [obj new().provider](obj-newprovider)
-    * [func new().provider.getSchema](func-newprovidergetschema)
-    * [func new().provider.generateLibrary](func-newprovidergeneratelibrary)
-  * [obj new().resource](obj-newresource)
-    * [func new().resource.getSchemas](func-newresourcegetschemas)
-    * [func new().resource.generateLibraries](func-newresourcegeneratelibraries)
-  * [obj new().ephemeral](obj-newephemeral)
-    * [func new().ephemeral.getSchemas](func-newephemeralgetschemas)
-    * [func new().ephemeral.generateLibraries](func-newephemeralgeneratelibraries)
-  * [obj new().data](obj-newdata)
-    * [func new().data.getSchemas](func-newdatagetschemas)
-    * [func new().data.generateLibraries](func-newdatageneratelibraries)
+* [func new](#func-new)
+  * [obj new().provider](#obj-newprovider)
+    * [func new().provider.getSchema](#func-newprovidergetschema)
+    * [func new().provider.generateLibrary](#func-newprovidergeneratelibrary)
+  * [obj new().resource](#obj-newresource)
+    * [func new().resource.getSchemas](#func-newresourcegetschemas)
+    * [func new().resource.generateLibraries](#func-newresourcegeneratelibraries)
+  * [obj new().ephemeral](#obj-newephemeral)
+    * [func new().ephemeral.getSchemas](#func-newephemeralgetschemas)
+    * [func new().ephemeral.generateLibraries](#func-newephemeralgeneratelibraries)
+  * [obj new().data](#obj-newdata)
+    * [func new().data.getSchemas](#func-newdatagetschemas)
+    * [func new().data.generateLibraries](#func-newdatageneratelibraries)
 
 ## Fields
 
