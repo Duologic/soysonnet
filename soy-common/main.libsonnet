@@ -1,7 +1,5 @@
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-// # soy-common
-//
 // Utility functions to work with generated soysonnet libraries.
 {
   // This function will manifest all blocks/resources and merge them together into Hashicorp's JSON Configuration Syntax.

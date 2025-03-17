@@ -6,7 +6,23 @@ The Terraform provider schemas can be generated with `terraform providers schema
 > [!CAUTION]
 > This is an experimental library.
 
-## Functions
+## Index
+
+* [func new](func-new)
+  * [obj new().provider](obj-newprovider)
+    * [func new().provider.getSchema](func-newprovidergetschema)
+    * [func new().provider.generateLibrary](func-newprovidergeneratelibrary)
+  * [obj new().resource](obj-newresource)
+    * [func new().resource.getSchemas](func-newresourcegetschemas)
+    * [func new().resource.generateLibraries](func-newresourcegeneratelibraries)
+  * [obj new().ephemeral](obj-newephemeral)
+    * [func new().ephemeral.getSchemas](func-newephemeralgetschemas)
+    * [func new().ephemeral.generateLibraries](func-newephemeralgeneratelibraries)
+  * [obj new().data](obj-newdata)
+    * [func new().data.getSchemas](func-newdatagetschemas)
+    * [func new().data.generateLibraries](func-newdatageneratelibraries)
+
+## Fields
 
 ### func new
 
@@ -39,7 +55,9 @@ Then execute it like this:
 jsonnet -S -m output -c -J vendor generator.jsonnet | jsonnetfmt -i
 ```
 
-##### obj new().provider
+#### obj new().provider
+
+##### func new().provider.getSchema
 
 ```jsonnet
 getSchema()
@@ -47,13 +65,17 @@ getSchema()
 
 Get JSON schema
 
+##### func new().provider.generateLibrary
+
 ```jsonnet
 generateLibrary(schema=self.getSchema())
 ```
 
 Generate library from `schema`
 
-##### obj new().resource
+#### obj new().resource
+
+##### func new().resource.getSchemas
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
@@ -67,13 +89,17 @@ PARAMETERS:
   - **groupFn** (`function`): fn(<resourceType>(`string`)) `string`
     Returns a key under which the resources will be grouped. By default it'll split the resource type by `_` and return the second word, for example: `aws_route53_record` will be grouped under `route53`.
 
+##### func new().resource.generateLibraries
+
 ```jsonnet
 generateLibraries(schemas=self.getSchemas())
 ```
 
 Generate library from `schemas`
 
-##### obj new().ephemeral
+#### obj new().ephemeral
+
+##### func new().ephemeral.getSchemas
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
@@ -83,13 +109,17 @@ Get JSON schema for ephemeral resource blocks
 
 PARAMETERS: *see `resource.getSchemas()`*
 
+##### func new().ephemeral.generateLibraries
+
 ```jsonnet
 generateLibraries(schemas=self.getSchemas())
 ```
 
 Generate library from `schemas`
 
-##### obj new().data
+#### obj new().data
+
+##### func new().data.getSchemas
 
 ```jsonnet
 getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
@@ -98,6 +128,8 @@ getSchemas(filterFn=defaultFilterFn, groupFn=defaultGroupFn)
 Get JSON schema for datasource blocks
 
 PARAMETERS: *see `resource.getSchemas()`*
+
+##### func new().data.generateLibraries
 
 ```jsonnet
 generateLibraries(schemas=self.getSchemas())

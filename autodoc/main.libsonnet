@@ -1,3 +1,3 @@
 local autodoc = import './vendor/autodoc/main.libsonnet';
-function(file)
-  autodoc(file).render(1)
+function(title, file)
+  autodoc.new(title, file).render(0)
